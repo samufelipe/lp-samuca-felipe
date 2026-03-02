@@ -62,7 +62,7 @@ const Cases: React.FC = () => {
             <div className="flex flex-row md:flex-col items-center md:items-end justify-between md:justify-end gap-2 w-full">
               <div className="flex items-center gap-3 text-yellow-500 font-bold px-5 md:px-8 py-3 md:py-5 rounded-2xl md:rounded-[2rem] border border-white/5 text-[9px] md:text-[10px] uppercase tracking-widest shadow-2xl">
                 <ShieldCheck size={18} className="shrink-0" />
-                <span className="whitespace-nowrap">Projetos Ativos</span>
+                <span className="whitespace-nowrap">Projetos Gerenciados</span>
               </div>
               <p className="text-[9px] text-gray-500 font-bold uppercase tracking-widest animate-pulse">Arraste para explorar</p>
             </div>
