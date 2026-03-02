@@ -1,6 +1,7 @@
 import React from 'react';
 import { ShieldCheck, ArrowRight, ArrowUpRight } from 'lucide-react';
 import ScrollReveal from './ScrollReveal';
+import gladysLogo from '@/assets/gladys-logo.jpg';
 
 const Cases: React.FC = () => {
   const allClients = [
@@ -17,7 +18,7 @@ const Cases: React.FC = () => {
     { name: "São José Confecções", niche: "Indústria Têxtil", desc: "Referência em moda masculina e produção têxtil em larga escala.", result: "Venda Direta", url: "https://www.saojoseconfeccoes.com.br/" },
     { name: "Cia Trip", niche: "Turismo Premium", desc: "Agência especializada em roteiros personalizados e experiências internacionais.", result: "Ticket Médio Alto", url: "https://ciatrip.com/" },
     { name: "Paula Cromão", niche: "Saúde Mental", desc: "Psicologia clínica especializada em desenvolvimento humano e performance.", result: "Agenda Lotada", url: "https://www.paulacromao.com.br/" },
-    { name: "Gladys Religiosos", niche: "Varejo Especializado", desc: "Principal e-commerce de artigos sacros e religiosos do mercado brasileiro.", result: "E-commerce Escalonável", url: "https://www.gladysreligiosos.com.br/" },
+    { name: "Gladys Religiosos", niche: "Varejo Especializado", desc: "Principal e-commerce de artigos sacros e religiosos do mercado brasileiro.", result: "E-commerce Escalonável", url: "https://www.gladysreligiosos.com.br/", customLogo: gladysLogo },
   ];
 
   const getFaviconUrl = (url: string) => {
@@ -87,9 +88,9 @@ const Cases: React.FC = () => {
 
                 {/* Logo + Name + Niche */}
                 <div className="flex flex-col gap-2">
-                  <div className="w-16 h-16 md:w-20 md:h-20 rounded-xl border border-yellow-500/20 overflow-hidden bg-white/10 flex-shrink-0 p-3 md:p-4 group-hover/card:border-yellow-500/40 group-hover/card:bg-white/15 transition-all duration-500">
+                  <div className="w-full aspect-square rounded-xl border border-yellow-500/20 overflow-hidden bg-white/10 flex-shrink-0 p-2 group-hover/card:border-yellow-500/40 group-hover/card:bg-white/15 transition-all duration-500">
                     <img
-                      src={getFaviconUrl(client.url)}
+                      src={client.customLogo || getFaviconUrl(client.url)}
                       alt={`${client.name} logo`}
                       className="w-full h-full object-contain"
                       loading="lazy"
