@@ -73,20 +73,17 @@ const Hero: React.FC = () => {
 
           <div className="w-full lg:flex-1 order-1 lg:order-2 flex justify-center lg:justify-end">
             <ScrollReveal className="relative w-72 h-72 sm:w-96 sm:h-96 md:w-[500px] md:h-[500px]">
-              <div className="absolute inset-0 rounded-full opacity-0 blur-[120px] animate-pulse"></div>
+              {/* Golden glow behind image */}
+              <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(197,160,89,0.15)_0%,_transparent_70%)] blur-[60px] scale-110 pointer-events-none"></div>
 
-              <div className="relative z-10 w-full h-full rounded-[3rem] border border-white/10 overflow-hidden group shadow-[0_0_50px_rgba(212,175,55,0.05)]">
+              <div className="relative z-10 w-full h-full overflow-hidden group">
                 <img
                   src={samuelPhoto}
                   className="w-full h-full object-cover object-[center_15%] grayscale brightness-90 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000"
                   alt="Samuel Felipe - Estrategista Digital focado em resultados reais"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-80 group-hover:opacity-40 transition-opacity"></div>
-
-                <div className="absolute bottom-8 left-8 right-8 p-6 glass-card rounded-2xl border-white/5">
-                  <p className="text-yellow-500 text-[10px] font-bold uppercase tracking-[0.2em] mb-2">Mentalidade de Dono</p>
-                  <p className="text-white text-base md:text-xl font-bold leading-tight">"Meu foco é tornar o digital simples e lucrativo para o seu negócio."</p>
-                </div>
+                {/* Smooth bottom fade into background */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-transparent"></div>
               </div>
             </ScrollReveal>
           </div>
