@@ -1,0 +1,121 @@
+import React from 'react';
+import { Shield, Zap, CheckCircle2, Award, Target, Layout, Search, Sparkles } from 'lucide-react';
+
+const GoogleExpertise: React.FC = () => {
+  return (
+    <section className="py-24 md:py-36 relative overflow-hidden">
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] bg-transparent pointer-events-none"></div>
+
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
+        <div className="text-center mb-20 md:mb-24">
+          <div className="inline-flex items-center gap-3 border border-white/5 px-5 py-2.5 rounded-full mb-8">
+            <Award size={16} className="text-yellow-500 animate-pulse" />
+            <span className="text-[10px] md:text-xs font-black uppercase tracking-[0.3em] text-yellow-500/90">Autoridade Validada</span>
+          </div>
+          <h2 className="text-4xl md:text-6xl font-black mb-8 text-white">
+            Estratégias Validadas <br className="hidden md:block" /><span className="gold-gradient">Google Partner</span>
+          </h2>
+          <p className="text-gray-400 max-w-2xl mx-auto text-base md:text-lg font-light">
+            Acesso às melhores ferramentas e práticas do Google para garantir que o seu investimento seja utilizado da forma mais inteligente e simples possível.
+          </p>
+        </div>
+
+        <div className="grid lg:grid-cols-12 gap-8 mb-12">
+          {/* Main Certification Card */}
+          <div className="lg:col-span-5 relative group">
+            <div className="absolute -inset-1 bg-gradient-to-b from-yellow-500/20 to-transparent rounded-[3rem] blur-xl opacity-0 group-hover:opacity-100 transition-all duration-700"></div>
+            <div className="relative h-full glass-card rounded-[3rem] p-10 md:p-14 flex flex-col items-center justify-center text-center border-white/5 overflow-hidden">
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-yellow-500/40 to-transparent"></div>
+
+              <div className="bg-white p-10 rounded-[2.5rem] mb-10 shadow-[0_20px_50px_rgba(255,255,255,0.1)] group-hover:scale-105 transition-transform duration-700">
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/c/c7/Google_Ads_logo.svg"
+                  alt="Google Ads Logo"
+                  className="w-48 md:w-56 h-auto"
+                />
+                <div className="mt-6 pt-6 border-t border-gray-100">
+                  <p className="text-gray-900 font-black text-2xl tracking-tighter italic">Certified</p>
+                </div>
+              </div>
+
+              <h3 className="text-2xl md:text-3xl font-black mb-4">Estrategista Certificado</h3>
+              <p className="text-gray-500 text-sm md:text-base font-medium">
+                Selo que garante o domínio das ferramentas certas para simplificar o seu crescimento digital.
+              </p>
+            </div>
+          </div>
+
+          {/* Side Cards Column */}
+          <div className="lg:col-span-7 flex flex-col gap-8">
+            <div className="glass-card rounded-[2.5rem] p-10 border-white/5 relative overflow-hidden group">
+              <div className="flex items-center gap-4 mb-10">
+                <div className="w-12 h-12 rounded-xl bg-yellow-500/10 flex items-center justify-center text-yellow-500 border border-yellow-500/20">
+                  <Sparkles size={24} />
+                </div>
+                <h4 className="text-xl font-black uppercase tracking-[0.2em] text-white">Como eu ajudo</h4>
+              </div>
+
+              <div className="grid md:grid-cols-1 gap-8">
+                {[
+                  { title: "Performance Max & AI", desc: "Engenharia de prompts e sinais para o algoritmo de IA do Google.", icon: <Zap size={20} /> },
+                  { title: "Rede de Pesquisa Avançada", desc: "Captura cirúrgica de demanda com foco em intenção de compra.", icon: <Search size={20} /> },
+                  { title: "Display & Youtube Strategy", desc: "Criação de demanda e branding para públicos de alto padrão.", icon: <Layout size={20} /> },
+                ].map((item, i) => (
+                  <div key={i} className="flex gap-6 group/item">
+                    <div className="text-yellow-500/50 group-hover/item:text-yellow-500 transition-colors">
+                      {item.icon}
+                    </div>
+                    <div>
+                      <h5 className="text-lg font-bold mb-1 group-hover/item:text-yellow-500 transition-colors">{item.title}</h5>
+                      <p className="text-sm text-gray-500 leading-relaxed">{item.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="glass-card rounded-[2.5rem] p-10 border-white/5">
+              <div className="flex items-center gap-4 mb-8">
+                <div className="w-12 h-12 rounded-xl bg-yellow-500/10 flex items-center justify-center text-yellow-500 border border-yellow-500/20">
+                  <Shield size={24} />
+                </div>
+                <h4 className="text-xl font-black uppercase tracking-[0.2em] text-white">Garantias do Selo</h4>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-y-6 gap-x-10">
+                {[
+                  "Processos validados pelo Google",
+                  "Beta testing de ferramentas",
+                  "Auditoria de boas práticas",
+                  "Suporte direto de engenharia",
+                ].map((text, i) => (
+                  <div key={i} className="flex items-center gap-4 group/check">
+                    <div className="w-6 h-6 rounded-full border border-yellow-500/30 flex items-center justify-center group-hover/check:border-yellow-500 transition-colors">
+                      <CheckCircle2 size={12} className="text-yellow-500" />
+                    </div>
+                    <span className="text-sm text-gray-300 font-semibold tracking-wide">{text}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom Banner */}
+        <div className="relative mt-16 group">
+          <div className="absolute -inset-0.5 bg-gradient-to-r from-transparent via-yellow-500/20 to-transparent rounded-3xl blur opacity-30 group-hover:opacity-60 transition-opacity"></div>
+          <div className="relative glass-card rounded-3xl p-8 md:p-12 text-center border-white/5">
+            <h4 className="text-xl md:text-3xl font-black mb-3 tracking-tight">
+              Estratégia Certificada + <span className="gold-gradient">4 Anos de Campo</span>
+            </h4>
+            <p className="text-gray-500 text-sm md:text-lg font-medium max-w-2xl mx-auto">
+              A união rara entre o rigor técnico da certificação e a malícia estratégica de quem já geriu mais de R$ 7 milhões em mídia.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default GoogleExpertise;
