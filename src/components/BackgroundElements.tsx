@@ -16,38 +16,38 @@ const BackgroundElements: React.FC = () => {
 
       {/* ── Subtle dot grid ── */}
       <div
-        className="absolute inset-0 opacity-[0.04]"
+        className="absolute inset-0 opacity-[0.09]"
         style={{
-          backgroundImage: 'radial-gradient(rgba(197,160,89,0.8) 1px, transparent 1px)',
-          backgroundSize: '60px 60px',
+          backgroundImage: 'radial-gradient(rgba(197,160,89,1) 1px, transparent 1px)',
+          backgroundSize: '50px 50px',
         }}
       />
 
       {/* ── Orbs ── */}
       <div
-        className="absolute top-[25%] right-[-5%] w-[500px] h-[500px] rounded-full bg-[radial-gradient(ellipse_at_center,_rgba(197,160,89,0.18)_0%,_transparent_65%)] blur-[60px]"
+        className="absolute top-[25%] right-[-5%] w-[500px] h-[500px] rounded-full bg-[radial-gradient(ellipse_at_center,_rgba(197,160,89,0.30)_0%,_transparent_65%)] blur-[50px]"
         style={{ transform: `translateY(${scrollY * -0.08}px)` }}
       />
       <div
-        className="absolute top-[50%] left-[-8%] w-[450px] h-[450px] rounded-full bg-[radial-gradient(ellipse_at_center,_rgba(226,194,132,0.15)_0%,_transparent_65%)] blur-[80px]"
+        className="absolute top-[50%] left-[-8%] w-[450px] h-[450px] rounded-full bg-[radial-gradient(ellipse_at_center,_rgba(226,194,132,0.25)_0%,_transparent_65%)] blur-[60px]"
         style={{ transform: `translateY(${scrollY * 0.05}px)` }}
       />
       <div
-        className="absolute top-[75%] left-[35%] w-[600px] h-[600px] rounded-full bg-[radial-gradient(ellipse_at_center,_rgba(197,160,89,0.12)_0%,_transparent_65%)] blur-[100px]"
+        className="absolute top-[75%] left-[35%] w-[600px] h-[600px] rounded-full bg-[radial-gradient(ellipse_at_center,_rgba(197,160,89,0.22)_0%,_transparent_65%)] blur-[70px]"
         style={{ transform: `translateY(${scrollY * -0.04}px)` }}
       />
 
       {/* ── Diagonal lines ── */}
       <div
-        className="absolute top-[35%] right-[10%] w-[1px] h-[350px] bg-gradient-to-b from-transparent via-[rgba(197,160,89,0.25)] to-transparent"
+        className="absolute top-[35%] right-[10%] w-[1px] h-[350px] bg-gradient-to-b from-transparent via-[rgba(197,160,89,0.40)] to-transparent"
         style={{ transform: `rotate(25deg) translateY(${scrollY * -0.12}px)` }}
       />
       <div
-        className="absolute top-[60%] left-[15%] w-[1px] h-[300px] bg-gradient-to-b from-transparent via-[rgba(226,194,132,0.2)] to-transparent"
+        className="absolute top-[60%] left-[15%] w-[1px] h-[300px] bg-gradient-to-b from-transparent via-[rgba(226,194,132,0.35)] to-transparent"
         style={{ transform: `rotate(-20deg) translateY(${scrollY * 0.1}px)` }}
       />
       <div
-        className="absolute top-[40%] left-[5%] w-[200px] h-[1px] bg-gradient-to-r from-transparent via-[rgba(197,160,89,0.2)] to-transparent"
+        className="absolute top-[40%] left-[5%] w-[200px] h-[1px] bg-gradient-to-r from-transparent via-[rgba(197,160,89,0.35)] to-transparent"
         style={{ transform: `translateY(${scrollY * -0.06}px)` }}
       />
 
@@ -64,7 +64,7 @@ const BackgroundElements: React.FC = () => {
       ].map((p, i) => (
         <div
           key={`particle-${i}`}
-          className="absolute rounded-full bg-yellow-500/20"
+          className="absolute rounded-full bg-yellow-500/40"
           style={{
             top: p.top,
             left: p.left,
@@ -79,7 +79,7 @@ const BackgroundElements: React.FC = () => {
       {/* ── Marketing digital icons (subtle SVG outlines) ── */}
       {/* Cursor/click icon - top area */}
       <svg
-        className="absolute top-[18%] right-[18%] opacity-[0.06]"
+        className="absolute top-[18%] right-[18%] opacity-[0.15]"
         width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="rgba(197,160,89,1)" strokeWidth="1.5"
         style={{ transform: `translateY(${scrollY * -0.07}px) rotate(12deg)` }}
       >
@@ -88,7 +88,7 @@ const BackgroundElements: React.FC = () => {
 
       {/* Bar chart icon - mid left */}
       <svg
-        className="absolute top-[42%] left-[6%] opacity-[0.05]"
+        className="absolute top-[42%] left-[6%] opacity-[0.12]"
         width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="rgba(226,194,132,1)" strokeWidth="1.5"
         style={{ transform: `translateY(${scrollY * 0.06}px) rotate(-8deg)` }}
       >
@@ -99,7 +99,7 @@ const BackgroundElements: React.FC = () => {
 
       {/* Target/bullseye icon - center right */}
       <svg
-        className="absolute top-[58%] right-[8%] opacity-[0.05]"
+        className="absolute top-[58%] right-[8%] opacity-[0.12]"
         width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="rgba(197,160,89,1)" strokeWidth="1.2"
         style={{ transform: `translateY(${scrollY * -0.05}px) rotate(5deg)` }}
       >
@@ -110,7 +110,7 @@ const BackgroundElements: React.FC = () => {
 
       {/* Trending up icon - bottom left */}
       <svg
-        className="absolute top-[78%] left-[22%] opacity-[0.06]"
+        className="absolute top-[78%] left-[22%] opacity-[0.15]"
         width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="rgba(226,194,132,1)" strokeWidth="1.5"
         style={{ transform: `translateY(${scrollY * 0.04}px) rotate(-5deg)` }}
       >
@@ -120,7 +120,7 @@ const BackgroundElements: React.FC = () => {
 
       {/* Megaphone/speaker icon - top left */}
       <svg
-        className="absolute top-[30%] left-[30%] opacity-[0.04]"
+        className="absolute top-[30%] left-[30%] opacity-[0.10]"
         width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="rgba(197,160,89,1)" strokeWidth="1.5"
         style={{ transform: `translateY(${scrollY * -0.08}px) rotate(15deg)` }}
       >
@@ -130,7 +130,7 @@ const BackgroundElements: React.FC = () => {
 
       {/* Lightning/zap - bottom right */}
       <svg
-        className="absolute top-[88%] right-[25%] opacity-[0.05]"
+        className="absolute top-[88%] right-[25%] opacity-[0.12]"
         width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="rgba(197,160,89,1)" strokeWidth="1.5"
         style={{ transform: `translateY(${scrollY * 0.06}px) rotate(-10deg)` }}
       >
@@ -138,10 +138,10 @@ const BackgroundElements: React.FC = () => {
       </svg>
 
       {/* ── Accent dots ── */}
-      <div className="absolute top-[20%] left-[20%] w-2.5 h-2.5 rounded-full bg-yellow-500/20" style={{ transform: `translateY(${scrollY * -0.06}px)` }} />
-      <div className="absolute top-[45%] right-[25%] w-2 h-2 rounded-full bg-yellow-500/[0.18]" style={{ transform: `translateY(${scrollY * 0.08}px)` }} />
-      <div className="absolute top-[70%] left-[60%] w-3 h-3 rounded-full bg-yellow-400/[0.15]" style={{ transform: `translateY(${scrollY * -0.05}px)` }} />
-      <div className="absolute top-[85%] right-[15%] w-2.5 h-2.5 rounded-full bg-yellow-500/[0.18]" style={{ transform: `translateY(${scrollY * 0.07}px)` }} />
+      <div className="absolute top-[20%] left-[20%] w-2.5 h-2.5 rounded-full bg-yellow-500/40" style={{ transform: `translateY(${scrollY * -0.06}px)` }} />
+      <div className="absolute top-[45%] right-[25%] w-2 h-2 rounded-full bg-yellow-500/35" style={{ transform: `translateY(${scrollY * 0.08}px)` }} />
+      <div className="absolute top-[70%] left-[60%] w-3 h-3 rounded-full bg-yellow-400/30" style={{ transform: `translateY(${scrollY * -0.05}px)` }} />
+      <div className="absolute top-[85%] right-[15%] w-2.5 h-2.5 rounded-full bg-yellow-500/35" style={{ transform: `translateY(${scrollY * 0.07}px)` }} />
     </div>
   );
 };
