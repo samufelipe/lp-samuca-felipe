@@ -105,7 +105,7 @@ const Cases: React.FC = () => {
 
                 {/* Result + Arrow */}
                 <div className="flex items-center justify-between mt-auto pt-2 border-t border-white/[0.04]">
-                  <span className="text-[8px] md:text-[9px] font-bold text-yellow-500/60 uppercase tracking-wider">{client.result}</span>
+                  <span className="text-[8px] md:text-[9px] font-bold text-yellow-500/60 uppercase tracking-wider">Ver Projeto</span>
                   <ArrowUpRight size={12} className="text-white/20 group-hover/card:text-yellow-500 group-hover/card:translate-x-0.5 group-hover/card:-translate-y-0.5 transition-all duration-300" />
                 </div>
               </div>
