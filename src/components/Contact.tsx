@@ -1,11 +1,24 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { Mail, Phone, Send, CheckCircle2 } from 'lucide-react';
+import { trackFormStart, trackFormSubmit, trackFormFieldInteraction, trackWhatsAppClick, trackOutboundClick } from '@/lib/gtm';
 
 const Contact: React.FC = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const formStarted = useRef(false);
+
+  const handleFieldFocus = (fieldName: string) => {
+    if (!formStarted.current) {
+      formStarted.current = true;
+      trackFormStart('diagnostico');
+    }
+    trackFormFieldInteraction('diagnostico', fieldName);
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    const form = e.target as HTMLFormElement;
+    const select = form.querySelector('select') as HTMLSelectElement;
+    trackFormSubmit('diagnostico', select?.value);
     setIsSubmitted(true);
   };
 
@@ -27,7 +40,7 @@ const Contact: React.FC = () => {
                 { label: 'E-mail', val: 'samucafe01@gmail.com', icon: <Mail />, href: 'mailto:samucafe01@gmail.com' },
                 { label: 'WhatsApp', val: '31 99297-6990', icon: <Phone />, href: 'https://wa.me/5531992976990' },
               ].map((item, i) => (
-                <a key={i} href={item.href} target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 text-left group hover:translate-x-2 transition-transform">
+                <a key={i} href={item.href} target="_blank" rel="noopener noreferrer" onClick={() => item.label === 'WhatsApp' ? trackWhatsAppClick('contact_section') : trackOutboundClick(item.href, item.label, 'contact_section')} className="flex items-center gap-4 text-left group hover:translate-x-2 transition-transform">
                   <div className="shrink-0 text-yellow-500 group-hover:text-white transition-colors">
                     {React.cloneElement(item.icon as React.ReactElement, { size: 22 })}
                   </div>
@@ -56,7 +69,7 @@ const Contact: React.FC = () => {
                   <div className="space-y-2.5">
                     <label className="text-[10px] md:text-xs font-black uppercase text-yellow-500/70 ml-1 tracking-widest">Nome Completo</label>
                     <div className="relative group">
-                      <input required type="text" placeholder="Ex: João Silva" className="w-full bg-white/[0.03] border border-white/5 rounded-xl md:rounded-2xl p-4 md:p-5 text-sm md:text-base focus:outline-none focus:border-yellow-500/50 focus:bg-white/[0.05] transition-all text-white placeholder:text-gray-600" />
+                      <input required type="text" placeholder="Ex: João Silva" onFocus={() => handleFieldFocus('nome')} className="w-full bg-white/[0.03] border border-white/5 rounded-xl md:rounded-2xl p-4 md:p-5 text-sm md:text-base focus:outline-none focus:border-yellow-500/50 focus:bg-white/[0.05] transition-all text-white placeholder:text-gray-600" />
                       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-yellow-500 group-focus-within:w-[90%] transition-all duration-500 rounded-full opacity-50"></div>
                     </div>
                   </div>
@@ -65,14 +78,14 @@ const Contact: React.FC = () => {
                     <div className="space-y-2.5">
                       <label className="text-[10px] md:text-xs font-black uppercase text-yellow-500/70 ml-1 tracking-widest">E-mail Corporativo</label>
                       <div className="relative group">
-                        <input required type="email" placeholder="email@empresa.com" className="w-full bg-white/[0.03] border border-white/5 rounded-xl md:rounded-2xl p-4 md:p-5 text-sm md:text-base focus:outline-none focus:border-yellow-500/50 focus:bg-white/[0.05] transition-all text-white placeholder:text-gray-600" />
+                        <input required type="email" placeholder="email@empresa.com" onFocus={() => handleFieldFocus('email')} className="w-full bg-white/[0.03] border border-white/5 rounded-xl md:rounded-2xl p-4 md:p-5 text-sm md:text-base focus:outline-none focus:border-yellow-500/50 focus:bg-white/[0.05] transition-all text-white placeholder:text-gray-600" />
                         <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-yellow-500 group-focus-within:w-[90%] transition-all duration-500 rounded-full opacity-50"></div>
                       </div>
                     </div>
                     <div className="space-y-2.5">
                       <label className="text-[10px] md:text-xs font-black uppercase text-yellow-500/70 ml-1 tracking-widest">WhatsApp</label>
                       <div className="relative group">
-                        <input required type="tel" placeholder="(31) 99297-6990" className="w-full bg-white/[0.03] border border-white/5 rounded-xl md:rounded-2xl p-4 md:p-5 text-sm md:text-base focus:outline-none focus:border-yellow-500/50 focus:bg-white/[0.05] transition-all text-white placeholder:text-gray-600" />
+                        <input required type="tel" placeholder="(31) 99297-6990" onFocus={() => handleFieldFocus('whatsapp')} className="w-full bg-white/[0.03] border border-white/5 rounded-xl md:rounded-2xl p-4 md:p-5 text-sm md:text-base focus:outline-none focus:border-yellow-500/50 focus:bg-white/[0.05] transition-all text-white placeholder:text-gray-600" />
                         <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-yellow-500 group-focus-within:w-[90%] transition-all duration-500 rounded-full opacity-50"></div>
                       </div>
                     </div>
@@ -81,7 +94,7 @@ const Contact: React.FC = () => {
                   <div className="space-y-2.5">
                     <label className="text-[10px] md:text-xs font-black uppercase text-yellow-500/70 ml-1 tracking-widest">Investimento Mensal</label>
                     <div className="relative group">
-                      <select required className="w-full bg-white/[0.03] border border-white/5 rounded-xl md:rounded-2xl p-4 md:p-5 text-sm md:text-base focus:outline-none focus:border-yellow-500/50 focus:bg-white/[0.05] transition-all appearance-none text-white cursor-pointer">
+                      <select required onFocus={() => handleFieldFocus('investimento')} className="w-full bg-white/[0.03] border border-white/5 rounded-xl md:rounded-2xl p-4 md:p-5 text-sm md:text-base focus:outline-none focus:border-yellow-500/50 focus:bg-white/[0.05] transition-all appearance-none text-white cursor-pointer">
                         <option value="" className="bg-zinc-900">Selecione uma faixa</option>
                         <option value="ate-5k" className="bg-zinc-900">Até R$ 5.000 /mês</option>
                         <option value="5k-15k" className="bg-zinc-900">R$ 5.000 a R$ 15.000 /mês</option>

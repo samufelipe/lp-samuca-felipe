@@ -1,6 +1,7 @@
 import React from 'react';
 import { ShieldCheck, ArrowRight, ArrowUpRight } from 'lucide-react';
 import ScrollReveal from './ScrollReveal';
+import { trackCaseClick, trackCtaClick } from '@/lib/gtm';
 import gladysLogo from '@/assets/gladys-logo.jpg';
 import becharaLogo from '@/assets/bechara-logo.png';
 import fasLogo from '@/assets/fas-logo.png';
@@ -82,6 +83,7 @@ const Cases: React.FC = () => {
               href={client.url}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackCaseClick(client.name, client.url)}
               className="min-w-[200px] md:min-w-[240px] group/card"
               role="group"
               aria-roledescription="slide"
@@ -132,7 +134,7 @@ const Cases: React.FC = () => {
               </div>
             </div>
 
-            <a href="#contato" className="flex items-center gap-2 group cursor-pointer">
+            <a href="#contato" onClick={() => trackCtaClick('diagnostico_semelhante', 'cases_section')} className="flex items-center gap-2 group cursor-pointer">
               <span className="text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-gray-500 group-hover:text-white transition-colors">Solicitar Diagnóstico Semelhante</span>
               <ArrowRight size={14} className="text-yellow-500 group-hover:translate-x-2 transition-transform" />
             </a>

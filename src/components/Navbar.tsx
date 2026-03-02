@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
+import { trackNavClick, trackCtaClick } from '@/lib/gtm';
 
 const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -38,11 +39,11 @@ const Navbar: React.FC = () => {
 
           <div className="hidden lg:flex items-center gap-10">
             {navLinks.map((link) => (
-              <a key={link.label} href={link.href} className="text-[11px] font-bold uppercase tracking-widest text-gray-400 hover:text-white hover:translate-y-[-1px] transition-all">
+              <a key={link.label} href={link.href} onClick={() => trackNavClick(link.label)} className="text-[11px] font-bold uppercase tracking-widest text-gray-400 hover:text-white hover:translate-y-[-1px] transition-all">
                 {link.label}
               </a>
             ))}
-            <a href="#contato" className="gold-bg text-black px-8 py-3 rounded-xl text-xs font-black uppercase tracking-widest hover:scale-[1.05] hover:shadow-yellow-500/20 shadow-xl transition-all">
+            <a href="#contato" onClick={() => trackCtaClick('agendar_call', 'navbar')} className="gold-bg text-black px-8 py-3 rounded-xl text-xs font-black uppercase tracking-widest hover:scale-[1.05] hover:shadow-yellow-500/20 shadow-xl transition-all">
               Agendar Call
             </a>
           </div>

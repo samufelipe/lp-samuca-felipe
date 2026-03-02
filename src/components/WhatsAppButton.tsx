@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { trackWhatsAppClick } from '@/lib/gtm';
 const WhatsAppButton: React.FC = () => {
   const phoneNumber = "5531992976990";
   const message = "Olá Samuel! Vim através do seu site e gostaria de solicitar um diagnóstico estratégico para o meu negócio.";
@@ -11,6 +11,7 @@ const WhatsAppButton: React.FC = () => {
       href={whatsappUrl}
       target="_blank"
       rel="noopener noreferrer"
+      onClick={() => trackWhatsAppClick('floating_button')}
       className="fixed bottom-6 right-6 md:bottom-10 md:right-10 z-[100] group flex items-center justify-center"
       aria-label="Falar no WhatsApp"
     >
