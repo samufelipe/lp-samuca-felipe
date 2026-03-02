@@ -2,8 +2,20 @@ import React, { useState, useRef } from 'react';
 import { Mail, Phone, Send, CheckCircle2 } from 'lucide-react';
 import { trackFormStart, trackFormSubmit, trackFormFieldInteraction, trackWhatsAppClick, trackOutboundClick } from '@/lib/gtm';
 
+const formatPhoneDisplay = (value: string): string => {
+  const digits = value.replace(/\D/g, '');
+  if (digits.length <= 2) return `+${digits}`;
+  if (digits.length <= 4) return `+${digits.slice(0, 2)} ${digits.slice(2)}`;
+  if (digits.length <= 9) return `+${digits.slice(0, 2)} (${digits.slice(2, 4)}) ${digits.slice(4)}`;
+  return `+${digits.slice(0, 2)} (${digits.slice(2, 4)}) ${digits.slice(4, 9)}-${digits.slice(9, 13)}`;
+};
+
+const getWhatsAppNumber = (value: string): string => value.replace(/\D/g, '');
+
 const Contact: React.FC = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [phone, setPhone] = useState('+55 ');
+  const [phoneError, setPhoneError] = useState('');
   const formStarted = useRef(false);
 
   const handleFieldFocus = (fieldName: string) => {
@@ -14,14 +26,33 @@ const Contact: React.FC = () => {
     trackFormFieldInteraction('diagnostico', fieldName);
   };
 
+  const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const raw = e.target.value.replace(/\D/g, '');
+    if (raw.length <= 15) {
+      setPhone(formatPhoneDisplay(raw));
+      setPhoneError('');
+    }
+  };
+
+  const validatePhone = (): boolean => {
+    const digits = getWhatsAppNumber(phone);
+    if (digits.length < 10 || digits.length > 15) {
+      setPhoneError('Insira entre 10 e 15 dígitos (com código do país)');
+      return false;
+    }
+    return true;
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    if (!validatePhone()) return;
     const form = e.target as HTMLFormElement;
     const select = form.querySelector('select') as HTMLSelectElement;
     trackFormSubmit('diagnostico', select?.value);
     const nameInput = form.querySelector('input[type="text"]') as HTMLInputElement;
+    const whatsappNumber = getWhatsAppNumber(phone);
     const message = `Olá Samuel! Meu nome é ${nameInput?.value || ''}. Vim pelo site e gostaria de solicitar um diagnóstico estratégico para o meu negócio.`;
-    window.location.href = `https://wa.me/5531992976990?text=${encodeURIComponent(message)}`;
+    window.location.href = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
   };
 
   return (
@@ -85,10 +116,11 @@ const Contact: React.FC = () => {
                       </div>
                     </div>
                     <div className="space-y-2.5">
-                      <label className="text-[10px] md:text-xs font-black uppercase text-yellow-500/70 ml-1 tracking-widest">WhatsApp</label>
+                      <label className="text-[10px] md:text-xs font-black uppercase text-yellow-500/70 ml-1 tracking-widest">WhatsApp (com DDI)</label>
                       <div className="relative group">
-                        <input required type="tel" placeholder="(31) 99297-6990" onFocus={() => handleFieldFocus('whatsapp')} className="w-full bg-white/[0.03] border border-white/5 rounded-xl md:rounded-2xl p-4 md:p-5 text-sm md:text-base focus:outline-none focus:border-yellow-500/50 focus:bg-white/[0.05] transition-all text-white placeholder:text-gray-600" />
+                        <input required type="tel" placeholder="+55 (31) 99297-6990" value={phone} onChange={handlePhoneChange} onFocus={() => handleFieldFocus('whatsapp')} className={`w-full bg-white/[0.03] border ${phoneError ? 'border-red-500/50' : 'border-white/5'} rounded-xl md:rounded-2xl p-4 md:p-5 text-sm md:text-base focus:outline-none focus:border-yellow-500/50 focus:bg-white/[0.05] transition-all text-white placeholder:text-gray-600`} />
                         <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-yellow-500 group-focus-within:w-[90%] transition-all duration-500 rounded-full opacity-50"></div>
+                        {phoneError && <p className="text-red-400 text-xs mt-1.5 ml-1">{phoneError}</p>}
                       </div>
                     </div>
                   </div>
