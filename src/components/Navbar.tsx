@@ -37,7 +37,7 @@ const Navbar: React.FC = () => {
             </div>
           </div>
 
-          <div className="hidden md:flex items-center gap-10">
+          <div className="hidden lg:flex items-center gap-10">
             {navLinks.map((link) => (
               <a key={link.label} href={link.href} className="text-[11px] font-bold uppercase tracking-widest text-gray-400 hover:text-white hover:translate-y-[-1px] transition-all">
                 {link.label}
@@ -49,7 +49,7 @@ const Navbar: React.FC = () => {
           </div>
 
           <button
-            className="md:hidden text-white p-2 glass-card rounded-lg"
+            className="lg:hidden text-white p-2 glass-card rounded-lg"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -57,7 +57,7 @@ const Navbar: React.FC = () => {
         </div>
 
         {/* Mobile Overlay */}
-        <div className={`fixed inset-0 top-[76px] bg-black/98 z-40 md:hidden backdrop-blur-3xl transition-all duration-500 ${isMenuOpen ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-full pointer-events-none'}`}>
+        <div className={`fixed inset-0 top-[76px] bg-black/98 z-40 lg:hidden backdrop-blur-3xl transition-all duration-500 ${isMenuOpen ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-full pointer-events-none'}`}>
           <div className="flex flex-col p-8 gap-8 h-full justify-center">
             {navLinks.map((link, i) => (
               <a
