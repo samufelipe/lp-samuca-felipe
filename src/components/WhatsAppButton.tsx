@@ -9,7 +9,7 @@ const WhatsAppButton: React.FC = () => {
   return (
     <a
       href={whatsappUrl}
-      target="_blank"
+      target="_self"
       rel="noopener noreferrer"
       onClick={() => trackWhatsAppClick('floating_button')}
       className="fixed bottom-6 right-6 md:bottom-10 md:right-10 z-[100] group flex items-center justify-center"
