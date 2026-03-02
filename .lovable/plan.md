@@ -1,70 +1,38 @@
 
 
-## Plano: Recriar LP "Samuel Felipe — Estrategista Digital" no Lovable
+## Plano: Imagem Hero limpa + Elementos dourados no background
 
-Vou recriar fielmente toda a landing page do repositório GitHub dentro deste projeto Lovable, mantendo o design escuro com acentos dourados, glassmorphism e todas as seções originais.
+### 1. Reestilizar a imagem do Hero
 
----
+Atualmente a foto do Samuel esta dentro de um card com bordas arredondadas (`rounded-[3rem]`), borda branca, overlay escuro e um glass-card com citacao por cima. O objetivo e deixar a imagem "limpa", sem esse container de card.
 
-### 1. Configuração de estilos globais
-- Configurar as cores customizadas (dourado `#C5A059`, `#E2C284`, `#8E6F3E`) no Tailwind
-- Adicionar fontes **Inter** e **Playfair Display** via Google Fonts
-- Criar os estilos globais: `glass-card`, `gold-gradient`, `gold-bg`, animações de `reveal`, `nav-progress`, fundo escuro `#050505`
+**Mudancas em `src/components/Hero.tsx`:**
+- Remover o container `rounded-[3rem] border border-white/10` que envolve a imagem
+- Remover o glass-card com a citacao ("Mentalidade de Dono" / "Meu foco e tornar...")
+- Remover o overlay gradient escuro sobre a imagem
+- Manter a imagem com um fade suave na base (gradient de transparente para o fundo `#050505`) para integrar naturalmente com a secao
+- Manter o efeito de grayscale com hover para colorido
+- Aplicar um glow dourado sutil atras da imagem para dar destaque
 
-### 2. Componente ScrollReveal
-- Animação de entrada ao scroll com IntersectionObserver e suporte a stagger
+### 2. Adicionar elementos dourados decorativos ao background da pagina
 
-### 3. Navbar
-- Logo "SF" dourada com nome "Samuel Felipe | Estrategista Digital"
-- Links de navegação: Início, Método, Cases, Diagnóstico
-- Menu mobile hamburger
-- Barra de progresso de scroll no topo
-- Efeito backdrop-blur ao rolar
+Criar um componente `BackgroundElements.tsx` com elementos minimalistas dourados distribuidos ao longo da pagina, posicionados com `position: fixed` ou `absolute` dentro de cada secao:
 
-### 4. Hero Section
-- Título: "Digital Descomplicado, Resultados Reais"
-- Subtítulo sobre estratégias simplificadas
-- Dois CTAs: "Agendar Diagnóstico" (WhatsApp) e "Ver Projetos"
-- Badges de prova social (Google Partner, +170 Projetos, Resultados Diários)
-- Efeitos de glow dourado no fundo
+- **Linhas douradas finas**: Linhas diagonais ou horizontais com opacidade muito baixa (~3-5%), usando gradientes dourados
+- **Circulos/orbs dourados com blur**: Similares aos que ja existem no Hero, mas distribuidos em pontos estrategicos entre secoes (Stats, Methodology, Contact)
+- **Pontos dourados pequenos**: Dots decorativos com opacidade sutil (~5-8%) em posicoes fixas
+- **Gradientes radiais dourados**: Manchas de luz dourada com blur alto espalhadas pela pagina
 
-### 5. Stats Section
-- 4 cards com ícones: +4 Anos, +7M Investidos, +800K Leads, +170 Projetos
-- Cards com efeito glassmorphism
+**Posicionamento estrategico:**
+- Entre Stats e GoogleExpertise: orb dourado no canto direito
+- Ao lado da Methodology: linha diagonal dourada sutil
+- Atras da secao Contact: glow dourado central
+- Pequenos dots decorativos entre secoes
 
-### 6. Google Expertise Section
-- Card principal de certificação Google Partner
-- Grid de cards de expertise (Performance, Proteção, Automação, etc.)
-- Badges de validação
+**Estilo:** Tudo em opacidade muito baixa (3-10%), com `pointer-events: none`, usando as cores `#C5A059`, `#E2C284`. Minimalista e elegante, sem poluir visualmente.
 
-### 7. Methodology Section
-- Layout de 2 colunas: texto + 4 etapas numeradas
-- Passos: Entendimento do Negócio, Jornada do Cliente, Crescimento Constante, Clareza nos Dados
-
-### 8. Comparison Section
-- Tabela comparativa "Gestor Comum" vs "Estratégia Samuel"
-- Ícones ✕ e ✓ para diferenciar
-
-### 9. Cases Section
-- Grid de cards de clientes com nome, nicho, descrição e resultado
-- Clientes: Móveis Bechara, FAS Iluminação, Grupo AL7, Inovando na sua Obra, Lu Guerra, VALEM, etc.
-- Links externos para os sites dos clientes
-
-### 10. FAQ Section
-- Perguntas e respostas com accordion interativo
-- Perguntas sobre funcionamento, tempo de resultados, investimento mínimo, etc.
-
-### 11. Contact Section
-- Formulário: Nome, E-mail, Telefone, Mensagem
-- Informações de contato: email e WhatsApp
-- Efeito de glow dourado no fundo
-
-### 12. Footer
-- Logo, descrição, links de navegação, links legais
-- Ícones de redes sociais (LinkedIn, Instagram)
-- Copyright
-
-### 13. WhatsApp Button flutuante
-- Botão fixo no canto inferior direito com animação de pulse
-- Link direto para WhatsApp com mensagem pré-definida
+### Arquivos modificados
+- `src/components/Hero.tsx` -- remover card, limpar imagem, adicionar fade natural
+- `src/components/BackgroundElements.tsx` -- novo componente com elementos decorativos dourados
+- `src/pages/Index.tsx` -- importar e posicionar o BackgroundElements
 
