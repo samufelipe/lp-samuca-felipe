@@ -25,8 +25,8 @@ const Stats: React.FC = () => {
           {stats.map((stat, idx) => (
             <ScrollReveal key={idx} stagger={idx + 1}>
               <div className="glass-card p-5 md:p-8 rounded-2xl md:rounded-3xl group h-full">
-                <div className="w-10 h-10 md:w-12 md:h-12 gold-bg rounded-xl md:rounded-2xl flex items-center justify-center text-black mb-4 md:mb-6 group-hover:scale-110 transition-transform">
-                  {React.cloneElement(stat.icon as React.ReactElement, { size: 20 })}
+                <div className="mb-4 md:mb-6 text-yellow-500 group-hover:scale-110 transition-transform">
+                  {React.cloneElement(stat.icon as React.ReactElement, { size: 24 })}
                 </div>
                 <h4 className="text-2xl md:text-4xl font-extrabold mb-1 tracking-tight">{stat.label}</h4>
                 <p className="text-xs md:text-gray-400 font-medium">{stat.sub}</p>

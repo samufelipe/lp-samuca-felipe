@@ -8,7 +8,7 @@ const GoogleExpertise: React.FC = () => {
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="text-center mb-20 md:mb-24">
-          <div className="inline-flex items-center gap-3 border border-white/5 px-5 py-2.5 rounded-full mb-8">
+          <div className="inline-flex items-center gap-3 mb-8">
             <Award size={16} className="text-yellow-500 animate-pulse" />
             <span className="text-[10px] md:text-xs font-black uppercase tracking-[0.3em] text-yellow-500/90">Autoridade Validada</span>
           </div>
@@ -49,7 +49,7 @@ const GoogleExpertise: React.FC = () => {
           <div className="lg:col-span-7 flex flex-col gap-8">
             <div className="glass-card rounded-[2.5rem] p-10 border-white/5 relative overflow-hidden group">
               <div className="flex items-center gap-4 mb-10">
-                <div className="w-12 h-12 rounded-xl bg-yellow-500/10 flex items-center justify-center text-yellow-500 border border-yellow-500/20">
+                <div className="text-yellow-500">
                   <Sparkles size={24} />
                 </div>
                 <h4 className="text-xl font-black uppercase tracking-[0.2em] text-white">Como eu ajudo</h4>
@@ -76,7 +76,7 @@ const GoogleExpertise: React.FC = () => {
 
             <div className="glass-card rounded-[2.5rem] p-10 border-white/5">
               <div className="flex items-center gap-4 mb-8">
-                <div className="w-12 h-12 rounded-xl bg-yellow-500/10 flex items-center justify-center text-yellow-500 border border-yellow-500/20">
+                <div className="text-yellow-500">
                   <Shield size={24} />
                 </div>
                 <h4 className="text-xl font-black uppercase tracking-[0.2em] text-white">Garantias do Selo</h4>
@@ -90,9 +90,7 @@ const GoogleExpertise: React.FC = () => {
                   "Suporte direto de engenharia",
                 ].map((text, i) => (
                   <div key={i} className="flex items-center gap-4 group/check">
-                    <div className="w-6 h-6 rounded-full border border-yellow-500/30 flex items-center justify-center group-hover/check:border-yellow-500 transition-colors">
-                      <CheckCircle2 size={12} className="text-yellow-500" />
-                    </div>
+                    <CheckCircle2 size={14} className="text-yellow-500" />
                     <span className="text-sm text-gray-300 font-semibold tracking-wide">{text}</span>
                   </div>
                 ))}

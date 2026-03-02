@@ -39,7 +39,7 @@ const Footer: React.FC = () => {
         </div>
 
         <div className="pt-8 border-t border-white/5 flex flex-col items-center gap-4 text-[10px] md:text-xs text-gray-500 text-center">
-          <p>© 2024 Samuel Felipe - Estrategista Digital.</p>
+          <p>© {new Date().getFullYear()} Samuel Felipe - Estrategista Digital.</p>
           <p>Alta Performance & Conversão.</p>
         </div>
       </div>

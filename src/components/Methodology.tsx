@@ -31,7 +31,7 @@ const Methodology: React.FC = () => {
             {steps.map((step, i) => (
               <ScrollReveal key={i} stagger={i + 1}>
                 <div className="glass-card p-8 rounded-[2.5rem] group h-full">
-                  <div className="w-14 h-14 gold-bg rounded-2xl flex items-center justify-center text-black mb-6 group-hover:scale-110 transition-transform">
+                  <div className="mb-6 text-yellow-500 group-hover:scale-110 transition-transform">
                     {React.cloneElement(step.icon as React.ReactElement, { size: 28 })}
                   </div>
                   <h4 className="text-xl font-bold mb-3">{step.title}</h4>

@@ -28,8 +28,8 @@ const Contact: React.FC = () => {
                 { label: 'WhatsApp', val: '31 99297-6990', icon: <Phone />, href: 'https://wa.me/5531992976990' },
               ].map((item, i) => (
                 <a key={i} href={item.href} target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 text-left group hover:translate-x-2 transition-transform">
-                  <div className="w-10 h-10 md:w-12 md:h-12 shrink-0 border border-white/5 rounded-xl flex items-center justify-center text-yellow-500 group-hover:gold-bg group-hover:text-black transition-all">
-                    {React.cloneElement(item.icon as React.ReactElement, { size: 20 })}
+                  <div className="shrink-0 text-yellow-500 group-hover:text-white transition-colors">
+                    {React.cloneElement(item.icon as React.ReactElement, { size: 22 })}
                   </div>
                   <div className="overflow-hidden">
                     <p className="text-[9px] md:text-xs text-gray-500 font-bold uppercase">{item.label}</p>
@@ -47,9 +47,6 @@ const Contact: React.FC = () => {
               <>
                 <div className="mb-10">
                   <h4 className="text-2xl md:text-3xl font-black mb-3 flex items-center gap-4">
-                    <div className="w-10 h-10 gold-bg rounded-xl flex items-center justify-center text-black shadow-lg shadow-yellow-500/20">
-                      <Send size={20} />
-                    </div>
                     Solicitar Diagnóstico
                   </h4>
                   <p className="text-gray-500 text-sm md:text-base font-medium">Preencha os dados abaixo e entrarei em contato.</p>
