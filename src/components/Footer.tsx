@@ -7,10 +7,12 @@ const Footer: React.FC = () => {
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-12 mb-16">
           <div className="col-span-1 md:col-span-2 text-center md:text-left">
-            <div className="flex items-center justify-center md:justify-start gap-2 mb-6">
-              <div className="w-10 h-10 gold-bg rounded-lg flex items-center justify-center font-bold text-black text-xl">SF</div>
-              <h2 className="text-white text-xl font-bold">Samuel Felipe</h2>
-            </div>
+            <a href="#inicio" className="flex items-center justify-center md:justify-start gap-2 mb-6">
+              <div>
+                <h2 className="text-white text-xl font-bold">Samuel Felipe</h2>
+                <p className="text-[9px] text-yellow-500 uppercase tracking-[0.3em] font-black opacity-80">Estrategista Digital</p>
+              </div>
+            </a>
             <p className="text-gray-400 max-w-sm mx-auto md:mx-0 mb-8 text-sm md:text-base">
               Estrategista Digital focado em simplificar o crescimento do seu negócio através de resultados reais.
             </p>

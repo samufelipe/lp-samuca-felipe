@@ -29,13 +29,12 @@ const Navbar: React.FC = () => {
       <div className="nav-progress" style={{ width: `${scrollProgress}%` }} />
       <nav className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-500 ${isScrolled || isMenuOpen ? 'bg-black/40 backdrop-blur-md py-4 border-b border-white/5' : 'bg-transparent py-8'}`}>
         <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
-          <div className="flex items-center gap-3 group cursor-pointer">
-            <div className="w-10 h-10 gold-bg rounded-xl flex items-center justify-center font-black text-black text-xl shadow-lg group-hover:rotate-6 transition-transform">SF</div>
+          <a href="#inicio" className="flex items-center gap-3 group cursor-pointer">
             <div>
               <span className="text-white font-extrabold tracking-tighter text-sm md:text-lg leading-none">Samuel Felipe</span>
               <p className="text-[9px] text-yellow-500 uppercase tracking-[0.3em] font-black opacity-80">Estrategista Digital</p>
             </div>
-          </div>
+          </a>
 
           <div className="hidden lg:flex items-center gap-10">
             {navLinks.map((link) => (
