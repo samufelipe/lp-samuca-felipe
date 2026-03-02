@@ -2,6 +2,7 @@ import React from 'react';
 import { ChevronRight, Star, ShieldCheck, TrendingUp, Sparkles } from 'lucide-react';
 import samuelPhoto from '@/assets/samuel-felipe.jpeg';
 import ScrollReveal from './ScrollReveal';
+import { trackCtaClick } from '@/lib/gtm';
 
 const Hero: React.FC = () => {
   return (
@@ -28,7 +29,7 @@ const Hero: React.FC = () => {
 
             <ScrollReveal stagger={2}>
               <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-6 mb-14">
-                <a href="#contato" className="group relative w-full sm:w-auto">
+                <a href="#contato" className="group relative w-full sm:w-auto" onClick={() => trackCtaClick('quero_escalar', 'hero')}>
                   <div className="absolute -inset-1 bg-gradient-to-r from-yellow-600 to-yellow-400 rounded-2xl blur opacity-30 group-hover:opacity-60 transition duration-1000 group-hover:duration-200"></div>
                   <button className="relative w-full sm:w-auto px-10 py-5 bg-gradient-to-r from-yellow-500 to-yellow-600 text-black rounded-2xl font-black text-lg flex items-center justify-center gap-3 hover:translate-y-[-2px] transition-all shadow-2xl active:scale-95">
                     Quero Escalar meu Negócio <ChevronRight size={22} className="group-hover:translate-x-1 transition-transform" />

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Linkedin, Instagram } from 'lucide-react';
+import { trackSocialClick } from '@/lib/gtm';
 
 const Footer: React.FC = () => {
   return (
@@ -17,8 +18,8 @@ const Footer: React.FC = () => {
               Estrategista Digital focado em simplificar o crescimento do seu negócio através de resultados reais.
             </p>
             <div className="flex justify-center md:justify-start gap-4">
-              <a href="https://www.linkedin.com/in/samufeelipe/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 glass-card rounded-lg flex items-center justify-center text-gray-400 hover:text-white hover:border-yellow-500/50 transition-all"><Linkedin size={18} /></a>
-              <a href="https://www.instagram.com/samufeelipe/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 glass-card rounded-lg flex items-center justify-center text-gray-400 hover:text-white hover:border-yellow-500/50 transition-all"><Instagram size={18} /></a>
+              <a href="https://www.linkedin.com/in/samufeelipe/" target="_blank" rel="noopener noreferrer" onClick={() => trackSocialClick('linkedin')} className="w-10 h-10 glass-card rounded-lg flex items-center justify-center text-gray-400 hover:text-white hover:border-yellow-500/50 transition-all"><Linkedin size={18} /></a>
+              <a href="https://www.instagram.com/samufeelipe/" target="_blank" rel="noopener noreferrer" onClick={() => trackSocialClick('instagram')} className="w-10 h-10 glass-card rounded-lg flex items-center justify-center text-gray-400 hover:text-white hover:border-yellow-500/50 transition-all"><Instagram size={18} /></a>
             </div>
           </div>
 
