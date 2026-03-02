@@ -2,6 +2,7 @@ import React from 'react';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import Stats from '@/components/Stats';
+import BackgroundElements from '@/components/BackgroundElements';
 import GoogleExpertise from '@/components/GoogleExpertise';
 import Methodology from '@/components/Methodology';
 import Comparison from '@/components/Comparison';
@@ -12,9 +13,10 @@ import WhatsAppButton from '@/components/WhatsAppButton';
 
 const Index: React.FC = () => {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen relative">
+      <BackgroundElements />
       <Navbar />
-      <main className="overflow-x-hidden">
+      <main className="overflow-x-hidden relative z-10">
         <Hero />
         <Stats />
         <GoogleExpertise />
