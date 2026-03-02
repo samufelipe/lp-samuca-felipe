@@ -1,38 +1,54 @@
 
 
-## Plano: Imagem Hero limpa + Elementos dourados no background
+## Plano: Redesign do Carrossel de Clientes
 
-### 1. Reestilizar a imagem do Hero
+### Problema Atual
+Os cards do carrossel estao com dimensoes exageradas (260-380px de largura x 360-480px de altura), com muitos elementos visuais (estrelas, icone Globe, badges grandes, botao "Ver Projeto" ocupando largura total). Isso deixa o layout pesado e pouco elegante.
 
-Atualmente a foto do Samuel esta dentro de um card com bordas arredondadas (`rounded-[3rem]`), borda branca, overlay escuro e um glass-card com citacao por cima. O objetivo e deixar a imagem "limpa", sem esse container de card.
+### Novo Design: Cards Compactos e Minimalistas
 
-**Mudancas em `src/components/Hero.tsx`:**
-- Remover o container `rounded-[3rem] border border-white/10` que envolve a imagem
-- Remover o glass-card com a citacao ("Mentalidade de Dono" / "Meu foco e tornar...")
-- Remover o overlay gradient escuro sobre a imagem
-- Manter a imagem com um fade suave na base (gradient de transparente para o fundo `#050505`) para integrar naturalmente com a secao
-- Manter o efeito de grayscale com hover para colorido
-- Aplicar um glow dourado sutil atras da imagem para dar destaque
+**Dimensoes novas dos cards:**
+- Mobile: `200px` de largura, altura automatica (~200px)
+- Desktop: `240px` de largura, altura automatica (~220px)
 
-### 2. Adicionar elementos dourados decorativos ao background da pagina
+**Estrutura do novo card:**
+```text
++---------------------------+
+|  [Logo]  28x28            |
+|  Nome do Cliente           |
+|  ·  Nicho                 |
+|                            |
+|  Descricao curta (2 lines) |
+|                            |
+|  Resultado  ->             |
++---------------------------+
+```
 
-Criar um componente `BackgroundElements.tsx` com elementos minimalistas dourados distribuidos ao longo da pagina, posicionados com `position: fixed` ou `absolute` dentro de cada secao:
+**Elementos do card:**
+1. **Logo do cliente** -- Imagem carregada via favicon do dominio do cliente (`https://www.google.com/s2/favicons?domain=URL&sz=64`), exibida em `28x28` com borda sutil dourada e `rounded-lg`
+2. **Nome** -- Fonte bold, tamanho reduzido (`text-sm` / `text-base`), branco, sem uppercase
+3. **Nicho** -- Tag inline discreta com dot dourado, texto `text-[8px]` em cinza
+4. **Descricao** -- `text-xs`, cinza claro, `line-clamp-2`, font-light
+5. **Resultado + link** -- Linha inferior com o resultado como badge sutil e seta de link para o site, tudo compacto
 
-- **Linhas douradas finas**: Linhas diagonais ou horizontais com opacidade muito baixa (~3-5%), usando gradientes dourados
-- **Circulos/orbs dourados com blur**: Similares aos que ja existem no Hero, mas distribuidos em pontos estrategicos entre secoes (Stats, Methodology, Contact)
-- **Pontos dourados pequenos**: Dots decorativos com opacidade sutil (~5-8%) em posicoes fixas
-- **Gradientes radiais dourados**: Manchas de luz dourada com blur alto espalhadas pela pagina
+**Elementos removidos:**
+- 5 estrelas (redundante)
+- Icone Globe grande no canto
+- Botao "Ver Projeto" de largura total (substituido por link discreto com seta)
+- Padding excessivo (`p-8` vira `p-4`/`p-5`)
+- Bordas arredondadas exageradas (`rounded-[2rem]` vira `rounded-xl`)
 
-**Posicionamento estrategico:**
-- Entre Stats e GoogleExpertise: orb dourado no canto direito
-- Ao lado da Methodology: linha diagonal dourada sutil
-- Atras da secao Contact: glow dourado central
-- Pequenos dots decorativos entre secoes
+### Ajustes no Marquee
+- Recalcular os `@keyframes marquee` com as novas larguras (200px mobile, 240px desktop)
+- Reduzir o gap entre cards de `gap-6/10` para `gap-4/6`
+- Ajustar velocidade da animacao para manter ritmo agradavel
 
-**Estilo:** Tudo em opacidade muito baixa (3-10%), com `pointer-events: none`, usando as cores `#C5A059`, `#E2C284`. Minimalista e elegante, sem poluir visualmente.
+### Hover do Card
+- Borda muda para `border-yellow-500/20`
+- Glow dourado sutil no background
+- Nome fica dourado
+- Seta do link faz `translate-x`
 
-### Arquivos modificados
-- `src/components/Hero.tsx` -- remover card, limpar imagem, adicionar fade natural
-- `src/components/BackgroundElements.tsx` -- novo componente com elementos decorativos dourados
-- `src/pages/Index.tsx` -- importar e posicionar o BackgroundElements
+### Arquivo Modificado
+- `src/components/Cases.tsx` -- Redesign completo do card, adicao de logos via favicon, recalculo do marquee
 
