@@ -32,7 +32,7 @@ const Navbar: React.FC = () => {
           <div className="flex items-center gap-3 group cursor-pointer">
             <div className="w-10 h-10 gold-bg rounded-xl flex items-center justify-center font-black text-black text-xl shadow-lg group-hover:rotate-6 transition-transform">SF</div>
             <div>
-              <h1 className="text-white font-extrabold tracking-tighter text-sm md:text-lg leading-none">Samuel Felipe</h1>
+              <span className="text-white font-extrabold tracking-tighter text-sm md:text-lg leading-none">Samuel Felipe</span>
               <p className="text-[9px] text-yellow-500 uppercase tracking-[0.3em] font-black opacity-80">Estrategista Digital</p>
             </div>
           </div>
