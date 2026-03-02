@@ -87,7 +87,7 @@ const Cases: React.FC = () => {
 
                 {/* Logo + Name + Niche */}
                 <div className="flex flex-col gap-2">
-                  <div className="w-12 h-12 md:w-14 md:h-14 rounded-xl border border-yellow-500/20 overflow-hidden bg-white/5 flex-shrink-0 p-2 md:p-2.5 group-hover/card:border-yellow-500/40 transition-colors duration-500">
+                  <div className="w-16 h-16 md:w-20 md:h-20 rounded-xl border border-yellow-500/20 overflow-hidden bg-white/10 flex-shrink-0 p-3 md:p-4 group-hover/card:border-yellow-500/40 group-hover/card:bg-white/15 transition-all duration-500">
                     <img
                       src={getFaviconUrl(client.url)}
                       alt={`${client.name} logo`}
