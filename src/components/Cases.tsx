@@ -1,5 +1,5 @@
 import React from 'react';
-import { ExternalLink, ShieldCheck, Globe, Star, ArrowRight } from 'lucide-react';
+import { ShieldCheck, ArrowRight, ArrowUpRight } from 'lucide-react';
 import ScrollReveal from './ScrollReveal';
 
 const Cases: React.FC = () => {
@@ -19,6 +19,15 @@ const Cases: React.FC = () => {
     { name: "Paula Cromão", niche: "Saúde Mental", desc: "Psicologia clínica especializada em desenvolvimento humano e performance.", result: "Agenda Lotada", url: "https://www.paulacromao.com.br/" },
     { name: "Gladys Religiosos", niche: "Varejo Especializado", desc: "Principal e-commerce de artigos sacros e religiosos do mercado brasileiro.", result: "E-commerce Escalonável", url: "https://www.gladysreligiosos.com.br/" },
   ];
+
+  const getFaviconUrl = (url: string) => {
+    try {
+      const domain = new URL(url).hostname;
+      return `https://www.google.com/s2/favicons?domain=${domain}&sz=64`;
+    } catch {
+      return '';
+    }
+  };
 
   return (
     <section id="projetos" className="py-20 md:py-32 overflow-hidden relative">
@@ -57,49 +66,54 @@ const Cases: React.FC = () => {
 
       {/* Carousel */}
       <div className="relative group/carousel cursor-grab active:cursor-grabbing" role="region" aria-roledescription="carousel" aria-label="Projetos e Clientes">
-        <div className="absolute left-0 top-0 bottom-0 w-20 md:w-80 bg-gradient-to-r from-[#050505] via-[#050505]/80 to-transparent z-20 pointer-events-none"></div>
-        <div className="absolute right-0 top-0 bottom-0 w-20 md:w-80 bg-gradient-to-l from-[#050505] via-[#050505]/80 to-transparent z-20 pointer-events-none"></div>
+        <div className="absolute left-0 top-0 bottom-0 w-16 md:w-60 bg-gradient-to-r from-[#050505] via-[#050505]/80 to-transparent z-20 pointer-events-none"></div>
+        <div className="absolute right-0 top-0 bottom-0 w-16 md:w-60 bg-gradient-to-l from-[#050505] via-[#050505]/80 to-transparent z-20 pointer-events-none"></div>
 
-        <div className="flex animate-marquee gap-6 md:gap-10 py-10 md:py-12 px-4 md:px-6 touch-pan-x">
+        <div className="flex animate-marquee gap-4 md:gap-6 py-8 md:py-10 px-4 md:px-6 touch-pan-x">
           {[...allClients, ...allClients].map((client, idx) => (
-            <div key={idx} className="min-w-[260px] sm:min-w-[300px] md:min-w-[380px] h-[360px] md:h-[480px] relative group/item-container" role="group" aria-roledescription="slide" aria-label={`${idx + 1} de ${allClients.length * 2}: ${client.name}`}>
-              <div className="glass-card rounded-[1.5rem] md:rounded-[2rem] p-6 md:p-8 h-full flex flex-col justify-between group/card hover:border-yellow-500/30 focus-within:border-yellow-500/50 transition-all duration-500 border-white/5 relative overflow-hidden bg-white/[0.01] backdrop-blur-sm hover:bg-white/[0.03] focus-within:bg-white/[0.05]">
-                <div className="absolute -top-12 -right-12 w-32 h-32 bg-yellow-500/[0.02] blur-[40px] pointer-events-none group-hover/card:bg-yellow-500/[0.06] group-focus-within/card:bg-yellow-500/[0.06] transition-all duration-700 group-hover/card:scale-125 group-focus-within/card:scale-125"></div>
+            <a
+              key={idx}
+              href={client.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="min-w-[200px] md:min-w-[240px] group/card"
+              role="group"
+              aria-roledescription="slide"
+              aria-label={`${client.name}`}
+            >
+              <div className="rounded-xl p-4 md:p-5 h-full flex flex-col gap-3 md:gap-4 border border-white/[0.06] hover:border-yellow-500/20 transition-all duration-500 relative overflow-hidden bg-white/[0.02] backdrop-blur-sm hover:bg-white/[0.04]">
+                {/* Hover glow */}
+                <div className="absolute -top-8 -right-8 w-24 h-24 bg-yellow-500/0 blur-[30px] pointer-events-none group-hover/card:bg-yellow-500/[0.08] transition-all duration-700"></div>
 
-                <div>
-                  <div className="flex justify-between items-start mb-5 md:mb-6">
-                    <div className="flex flex-col gap-1.5">
-                      <div className="inline-flex items-center px-2 py-0.5 rounded-md bg-yellow-500/5 border border-yellow-500/10">
-                        <span className="text-[7px] md:text-[8px] font-bold uppercase tracking-[0.15em] text-yellow-500/80">{client.niche}</span>
-                      </div>
-                      <div className="flex gap-0.5">
-                        {[...Array(5)].map((_, i) => (
-                          <Star key={i} size={7} className="fill-yellow-500/60 text-yellow-500/60 md:w-[9px] md:h-[9px]" />
-                        ))}
-                      </div>
-                    </div>
-                    <div className="w-9 h-9 md:w-10 md:h-10 rounded-lg border border-white/5 flex items-center justify-center text-white/20 group-hover/card:text-yellow-500/60 group-focus-within/card:text-yellow-500/60 group-hover/card:border-yellow-500/20 group-focus-within/card:border-yellow-500/20 transition-all duration-500 bg-white/[0.01]">
-                      <Globe size={16} />
-                    </div>
+                {/* Logo + Name + Niche */}
+                <div className="flex flex-col gap-2">
+                  <div className="w-7 h-7 rounded-lg border border-yellow-500/15 overflow-hidden bg-white/5 flex-shrink-0">
+                    <img
+                      src={getFaviconUrl(client.url)}
+                      alt={`${client.name} logo`}
+                      className="w-full h-full object-cover"
+                      loading="lazy"
+                    />
                   </div>
-
-                  <h4 className="text-xl md:text-2xl font-bold mb-2 md:mb-3 tracking-tight text-white group-hover/card:text-yellow-500 group-focus-within/card:text-yellow-500 transition-colors uppercase leading-tight">{client.name}</h4>
-                  <p className="text-gray-400 text-xs md:text-sm leading-relaxed font-light opacity-60 group-hover/card:opacity-90 group-focus-within/card:opacity-90 transition-opacity line-clamp-3 md:line-clamp-4 mb-4">{client.desc}</p>
-                  <div className="inline-flex items-center gap-2 text-[8px] md:text-[9px] font-bold text-white/30 uppercase tracking-widest group-hover/card:text-yellow-500/50 group-focus-within/card:text-yellow-500/50 transition-colors">
-                    <div className="w-1 h-1 rounded-full bg-yellow-500/40"></div>
-                    {client.result}
+                  <h4 className="text-sm md:text-base font-bold text-white group-hover/card:text-yellow-500 transition-colors leading-tight tracking-tight">
+                    {client.name}
+                  </h4>
+                  <div className="flex items-center gap-1.5">
+                    <div className="w-1 h-1 rounded-full bg-yellow-500/50"></div>
+                    <span className="text-[8px] md:text-[9px] text-gray-500 font-medium uppercase tracking-wider">{client.niche}</span>
                   </div>
                 </div>
 
-                <div className="mt-5">
-                  <a href={client.url} target="_blank" rel="noopener noreferrer" className="relative inline-flex items-center justify-center w-full border border-white/5 text-white/60 py-2.5 md:py-3 rounded-lg md:rounded-xl font-bold text-[8px] md:text-[9px] uppercase tracking-[0.2em] transition-all hover:bg-yellow-500 hover:text-black hover:border-yellow-500 focus:bg-yellow-500 focus:text-black focus:border-yellow-500 focus:outline-none shadow-lg group/btn overflow-hidden">
-                    <span className="relative z-10 flex items-center">
-                      Ver Projeto <ExternalLink size={10} className="ml-2 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 group-focus/btn:translate-x-0.5 group-focus/btn:-translate-y-0.5 transition-transform" />
-                    </span>
-                  </a>
+                {/* Description */}
+                <p className="text-[11px] md:text-xs text-gray-400 font-light leading-relaxed line-clamp-2">{client.desc}</p>
+
+                {/* Result + Arrow */}
+                <div className="flex items-center justify-between mt-auto pt-2 border-t border-white/[0.04]">
+                  <span className="text-[8px] md:text-[9px] font-bold text-yellow-500/60 uppercase tracking-wider">{client.result}</span>
+                  <ArrowUpRight size={12} className="text-white/20 group-hover/card:text-yellow-500 group-hover/card:translate-x-0.5 group-hover/card:-translate-y-0.5 transition-all duration-300" />
                 </div>
               </div>
-            </div>
+            </a>
           ))}
         </div>
       </div>
@@ -127,31 +141,25 @@ const Cases: React.FC = () => {
       <style>{`
         @keyframes marquee {
           0% { transform: translateX(0); }
-          100% { transform: translateX(calc(-260px * 14 - 14 * 24px)); }
-        }
-        @media (min-width: 640px) {
-          @keyframes marquee {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(calc(-300px * 14 - 14 * 24px)); }
-          }
+          100% { transform: translateX(calc(-200px * 14 - 14 * 16px)); }
         }
         @media (min-width: 768px) {
           @keyframes marquee {
             0% { transform: translateX(0); }
-            100% { transform: translateX(calc(-380px * 14 - 14 * 40px)); }
+            100% { transform: translateX(calc(-240px * 14 - 14 * 24px)); }
           }
         }
         .animate-marquee {
           display: flex;
           width: fit-content;
-          animation: marquee 60s linear infinite;
+          animation: marquee 45s linear infinite;
         }
         .animate-marquee:hover, .animate-marquee:focus-within {
           animation-play-state: paused;
         }
         @media (max-width: 768px) {
           .animate-marquee {
-            animation-duration: 40s;
+            animation-duration: 30s;
           }
         }
       `}</style>
