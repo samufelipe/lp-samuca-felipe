@@ -19,7 +19,9 @@ const Contact: React.FC = () => {
     const form = e.target as HTMLFormElement;
     const select = form.querySelector('select') as HTMLSelectElement;
     trackFormSubmit('diagnostico', select?.value);
-    setIsSubmitted(true);
+    const nameInput = form.querySelector('input[type="text"]') as HTMLInputElement;
+    const message = `Olá Samuel! Meu nome é ${nameInput?.value || ''}. Vim pelo site e gostaria de solicitar um diagnóstico estratégico para o meu negócio.`;
+    window.location.href = `https://wa.me/5531992976990?text=${encodeURIComponent(message)}`;
   };
 
   return (
@@ -40,7 +42,7 @@ const Contact: React.FC = () => {
                 { label: 'E-mail', val: 'samucafe01@gmail.com', icon: <Mail />, href: 'mailto:samucafe01@gmail.com' },
                 { label: 'WhatsApp', val: '31 99297-6990', icon: <Phone />, href: 'https://wa.me/5531992976990' },
               ].map((item, i) => (
-                <a key={i} href={item.href} target="_blank" rel="noopener noreferrer" onClick={() => item.label === 'WhatsApp' ? trackWhatsAppClick('contact_section') : trackOutboundClick(item.href, item.label, 'contact_section')} className="flex items-center gap-4 text-left group hover:translate-x-2 transition-transform">
+                <a key={i} href={item.href} target={item.label === 'WhatsApp' ? '_self' : '_blank'} rel="noopener noreferrer" onClick={() => item.label === 'WhatsApp' ? trackWhatsAppClick('contact_section') : trackOutboundClick(item.href, item.label, 'contact_section')} className="flex items-center gap-4 text-left group hover:translate-x-2 transition-transform">
                   <div className="shrink-0 text-yellow-500 group-hover:text-white transition-colors">
                     {React.cloneElement(item.icon as React.ReactElement, { size: 22 })}
                   </div>
