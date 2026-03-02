@@ -1,5 +1,6 @@
 import React from 'react';
 import { ChevronRight, Star, ShieldCheck, TrendingUp, Sparkles } from 'lucide-react';
+import samuelPhoto from '@/assets/samuel-felipe.jpeg';
 import ScrollReveal from './ScrollReveal';
 
 const Hero: React.FC = () => {
@@ -76,8 +77,8 @@ const Hero: React.FC = () => {
 
               <div className="relative z-10 w-full h-full rounded-[3rem] border border-white/10 overflow-hidden group shadow-[0_0_50px_rgba(212,175,55,0.05)]">
                 <img
-                  src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=687&auto=format&fit=crop"
-                  className="w-full h-full object-cover grayscale brightness-90 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000"
+                  src={samuelPhoto}
+                  className="w-full h-full object-cover object-top grayscale brightness-90 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000"
                   alt="Samuel Felipe - Estrategista Digital focado em resultados reais"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-80 group-hover:opacity-40 transition-opacity"></div>
