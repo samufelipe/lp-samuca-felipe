@@ -98,10 +98,6 @@ const Cases: React.FC = () => {
                   <h4 className="text-sm md:text-base font-bold text-white group-hover/card:text-yellow-500 transition-colors leading-tight tracking-tight">
                     {client.name}
                   </h4>
-                  <div className="flex items-center gap-1.5">
-                    <div className="w-1 h-1 rounded-full bg-yellow-500/50"></div>
-                    <span className="text-[8px] md:text-[9px] text-gray-500 font-medium uppercase tracking-wider">{client.niche}</span>
-                  </div>
                 </div>
 
                 {/* Description */}
