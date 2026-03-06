@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { trackNavClick, trackCtaClick } from '@/lib/gtm';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate, useLocation, Link } from 'react-router-dom';
 
 const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -58,9 +58,9 @@ const Navbar: React.FC = () => {
           <div className="hidden lg:flex items-center gap-10">
             {navLinks.map((link) =>
               isRouteLink(link.href) ? (
-                <a key={link.label} href={link.href} onClick={() => handleNavClick(link)} className="text-[11px] font-bold uppercase tracking-widest text-gray-400 hover:text-white hover:translate-y-[-1px] transition-all">
+                <Link key={link.label} to={link.href} onClick={() => handleNavClick(link)} className="text-[11px] font-bold uppercase tracking-widest text-gray-400 hover:text-white hover:translate-y-[-1px] transition-all">
                   {link.label}
-                </a>
+                </Link>
               ) : (
                 <a key={link.label} href={link.href} onClick={() => handleNavClick(link)} className="text-[11px] font-bold uppercase tracking-widest text-gray-400 hover:text-white hover:translate-y-[-1px] transition-all">
                   {link.label}
@@ -83,17 +83,29 @@ const Navbar: React.FC = () => {
         {/* Mobile Overlay */}
         <div className={`fixed inset-0 top-[76px] bg-black/98 z-40 lg:hidden backdrop-blur-3xl transition-all duration-500 ${isMenuOpen ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-full pointer-events-none'}`}>
           <div className="flex flex-col p-8 gap-8 h-full justify-center">
-            {navLinks.map((link, i) => (
-              <a
-                key={link.label}
-                href={link.href}
-                className={`text-4xl font-black text-white transition-all duration-500 ${isMenuOpen ? 'translate-x-0' : 'translate-x-10'}`}
-                style={{ transitionDelay: `${i * 100}ms` }}
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {link.label}
-              </a>
-            ))}
+            {navLinks.map((link, i) =>
+              isRouteLink(link.href) ? (
+                <Link
+                  key={link.label}
+                  to={link.href}
+                  className={`text-4xl font-black text-white transition-all duration-500 ${isMenuOpen ? 'translate-x-0' : 'translate-x-10'}`}
+                  style={{ transitionDelay: `${i * 100}ms` }}
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {link.label}
+                </Link>
+              ) : (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  className={`text-4xl font-black text-white transition-all duration-500 ${isMenuOpen ? 'translate-x-0' : 'translate-x-10'}`}
+                  style={{ transitionDelay: `${i * 100}ms` }}
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {link.label}
+                </a>
+              )
+            )}
             <a
               href={isHome ? '#contato' : '/#contato'}
               className="gold-bg text-black w-full py-5 rounded-2xl text-center font-black text-xl shadow-2xl mt-8"

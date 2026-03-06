@@ -8,7 +8,7 @@ const comparisonItems = [
   { label: "Escala de Infoprodutos", bad: "Não entende o mercado", good: "Cursos, mentorias e programas" },
   { label: "Criativos", bad: "Espera o cliente enviar", good: "Orientação de criativos que convertem" },
   { label: "Landing Pages & Sites", bad: "Não oferece", good: "Páginas de alta conversão" },
-  { label: "Funil de Vendas", bad: "Tráfego direto sem estratégia", good: "Funil 360º com automação" },
+  { label: "Funil de Vendas", bad: "Tráfego direto sem estratégia", good: "Direcionamento completo do funil ideal para cada oferta" },
   { label: "Planejamento do Zero", bad: "Assume que você já sabe", good: "Direcionamento completo" },
   { label: "Conteúdo", bad: "Não direciona", good: "Direcionamento estratégico" },
   { label: "Foco no Resultado", bad: "Métricas de vaidade", good: "ROI e lucratividade" },
@@ -52,23 +52,27 @@ const Comparison: React.FC = () => {
           </div>
         </ScrollReveal>
 
-        {/* Mobile: stacked cards */}
-        <div className="md:hidden space-y-3">
-          {comparisonItems.map((item, i) => (
-            <ScrollReveal key={i} stagger={i % 3}>
-              <div className="glass-card rounded-2xl p-5 border-white/5">
-                <p className="text-sm font-bold text-white mb-3">{item.label}</p>
-                <div className="flex items-start gap-2 mb-2">
-                  <X size={14} className="text-red-500/50 shrink-0 mt-0.5" />
-                  <span className="text-xs text-red-500/40 italic">{item.bad}</span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <Check size={14} className="text-yellow-500 shrink-0 mt-0.5" />
-                  <span className="text-xs font-bold text-white">{item.good}</span>
-                </div>
+        {/* Mobile: only strategic partnership benefits */}
+        <div className="md:hidden">
+          <ScrollReveal>
+            <div className="glass-card rounded-3xl p-6 border-white/5">
+              <div className="flex items-center gap-2 mb-6">
+                <div className="w-2 h-2 rounded-full bg-yellow-500"></div>
+                <span className="text-[10px] font-black text-yellow-500 uppercase tracking-widest">O que você recebe na parceria</span>
               </div>
-            </ScrollReveal>
-          ))}
+              <div className="space-y-4">
+                {comparisonItems.map((item, i) => (
+                  <div key={i} className="flex items-start gap-3">
+                    <Check size={16} className="text-yellow-500 shrink-0 mt-0.5" />
+                    <div>
+                      <p className="text-sm font-bold text-white">{item.label}</p>
+                      <p className="text-xs text-gray-400 mt-0.5">{item.good}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </ScrollReveal>
         </div>
       </div>
     </section>
