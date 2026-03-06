@@ -34,9 +34,11 @@ const Index: React.FC = () => {
 
             <div className="space-y-4">
               {[
-                { q: "Como funciona o seu trabalho?", a: "Eu simplifico o digital para você. Analiso o seu negócio e implemento as estratégias de tráfego que trazem resultados reais, sem complicações." },
-                { q: "Em quanto tempo vejo resultados?", a: "Resultados consistentes começam a aparecer conforme as estratégias são validadas, geralmente nas primeiras semanas de acompanhamento." },
-                { q: "O digital é para o meu negócio?", a: "Sim! Com a estratégia certa e simplificada, qualquer negócio pode crescer e encontrar o seu público ideal na internet." },
+                { q: "Quais tipos de negócio você atende?", a: "Atendo times comerciais que precisam de mais leads qualificados, infoprodutores que desejam escalar vendas de cursos e mentorias, marcas que querem aumentar visibilidade e e-commerces que buscam mais vendas. Cada estratégia é personalizada para o seu modelo de negócio." },
+                { q: "Você também cria landing pages e sites?", a: "Sim! Desenvolvo landing pages de alta conversão, sites profissionais e até aplicativos com inteligência artificial. Tudo integrado à estratégia de mídia paga para maximizar seus resultados." },
+                { q: "Nunca anunciei, vocês me ajudam do zero?", a: "Com certeza. Faço o planejamento estratégico completo: desde a definição de público, criação de campanhas, desenvolvimento de landing pages até o acompanhamento diário. Você não precisa saber nada de tráfego pago." },
+                { q: "Já anuncio mas quero escalar, como funciona?", a: "Começo com um diagnóstico completo das suas campanhas atuais, identifico gargalos e oportunidades, e implemento estratégias de escala controlada para multiplicar seus resultados sem desperdiçar investimento." },
+                { q: "Em quanto tempo vejo resultados?", a: "Resultados iniciais aparecem nas primeiras semanas conforme as estratégias são validadas. A escala consistente acontece a partir do segundo mês, com otimizações contínuas baseadas em dados reais." },
               ].map((item, idx) => (
                 <details key={idx} className="glass-card rounded-2xl group transition-all border-white/5">
                   <summary className="p-6 cursor-pointer flex items-center justify-between font-bold text-lg md:text-xl select-none list-none">

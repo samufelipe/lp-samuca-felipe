@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { trackNavClick, trackCtaClick } from '@/lib/gtm';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,32 +20,54 @@ const Navbar: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navLinks = [
-    { label: 'Início', href: '#inicio' },
-    { label: 'Método', href: '#metodologia' },
-    { label: 'Cases', href: '#projetos' },
-    { label: 'Diagnóstico', href: '#contato' },
-  ];
+  const isHome = location.pathname === '/';
+
+  const navLinks = isHome
+    ? [
+        { label: 'Início', href: '#inicio' },
+        { label: 'Método', href: '#metodologia' },
+        { label: 'Cases', href: '#projetos' },
+        { label: 'Aprender', href: '/aprender' },
+        { label: 'Diagnóstico', href: '#contato' },
+      ]
+    : [
+        { label: 'Início', href: '/' },
+        { label: 'Aprender', href: '/aprender' },
+        { label: 'Diagnóstico', href: '/#contato' },
+      ];
+
+  const handleNavClick = (link: { label: string; href: string }) => {
+    trackNavClick(link.label);
+    setIsMenuOpen(false);
+  };
+
+  const isRouteLink = (href: string) => href.startsWith('/') && !href.startsWith('/#');
 
   return (
     <>
       <div className="nav-progress" style={{ width: `${scrollProgress}%` }} />
       <nav className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-500 ${isScrolled || isMenuOpen ? 'bg-black/40 backdrop-blur-md py-4 border-b border-white/5' : 'bg-transparent py-8'}`}>
         <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
-          <a href="#inicio" className="flex items-center gap-3 group cursor-pointer">
+          <a href="/" className="flex items-center gap-3 group cursor-pointer">
             <div>
               <span className="text-white font-extrabold tracking-tighter text-sm md:text-lg leading-none">Samuel Felipe</span>
-              <p className="text-[9px] text-yellow-500 uppercase tracking-[0.3em] font-black opacity-80">Estrategista Digital</p>
+              <p className="text-[9px] text-yellow-500 uppercase tracking-[0.3em] font-black opacity-80">Estrategista de Mídia Paga</p>
             </div>
           </a>
 
           <div className="hidden lg:flex items-center gap-10">
-            {navLinks.map((link) => (
-              <a key={link.label} href={link.href} onClick={() => trackNavClick(link.label)} className="text-[11px] font-bold uppercase tracking-widest text-gray-400 hover:text-white hover:translate-y-[-1px] transition-all">
-                {link.label}
-              </a>
-            ))}
-            <a href="#contato" onClick={() => trackCtaClick('agendar_call', 'navbar')} className="gold-bg text-black px-8 py-3 rounded-xl text-xs font-black uppercase tracking-widest hover:scale-[1.05] hover:shadow-yellow-500/20 shadow-xl transition-all">
+            {navLinks.map((link) =>
+              isRouteLink(link.href) ? (
+                <a key={link.label} href={link.href} onClick={() => handleNavClick(link)} className="text-[11px] font-bold uppercase tracking-widest text-gray-400 hover:text-white hover:translate-y-[-1px] transition-all">
+                  {link.label}
+                </a>
+              ) : (
+                <a key={link.label} href={link.href} onClick={() => handleNavClick(link)} className="text-[11px] font-bold uppercase tracking-widest text-gray-400 hover:text-white hover:translate-y-[-1px] transition-all">
+                  {link.label}
+                </a>
+              )
+            )}
+            <a href={isHome ? '#contato' : '/#contato'} onClick={() => trackCtaClick('agendar_call', 'navbar')} className="gold-bg text-black px-8 py-3 rounded-xl text-xs font-black uppercase tracking-widest hover:scale-[1.05] hover:shadow-yellow-500/20 shadow-xl transition-all">
               Agendar Call
             </a>
           </div>
@@ -71,7 +95,7 @@ const Navbar: React.FC = () => {
               </a>
             ))}
             <a
-              href="#contato"
+              href={isHome ? '#contato' : '/#contato'}
               className="gold-bg text-black w-full py-5 rounded-2xl text-center font-black text-xl shadow-2xl mt-8"
               onClick={() => setIsMenuOpen(false)}
             >

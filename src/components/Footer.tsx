@@ -11,11 +11,11 @@ const Footer: React.FC = () => {
             <a href="#inicio" className="flex items-center justify-center md:justify-start gap-2 mb-6">
               <div>
                 <h2 className="text-white text-xl font-bold">Samuel Felipe</h2>
-                <p className="text-[9px] text-yellow-500 uppercase tracking-[0.3em] font-black opacity-80">Estrategista Digital</p>
+                <p className="text-[9px] text-yellow-500 uppercase tracking-[0.3em] font-black opacity-80">Estrategista de Mídia Paga</p>
               </div>
             </a>
             <p className="text-gray-400 max-w-sm mx-auto md:mx-0 mb-8 text-sm md:text-base">
-              Estrategista Digital focado em simplificar o crescimento do seu negócio através de resultados reais.
+              Estrategista de Mídia Paga especializado em geração de demanda comercial, escala de infoprodutos e desenvolvimento de soluções digitais com IA.
             </p>
             <div className="flex justify-center md:justify-start gap-4">
               <a href="https://www.linkedin.com/in/samufeelipe/" target="_blank" rel="noopener noreferrer" onClick={() => trackSocialClick('linkedin')} className="w-10 h-10 glass-card rounded-lg flex items-center justify-center text-gray-400 hover:text-white hover:border-yellow-500/50 transition-all"><Linkedin size={18} /></a>
@@ -29,6 +29,7 @@ const Footer: React.FC = () => {
               <li><a href="#inicio" className="text-gray-400 hover:text-white transition-colors">Início</a></li>
               <li><a href="#experiencia" className="text-gray-400 hover:text-white transition-colors">Metodologia</a></li>
               <li><a href="#projetos" className="text-gray-400 hover:text-white transition-colors">Portfólio</a></li>
+              <li><a href="/aprender" className="text-gray-400 hover:text-white transition-colors">Aprender</a></li>
             </ul>
           </div>
 
@@ -42,8 +43,8 @@ const Footer: React.FC = () => {
         </div>
 
         <div className="pt-8 border-t border-white/5 flex flex-col items-center gap-4 text-[10px] md:text-xs text-gray-500 text-center">
-          <p>© {new Date().getFullYear()} Samuel Felipe - Estrategista Digital.</p>
-          <p>Alta Performance & Conversão.</p>
+          <p>© {new Date().getFullYear()} Samuel Felipe - Estrategista de Mídia Paga.</p>
+          <p>Demanda Comercial · Infoprodutos · Marcas</p>
         </div>
       </div>
     </footer>

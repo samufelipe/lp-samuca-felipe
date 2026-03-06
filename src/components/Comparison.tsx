@@ -11,7 +11,7 @@ const Comparison: React.FC = () => {
             <span className="gold-gradient italic">Parceria Estratégica</span>
           </h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto font-light">
-            Um gestor comum apenas executa. O estrategista certo é o parceiro que dá o direcionamento necessário para o seu negócio escalar com lucro real.
+            Um gestor comum apenas sobe campanhas. O estrategista certo gera demanda, escala vendas e desenvolve as ferramentas que o seu negócio precisa para crescer.
           </p>
         </ScrollReveal>
 
@@ -28,9 +28,13 @@ const Comparison: React.FC = () => {
               <tbody className="text-sm md:text-base">
                 {[
                   ["Direcionamento Estratégico", "Foca apenas em subir campanhas", "Estratégia Personalizada para Escala"],
+                  ["Geração de Leads Qualificados", "Tráfego genérico sem qualificação", "Pipeline Lotado para Times Comerciais"],
+                  ["Escala de Infoprodutos", "Não entende o mercado digital", "Estratégias para Cursos, Mentorias e Programas"],
                   ["Direcionamento de Criativos", "Espera o cliente enviar o que tem", "Orientação de Criativos que Convertem"],
-                  ["Página de Vendas", "Não analisa a experiência do usuário", "Direcionamento para Otimização (LP)"],
-                  ["Funil Completo de Vendas", "Tráfego direto sem inteligência", "Direcionamento de Funil 360º"],
+                  ["Desenvolvimento de LP/Site", "Não oferece", "Landing Pages e Sites de Alta Conversão"],
+                  ["Funil Completo de Vendas", "Tráfego direto sem inteligência", "Funil 360º com Landing Pages e Automação"],
+                  ["Planejamento do Zero", "Assume que o cliente sabe o que precisa", "Direcionamento Completo desde o Zero"],
+                  ["Produção de Conteúdo", "Não direciona", "Direcionamento Estratégico de Conteúdo"],
                   ["Foco no Resultado", "Métricas de vaidade (cliques/CPC)", "Foco total em ROI e Lucratividade"],
                 ].map((row, i) => (
                   <tr key={i} className="border-b border-white/5 last:border-0 group/row hover:bg-white/[0.02] transition-colors">

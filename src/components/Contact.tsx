@@ -50,9 +50,8 @@ const Contact: React.FC = () => {
     const select = form.querySelector('select') as HTMLSelectElement;
     trackFormSubmit('diagnostico', select?.value);
     const nameInput = form.querySelector('input[type="text"]') as HTMLInputElement;
-    const whatsappNumber = getWhatsAppNumber(phone);
-    const message = `Olá Samuel! Meu nome é ${nameInput?.value || ''}. Vim pelo site e gostaria de solicitar um diagnóstico estratégico para o meu negócio.`;
-    window.location.href = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+    const message = `Olá Samuel! Meu nome é ${nameInput?.value || ''}. Vim pelo site e gostaria de solicitar um diagnóstico de mídia paga para o meu negócio.`;
+    window.location.href = `https://wa.me/5531992976990?text=${encodeURIComponent(message)}`;
   };
 
   return (
@@ -62,10 +61,10 @@ const Contact: React.FC = () => {
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           <div className="text-center lg:text-left">
-            <h2 className="text-[10px] md:text-sm font-bold text-yellow-500 uppercase tracking-[0.2em] mb-4">Vamos Escalar?</h2>
-            <h3 className="text-3xl md:text-5xl font-bold mb-6 md:mb-8 leading-[1.1] text-balance tracking-tight">Vamos simplificar o seu digital?</h3>
+            <h2 className="text-[10px] md:text-sm font-bold text-yellow-500 uppercase tracking-[0.2em] mb-4">Diagnóstico Gratuito</h2>
+            <h3 className="text-3xl md:text-5xl font-bold mb-6 md:mb-8 leading-[1.1] text-balance tracking-tight">Solicitar Diagnóstico <br className="hidden md:block" /><span className="gold-gradient">de Mídia Paga</span></h3>
             <p className="text-gray-400 text-base md:text-lg mb-10 md:mb-12 leading-relaxed">
-              Estou pronto para ajudar o seu negócio a crescer com as estratégias certas e acessíveis.
+              Descubra como gerar mais demanda para seu time comercial, escalar suas vendas de infoprodutos ou posicionar sua marca no digital. Análise gratuita e sem compromisso.
             </p>
 
             <div className="space-y-4 md:space-y-6 max-w-sm mx-auto lg:mx-0">
@@ -95,7 +94,7 @@ const Contact: React.FC = () => {
                   <h4 className="text-2xl md:text-3xl font-black mb-3 flex items-center gap-4">
                     Solicitar Diagnóstico
                   </h4>
-                  <p className="text-gray-500 text-sm md:text-base font-medium">Preencha os dados abaixo e entrarei em contato.</p>
+                  <p className="text-gray-500 text-sm md:text-base font-medium">Preencha os dados e receba uma análise personalizada da sua estratégia de mídia paga.</p>
                 </div>
 
                 <form className="space-y-6 md:space-y-8" onSubmit={handleSubmit}>
@@ -143,7 +142,7 @@ const Contact: React.FC = () => {
 
                   <button type="submit" className="w-full py-5 md:py-6 gold-bg text-black rounded-xl md:rounded-2xl font-black text-base md:text-lg hover:scale-[1.02] transition-all shadow-2xl shadow-yellow-500/20 active:scale-95 mt-4 group/btn overflow-hidden relative">
                     <span className="relative z-10 flex items-center justify-center gap-3">
-                      Enviar Solicitação <Send size={18} className="group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
+                      Solicitar Diagnóstico Gratuito <Send size={18} className="group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
                     </span>
                     <div className="absolute inset-0 bg-white/20 translate-y-full group-hover/btn:translate-y-0 transition-transform duration-500"></div>
                   </button>
@@ -156,7 +155,7 @@ const Contact: React.FC = () => {
                 </div>
                 <h4 className="text-2xl md:text-3xl font-bold mb-4 text-white">Solicitação Recebida!</h4>
                 <p className="text-gray-400 text-lg leading-relaxed max-w-xs mx-auto">
-                  Obrigado pelo interesse. Entrarei em contato em breve para agendarmos o seu diagnóstico.
+                  Obrigado pelo interesse. Entrarei em contato em breve para agendarmos o seu diagnóstico de mídia paga.
                 </p>
                 <button
                   onClick={() => setIsSubmitted(false)}
