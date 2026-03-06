@@ -1,5 +1,6 @@
 import React from 'react';
-import { Shield, Zap, CheckCircle2, Award, Target, Layout, Search, Sparkles } from 'lucide-react';
+import { Shield, CheckCircle2, Award, Target, Layout, Search, Sparkles, Users, Megaphone, Code, Compass, TrendingUp } from 'lucide-react';
+import ScrollReveal from './ScrollReveal';
 
 const GoogleExpertise: React.FC = () => {
   return (
@@ -13,10 +14,10 @@ const GoogleExpertise: React.FC = () => {
             <span className="text-[10px] md:text-xs font-black uppercase tracking-[0.3em] text-yellow-500/90">Autoridade Validada</span>
           </div>
           <h2 className="text-4xl md:text-6xl font-black mb-8 text-white">
-            Estratégias Validadas <br className="hidden md:block" /><span className="gold-gradient">Google Partner</span>
+            Soluções Completas <br className="hidden md:block" /><span className="gold-gradient">para Escalar seu Negócio</span>
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto text-base md:text-lg font-light">
-            Acesso às melhores ferramentas e práticas do Google para garantir que o seu investimento seja utilizado da forma mais inteligente e simples possível.
+            Da geração de leads para times comerciais à escala de infoprodutos, passando por desenvolvimento de Landing Pages, sites e aplicativos com IA.
           </p>
         </div>
 
@@ -40,7 +41,7 @@ const GoogleExpertise: React.FC = () => {
 
               <h3 className="text-2xl md:text-3xl font-black mb-4">Estrategista Certificado</h3>
               <p className="text-gray-500 text-sm md:text-base font-medium">
-                Selo que garante o domínio das ferramentas certas para simplificar o seu crescimento digital.
+                Selo que garante domínio das ferramentas e estratégias que geram resultados reais em mídia paga.
               </p>
             </div>
           </div>
@@ -55,14 +56,17 @@ const GoogleExpertise: React.FC = () => {
                 <h4 className="text-xl font-black uppercase tracking-[0.2em] text-white">Como eu ajudo</h4>
               </div>
 
-              <div className="grid md:grid-cols-1 gap-8">
+              <div className="grid md:grid-cols-2 gap-8">
                 {[
-                  { title: "Performance Max & AI", desc: "Engenharia de prompts e sinais para o algoritmo de IA do Google.", icon: <Zap size={20} /> },
-                  { title: "Rede de Pesquisa Avançada", desc: "Captura cirúrgica de demanda com foco em intenção de compra.", icon: <Search size={20} /> },
-                  { title: "Display & Youtube Strategy", desc: "Criação de demanda e branding para públicos de alto padrão.", icon: <Layout size={20} /> },
+                  { title: "Leads para Times Comerciais", desc: "Campanhas de mídia paga para lotar o pipeline de vendas da sua equipe comercial.", icon: <Users size={20} /> },
+                  { title: "Escala de Infoprodutos", desc: "Estratégias para vender mais cursos, mentorias e programas digitais com previsibilidade.", icon: <TrendingUp size={20} /> },
+                  { title: "Visibilidade de Marcas", desc: "Branding e awareness estratégico com Google Ads e Meta Ads para posicionar sua marca.", icon: <Megaphone size={20} /> },
+                  { title: "Landing Pages & Sites", desc: "Desenvolvimento de páginas de alta conversão e sites profissionais que vendem.", icon: <Code size={20} /> },
+                  { title: "Do Zero ao Primeiro Anúncio", desc: "Planejamento estratégico completo para quem nunca anunciou e precisa de direcionamento.", icon: <Compass size={20} /> },
+                  { title: "Escala para quem já Anuncia", desc: "Otimização e direcionamento para multiplicar resultados de campanhas existentes.", icon: <Target size={20} /> },
                 ].map((item, i) => (
                   <div key={i} className="flex gap-6 group/item">
-                    <div className="text-yellow-500/50 group-hover/item:text-yellow-500 transition-colors">
+                    <div className="text-yellow-500/50 group-hover/item:text-yellow-500 transition-colors shrink-0 mt-1">
                       {item.icon}
                     </div>
                     <div>
@@ -100,17 +104,19 @@ const GoogleExpertise: React.FC = () => {
         </div>
 
         {/* Bottom Banner */}
-        <div className="relative mt-16 group">
-          <div className="absolute -inset-0.5 bg-gradient-to-r from-transparent via-yellow-500/20 to-transparent rounded-3xl blur opacity-30 group-hover:opacity-60 transition-opacity"></div>
-          <div className="relative glass-card rounded-3xl p-8 md:p-12 text-center border-white/5">
-            <h4 className="text-xl md:text-3xl font-black mb-3 tracking-tight">
-              Estratégia Certificada + <span className="gold-gradient">4 Anos de Campo</span>
-            </h4>
-            <p className="text-gray-500 text-sm md:text-lg font-medium max-w-2xl mx-auto">
-              A união rara entre o rigor técnico da certificação e a malícia estratégica de quem já geriu mais de R$ 7 milhões em mídia.
-            </p>
+        <ScrollReveal>
+          <div className="relative mt-16 group">
+            <div className="absolute -inset-0.5 bg-gradient-to-r from-transparent via-yellow-500/20 to-transparent rounded-3xl blur opacity-30 group-hover:opacity-60 transition-opacity"></div>
+            <div className="relative glass-card rounded-3xl p-8 md:p-12 text-center border-white/5">
+              <h4 className="text-xl md:text-3xl font-black mb-3 tracking-tight">
+                Estratégia Certificada + Tecnologia + <span className="gold-gradient">4 Anos de Campo</span>
+              </h4>
+              <p className="text-gray-500 text-sm md:text-lg font-medium max-w-2xl mx-auto">
+                A união entre certificação Google, desenvolvimento de soluções digitais com IA e a experiência de quem já geriu +R$ 7 milhões em mídia paga.
+              </p>
+            </div>
           </div>
-        </div>
+        </ScrollReveal>
       </div>
     </section>
   );

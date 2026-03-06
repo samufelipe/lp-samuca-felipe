@@ -4,20 +4,20 @@ import ScrollReveal from './ScrollReveal';
 
 const Stats: React.FC = () => {
   const stats = [
-    { label: "+4 Anos", sub: "Experiência", icon: <Briefcase /> },
-    { label: "+7M", sub: "Investidos", icon: <TrendingUp /> },
-    { label: "+800K", sub: "Leads", icon: <Users /> },
-    { label: "+170", sub: "Projetos", icon: <Trophy /> },
+    { label: "+4 Anos", sub: "de Campo", icon: <Briefcase /> },
+    { label: "+7M", sub: "em Mídia Gerida", icon: <TrendingUp /> },
+    { label: "+800K", sub: "Leads Gerados", icon: <Users /> },
+    { label: "+170", sub: "Projetos Entregues", icon: <Trophy /> },
   ];
 
   return (
     <section id="experiencia" className="py-20 md:py-24">
       <div className="max-w-7xl mx-auto px-6">
         <ScrollReveal className="text-center mb-12 md:mb-16">
-          <h2 className="text-[10px] md:text-xs font-bold text-yellow-500 uppercase tracking-[0.3em] mb-3 md:mb-4">Resultados Diários</h2>
-          <h3 className="text-3xl md:text-4xl font-bold mb-4 md:mb-6">Crescimento que se vê nos números</h3>
+          <h2 className="text-[10px] md:text-xs font-bold text-yellow-500 uppercase tracking-[0.3em] mb-3 md:mb-4">Resultados que Falam por Si</h2>
+          <h3 className="text-3xl md:text-4xl font-bold mb-4 md:mb-6">Demanda gerada para times comerciais e vendas escaladas para infoprodutores</h3>
           <p className="text-gray-400 max-w-2xl mx-auto text-base md:text-lg font-light">
-            Estratégias que funcionam na prática para centenas de clientes que buscam resultados consistentes e acessíveis.
+            Números construídos com estratégias de mídia paga que lotam pipelines de vendas, escalam cursos e mentorias, e posicionam marcas no digital.
           </p>
         </ScrollReveal>
 

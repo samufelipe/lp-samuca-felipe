@@ -4,10 +4,10 @@ import ScrollReveal from './ScrollReveal';
 
 const Methodology: React.FC = () => {
   const steps = [
-    { title: "Entendimento do Negócio", desc: "Analisamos seus números e o seu mercado para entender o melhor caminho antes de começar.", icon: <Search /> },
-    { title: "Jornada do Cliente", desc: "Organizamos como o seu cliente te encontra e como ele decide comprar de você.", icon: <Target /> },
-    { title: "Crescimento Constante", desc: "Ajustamos os anúncios para que você tenha resultados consistentes todos os dias.", icon: <Rocket /> },
-    { title: "Clareza nos Dados", desc: "Relatórios simples para você saber exatamente quanto está ganhando com o digital.", icon: <BarChart3 /> },
+    { title: "Diagnóstico de Demanda", desc: "Entendemos seu mercado, concorrência e oportunidades reais de geração de leads e vendas antes de investir um centavo.", icon: <Search /> },
+    { title: "Estrutura de Campanhas & Funil", desc: "Criamos campanhas, landing pages e funis otimizados para converter visitantes em clientes pagantes.", icon: <Target /> },
+    { title: "Escala Controlada", desc: "Aumentamos o investimento com inteligência, garantindo que cada real a mais traga retorno proporcional.", icon: <Rocket /> },
+    { title: "Otimização Contínua & Dados", desc: "Relatórios claros, ajustes diários e foco total em lucratividade. Você sabe exatamente quanto está ganhando.", icon: <BarChart3 /> },
   ];
 
   return (
@@ -17,12 +17,12 @@ const Methodology: React.FC = () => {
           <div className="lg:w-1/2">
             <ScrollReveal>
               <h2 className="text-sm font-bold text-yellow-500 uppercase tracking-[0.3em] mb-6">O Processo</h2>
-              <h3 className="text-4xl md:text-5xl font-black mb-8">Método Simples de <br className="hidden md:block" />Crescimento Diário</h3>
+              <h3 className="text-4xl md:text-5xl font-black mb-8">Método de Escala <br className="hidden md:block" /><span className="gold-gradient italic playfair">com Previsibilidade</span></h3>
               <p className="text-gray-400 text-lg md:text-xl mb-10 font-light">
-                O digital não precisa ser complicado. Minha metodologia foca no que realmente importa: estratégias acessíveis que geram resultados constantes.
+                Um processo testado em +170 projetos para gerar demanda comercial, escalar infoprodutos e posicionar marcas — do diagnóstico à escala.
               </p>
               <a href="#contato" className="inline-flex items-center gap-3 text-white font-bold border-b-2 border-yellow-500 pb-2 hover:gap-5 transition-all">
-                Ver Como Aplicar ao Seu Negócio <Target size={20} />
+                Aplicar ao Seu Negócio <Target size={20} />
               </a>
             </ScrollReveal>
           </div>
