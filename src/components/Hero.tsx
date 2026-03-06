@@ -26,7 +26,7 @@ const Hero: React.FC = () => {
 
             <ScrollReveal stagger={1}>
               <p className="text-lg md:text-xl text-gray-400 mb-10 max-w-xl mx-auto lg:mx-0 font-light">
-                Estratégias de tráfego pago para lotar a agenda do seu time comercial, escalar infoprodutos e posicionar marcas. Desenvolvimento de Landing Pages, sites e aplicativos com IA. <strong className="text-white">+7 milhões geridos em mídia paga.</strong>
+                Estratégias de tráfego pago para lotar a agenda de times comerciais, escalar infoprodutos e gerar demanda para profissionais da saúde, educação e serviços. Landing Pages, sites e apps com IA. <strong className="text-white">+7 milhões geridos em mídia paga.</strong>
               </p>
             </ScrollReveal>
 
