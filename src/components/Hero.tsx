@@ -15,8 +15,11 @@ const Hero: React.FC = () => {
         <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
           <div className="w-full lg:flex-1 text-center lg:text-left order-2 lg:order-1">
             <ScrollReveal className="overflow-hidden">
-              <h1 className="mask-reveal text-4xl sm:text-5xl md:text-7xl lg:text-[5.5rem] font-black mb-8 text-white">
-                Mais Demanda. Mais Vendas. <br className="hidden md:block" />
+              <h1 className="mask-reveal text-[2.1rem] leading-[1.1] sm:text-5xl md:text-7xl lg:text-[5.5rem] font-black mb-8 text-white">
+                Mais Demanda.{' '}
+                <br className="sm:hidden" />
+                Mais Vendas.
+                <br />
                 <span className="gold-gradient italic playfair font-medium">Mídia Paga de Verdade.</span>
               </h1>
             </ScrollReveal>
