@@ -1,54 +1,61 @@
 
 
-## Plano: Redesign do Carrossel de Clientes
+## Plano: Correção das Descrições dos Cards de Clientes
 
-### Problema Atual
-Os cards do carrossel estao com dimensoes exageradas (260-380px de largura x 360-480px de altura), com muitos elementos visuais (estrelas, icone Globe, badges grandes, botao "Ver Projeto" ocupando largura total). Isso deixa o layout pesado e pouco elegante.
+### Erros Encontrados (verificados nos sites reais)
 
-### Novo Design: Cards Compactos e Minimalistas
+| Cliente | Erro | Realidade do Site |
+|---------|------|-------------------|
+| **Lu Guerra** | ❌ "Joalheria Autoral" / "semijoias e acessórios" | Arquiteta e Urbanista especialista em **iluminação**. Projetos de lighting design e cursos para profissionais. Nada de joias. |
+| **Paula Cromão** | ❌ "Saúde Mental" / "Psicologia clínica" | **Fisioterapeuta/esteticista** especializada em pós-operatório de cirurgia plástica, fibrose, celulite. Atendimento domiciliar. Nada de psicologia. |
+| **São José Confecções** | ❌ "moda masculina e produção têxtil em larga escala" | Fábrica de **produtos promocionais personalizados**: bonés, viseiras, chapéus, ecobags, camisetas. Não é moda masculina. |
+| **Inovando na sua Obra** | ❌ "Engenharia e soluções inovadoras para reformas" | É uma **mentoria para arquitetas e designers de interiores** sobre gerenciamento de obras de interiores. Não é uma empresa de engenharia. |
+| **Grupo AL7 Motos** | ⚠️ "Mais de 30 anos" não confirmado | Concessionária **Dafra**. Vende motos 0km, seminovas, peças, consórcio e seguros. O "30 anos" não aparece no site. |
+| **Colina dos Ipês** | ⚠️ "Parque memorial" impreciso | Empresa de **planos funerários** com clube de benefícios (Clube Colina). Mais que um parque memorial. |
+| **Ituran** | ⚠️ Parcialmente incompleto | Além de rastreamento, oferece **seguros e proteção veicular** com cotação online. |
 
-**Dimensoes novas dos cards:**
-- Mobile: `200px` de largura, altura automatica (~200px)
-- Desktop: `240px` de largura, altura automatica (~220px)
+### Cards OK (sem alteração necessária)
+- Móveis Bechara ✅ (100+ anos de mercado moveleiro, confirmado)
+- FAS Iluminação ✅ (marcas internacionais de iluminação de alto padrão)
+- VALEM ✅ (administradora de planos de saúde)
+- HDI Brasil ✅ (instituto de capacitação em gestão de TI)
+- Instituto Embelleze ✅ (cursos profissionalizantes de beleza)
+- Ciatrip ✅ (agência de viagens internacionais)
+- Gladys Religiosos ✅ (site indisponível para validação, mas descrição coerente)
 
-**Estrutura do novo card:**
-```text
-+---------------------------+
-|  [Logo]  28x28            |
-|  Nome do Cliente           |
-|  ·  Nicho                 |
-|                            |
-|  Descricao curta (2 lines) |
-|                            |
-|  Resultado  ->             |
-+---------------------------+
+### Correções Propostas
+
+```
+Lu Guerra
+  niche: "Iluminação & Arquitetura"
+  desc: "Arquiteta especialista em lighting design com projetos autorais e cursos para profissionais da iluminação."
+
+Paula Cromão
+  niche: "Estética & Saúde"
+  desc: "Fisioterapeuta especializada em pós-operatório de cirurgia plástica, com atendimento domiciliar personalizado."
+
+São José Confecções
+  niche: "Produtos Promocionais"
+  desc: "Fábrica de bonés, viseiras, camisetas e ecobags personalizados para ações promocionais e eventos."
+
+Inovando na sua Obra
+  niche: "Educação & Arquitetura"
+  desc: "Mentoria para arquitetas e designers de interiores sobre gerenciamento lucrativo de obras."
+
+Grupo AL7 Motos
+  niche: "Setor Automotivo"
+  desc: "Concessionária Dafra com venda de motos 0km, seminovas, peças, consórcio e seguros."
+
+Colina dos Ipês
+  niche: "Planos Funerários"
+  desc: "Planos funerários com atendimento humanizado e clube de benefícios com mais de 500 parceiros."
+
+Ituran
+  desc: "Líder em rastreamento veicular, seguros e proteção automotiva com tecnologia de ponta."
 ```
 
-**Elementos do card:**
-1. **Logo do cliente** -- Imagem carregada via favicon do dominio do cliente (`https://www.google.com/s2/favicons?domain=URL&sz=64`), exibida em `28x28` com borda sutil dourada e `rounded-lg`
-2. **Nome** -- Fonte bold, tamanho reduzido (`text-sm` / `text-base`), branco, sem uppercase
-3. **Nicho** -- Tag inline discreta com dot dourado, texto `text-[8px]` em cinza
-4. **Descricao** -- `text-xs`, cinza claro, `line-clamp-2`, font-light
-5. **Resultado + link** -- Linha inferior com o resultado como badge sutil e seta de link para o site, tudo compacto
-
-**Elementos removidos:**
-- 5 estrelas (redundante)
-- Icone Globe grande no canto
-- Botao "Ver Projeto" de largura total (substituido por link discreto com seta)
-- Padding excessivo (`p-8` vira `p-4`/`p-5`)
-- Bordas arredondadas exageradas (`rounded-[2rem]` vira `rounded-xl`)
-
-### Ajustes no Marquee
-- Recalcular os `@keyframes marquee` com as novas larguras (200px mobile, 240px desktop)
-- Reduzir o gap entre cards de `gap-6/10` para `gap-4/6`
-- Ajustar velocidade da animacao para manter ritmo agradavel
-
-### Hover do Card
-- Borda muda para `border-yellow-500/20`
-- Glow dourado sutil no background
-- Nome fica dourado
-- Seta do link faz `translate-x`
-
 ### Arquivo Modificado
-- `src/components/Cases.tsx` -- Redesign completo do card, adicao de logos via favicon, recalculo do marquee
+| Arquivo | Acao |
+|---------|------|
+| `src/components/Cases.tsx` | Editar linhas 14-27 — corrigir descrições e nichos |
 
