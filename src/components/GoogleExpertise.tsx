@@ -51,7 +51,7 @@ const GoogleExpertise: React.FC = () => {
             <div className="glass-card rounded-[2.5rem] p-10 border-white/5 relative overflow-hidden group">
               <div className="flex items-center gap-4 mb-10">
                 <div className="text-yellow-500">
-                  <Sparkles size={24} />
+                  <Handshake size={24} />
                 </div>
                 <h4 className="text-xl font-black uppercase tracking-[0.2em] text-white">Como eu ajudo</h4>
               </div>
