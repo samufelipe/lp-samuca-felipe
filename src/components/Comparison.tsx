@@ -1,5 +1,6 @@
 import React from 'react';
-import { X, Check } from 'lucide-react';
+import { X, Check, ChevronRight } from 'lucide-react';
+import { trackCtaClick } from '@/lib/gtm';
 import ScrollReveal from './ScrollReveal';
 
 const comparisonItems = [
@@ -74,6 +75,14 @@ const Comparison: React.FC = () => {
             </div>
           </ScrollReveal>
         </div>
+
+        <ScrollReveal>
+          <div className="text-center mt-12">
+            <a href="#contato" onClick={() => trackCtaClick('quero_parceria', 'comparison')} className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-yellow-500 to-yellow-600 text-black rounded-xl font-bold text-xs sm:text-sm hover:translate-y-[-2px] transition-all shadow-xl active:scale-95">
+              Quero uma Parceria Estratégica <ChevronRight size={18} />
+            </a>
+          </div>
+        </ScrollReveal>
       </div>
     </section>
   );
