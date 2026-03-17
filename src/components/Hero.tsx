@@ -1,6 +1,9 @@
 import React from 'react';
 import { ChevronRight, Star, Handshake, TrendingUp, Code, Cpu } from 'lucide-react';
 import samuelPhoto from '@/assets/samuel-felipe.jpeg';
+import avatar1 from '@/assets/avatar-1.jpg';
+import avatar2 from '@/assets/avatar-2.jpg';
+import avatar3 from '@/assets/avatar-3.jpg';
 import ScrollReveal from './ScrollReveal';
 import { trackCtaClick } from '@/lib/gtm';
 
@@ -44,9 +47,9 @@ const Hero: React.FC = () => {
 
                 <div className="flex items-center gap-4 px-6 py-5 lg:ml-4">
                   <div className="flex -space-x-3">
-                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face" className="w-10 h-10 rounded-full border-2 border-zinc-950 shadow-xl object-cover" alt="Cliente" />
-                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&crop=face" className="w-10 h-10 rounded-full border-2 border-zinc-950 shadow-xl object-cover" alt="Cliente" />
-                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face" className="w-10 h-10 rounded-full border-2 border-zinc-950 shadow-xl object-cover" alt="Cliente" />
+                    <img src={avatar1} className="w-10 h-10 rounded-full border-2 border-zinc-950 shadow-xl object-cover" alt="Cliente" />
+                    <img src={avatar2} className="w-10 h-10 rounded-full border-2 border-zinc-950 shadow-xl object-cover" alt="Cliente" />
+                    <img src={avatar3} className="w-10 h-10 rounded-full border-2 border-zinc-950 shadow-xl object-cover" alt="Cliente" />
                   </div>
                   <div className="text-left">
                     <p className="text-xs font-bold text-white">+7 Milhões Geridos</p>
