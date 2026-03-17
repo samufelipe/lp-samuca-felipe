@@ -1,5 +1,5 @@
 import React from 'react';
-import { ChevronRight, Star, ShieldCheck, TrendingUp, Sparkles, Code, Cpu } from 'lucide-react';
+import { ChevronRight, Star, Handshake, TrendingUp, Sparkles, Code, Cpu } from 'lucide-react';
 import samuelPhoto from '@/assets/samuel-felipe.jpeg';
 import ScrollReveal from './ScrollReveal';
 import { trackCtaClick } from '@/lib/gtm';
