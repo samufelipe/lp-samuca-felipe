@@ -1,5 +1,5 @@
 import React from 'react';
-import { Shield, CheckCircle2, Award, Target, Layout, Search, Handshake, Users, Megaphone, Code, Compass, TrendingUp } from 'lucide-react';
+import { Shield, CheckCircle2, Award, Target, Layout, Search, Handshake, Users, Megaphone, Code, Compass, TrendingUp, ChevronRight } from 'lucide-react';
 import ScrollReveal from './ScrollReveal';
 
 const GoogleExpertise: React.FC = () => {
