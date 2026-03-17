@@ -1,5 +1,5 @@
 import React from 'react';
-import { ChevronRight, Star, ShieldCheck, TrendingUp, Sparkles, Code, Cpu } from 'lucide-react';
+import { ChevronRight, Star, Handshake, TrendingUp, Sparkles, Code, Cpu } from 'lucide-react';
 import samuelPhoto from '@/assets/samuel-felipe.jpeg';
 import ScrollReveal from './ScrollReveal';
 import { trackCtaClick } from '@/lib/gtm';
@@ -64,7 +64,7 @@ const Hero: React.FC = () => {
             <ScrollReveal stagger={3}>
               <div className="flex flex-wrap justify-center lg:justify-start items-center gap-6 md:gap-8 opacity-40 grayscale hover:grayscale-0 transition-all duration-700">
                 <div className="flex items-center gap-2 group cursor-default">
-                  <ShieldCheck size={18} className="group-hover:text-blue-500 transition-colors" />
+                  <Handshake size={18} className="group-hover:text-blue-500 transition-colors" />
                   <span className="text-[10px] font-bold uppercase tracking-widest">Google Partner</span>
                 </div>
                 <div className="flex items-center gap-2 group cursor-default">
