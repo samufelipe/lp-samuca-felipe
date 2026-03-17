@@ -67,7 +67,7 @@ const Navbar: React.FC = () => {
                 </a>
               )
             )}
-            <a href={isHome ? '#contato' : '/#contato'} onClick={() => trackCtaClick('agendar_call', 'navbar')} className="gold-bg text-black px-8 py-3 rounded-xl text-xs font-black uppercase tracking-widest hover:scale-[1.05] hover:shadow-yellow-500/20 shadow-xl transition-all">
+            <a href={isHome ? '#contato' : '/#contato'} onClick={() => trackCtaClick('agendar_call', 'navbar')} className="gold-bg text-black px-6 py-2.5 rounded-xl text-xs font-bold uppercase tracking-widest hover:scale-[1.05] hover:shadow-yellow-500/20 shadow-lg transition-all">
               Agendar Call
             </a>
           </div>
