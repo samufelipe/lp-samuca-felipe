@@ -1,5 +1,5 @@
 import React from 'react';
-import { ChevronRight, Star, Handshake, TrendingUp, Sparkles, Code, Cpu } from 'lucide-react';
+import { ChevronRight, Star, Handshake, TrendingUp, Code, Cpu } from 'lucide-react';
 import samuelPhoto from '@/assets/samuel-felipe.jpeg';
 import ScrollReveal from './ScrollReveal';
 import { trackCtaClick } from '@/lib/gtm';
@@ -37,7 +37,7 @@ const Hero: React.FC = () => {
                   </button>
                   <div className="mt-2 text-center lg:text-left">
                     <span className="text-[9px] text-yellow-500/70 uppercase font-black tracking-widest flex items-center justify-center lg:justify-start gap-1">
-                       <Sparkles size={10} /> Agenda Limitada para Novos Projetos
+                       Agenda Limitada para Novos Projetos
                     </span>
                   </div>
                 </a>
