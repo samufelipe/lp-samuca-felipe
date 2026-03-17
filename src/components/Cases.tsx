@@ -1,5 +1,5 @@
-import React from 'react';
-import { ShieldCheck, ArrowRight, ArrowUpRight } from 'lucide-react';
+import React, { useRef, useState, useCallback } from 'react';
+import { Handshake, ArrowRight, ArrowUpRight } from 'lucide-react';
 import ScrollReveal from './ScrollReveal';
 import { trackCaseClick, trackCtaClick } from '@/lib/gtm';
 import gladysLogo from '@/assets/gladys-logo.jpg';
