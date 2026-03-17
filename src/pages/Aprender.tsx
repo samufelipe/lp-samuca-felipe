@@ -1,5 +1,5 @@
 import React from 'react';
-import { ChevronRight, BookOpen, Target, TrendingUp, Monitor, BarChart3, Rocket, Users, Award, Sparkles, CheckCircle2, ArrowRight } from 'lucide-react';
+import { ChevronRight, BookOpen, Target, TrendingUp, Monitor, BarChart3, Rocket, Users, Award, CheckCircle2, ArrowRight } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import WhatsAppButton from '@/components/WhatsAppButton';
