@@ -1,5 +1,5 @@
 import React from 'react';
-import { ChevronRight, BookOpen, Target, TrendingUp, Monitor, BarChart3, Rocket, Users, Award, Sparkles, CheckCircle2, ArrowRight } from 'lucide-react';
+import { ChevronRight, BookOpen, Target, TrendingUp, Monitor, BarChart3, Rocket, Users, Award, CheckCircle2, ArrowRight } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import WhatsAppButton from '@/components/WhatsAppButton';
@@ -35,7 +35,6 @@ const Aprender: React.FC = () => {
           <div className="max-w-5xl mx-auto px-6 text-center relative z-10">
             <ScrollReveal>
               <div className="inline-flex items-center gap-2 mb-8 px-5 py-2.5 glass-card rounded-full">
-                <Sparkles size={14} className="text-yellow-500" />
                 <span className="text-[10px] font-black uppercase tracking-[0.3em] text-yellow-500">Formação em Tráfego Pago</span>
               </div>
             </ScrollReveal>
@@ -186,7 +185,6 @@ const Aprender: React.FC = () => {
                 <div className="absolute -inset-1 bg-gradient-to-r from-yellow-600/20 via-yellow-500/30 to-yellow-600/20 rounded-[3rem] blur-xl opacity-50 group-hover:opacity-80 transition-all duration-700"></div>
                 <div className="relative glass-card rounded-[3rem] p-12 md:p-20 text-center border-yellow-500/10">
                   <div className="inline-flex items-center gap-2 mb-8 px-4 py-2 rounded-full bg-yellow-500/10 border border-yellow-500/20">
-                    <Sparkles size={14} className="text-yellow-500" />
                     <span className="text-[10px] font-black uppercase tracking-[0.2em] text-yellow-500">Vagas Limitadas</span>
                   </div>
                   <h3 className="text-3xl md:text-5xl font-black mb-6 leading-tight">
