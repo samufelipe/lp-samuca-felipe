@@ -111,9 +111,12 @@ const GoogleExpertise: React.FC = () => {
               <h4 className="text-xl md:text-3xl font-black mb-3 tracking-tight">
                 Estratégia Certificada + Tecnologia + <span className="gold-gradient">4 Anos de Campo</span>
               </h4>
-              <p className="text-gray-500 text-sm md:text-lg font-medium max-w-2xl mx-auto">
+              <p className="text-gray-500 text-sm md:text-lg font-medium max-w-2xl mx-auto mb-8">
                 A união entre certificação Google, desenvolvimento de soluções digitais com IA e a experiência de quem já geriu +R$ 7 milhões em mídia paga.
               </p>
+              <a href="#contato" className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-yellow-500 to-yellow-600 text-black rounded-xl font-bold text-xs sm:text-sm hover:translate-y-[-2px] transition-all shadow-xl active:scale-95">
+                Solicitar Diagnóstico Gratuito <ChevronRight size={18} />
+              </a>
             </div>
           </div>
         </ScrollReveal>
