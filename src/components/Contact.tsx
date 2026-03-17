@@ -140,7 +140,7 @@ const Contact: React.FC = () => {
                     </div>
                   </div>
 
-                  <button type="submit" className="w-full py-5 md:py-6 gold-bg text-black rounded-xl md:rounded-2xl font-black text-base md:text-lg hover:scale-[1.02] transition-all shadow-2xl shadow-yellow-500/20 active:scale-95 mt-4 group/btn overflow-hidden relative">
+                  <button type="submit" className="w-full py-3 md:py-3.5 gold-bg text-black rounded-xl font-bold text-xs md:text-sm hover:scale-[1.02] transition-all shadow-xl shadow-yellow-500/20 active:scale-95 mt-4 group/btn overflow-hidden relative">
                     <span className="relative z-10 flex items-center justify-center gap-3">
                       Solicitar Diagnóstico Gratuito <Send size={18} className="group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
                     </span>

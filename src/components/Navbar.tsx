@@ -108,7 +108,7 @@ const Navbar: React.FC = () => {
             )}
             <a
               href={isHome ? '#contato' : '/#contato'}
-              className="gold-bg text-black w-full py-5 rounded-2xl text-center font-black text-xl shadow-2xl mt-8"
+              className="gold-bg text-black w-full py-3.5 rounded-xl text-center font-bold text-base shadow-xl mt-8"
               onClick={() => setIsMenuOpen(false)}
             >
               Começar Agora
