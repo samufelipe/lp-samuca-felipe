@@ -34,7 +34,7 @@ const Hero: React.FC = () => {
               <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-6 mb-14">
                 <a href="#contato" className="group relative w-full sm:w-auto" onClick={() => trackCtaClick('solicitar_diagnostico', 'hero')}>
                   <div className="absolute -inset-1 bg-gradient-to-r from-yellow-600 to-yellow-400 rounded-2xl blur opacity-30 group-hover:opacity-60 transition duration-1000 group-hover:duration-200"></div>
-                  <button className="relative w-full sm:w-auto px-10 py-5 bg-gradient-to-r from-yellow-500 to-yellow-600 text-black rounded-2xl font-black text-lg flex items-center justify-center gap-3 hover:translate-y-[-2px] transition-all shadow-2xl active:scale-95">
+                  <button className="relative w-full sm:w-auto px-7 py-3.5 bg-gradient-to-r from-yellow-500 to-yellow-600 text-black rounded-xl font-black text-sm md:text-base flex items-center justify-center gap-2 hover:translate-y-[-2px] transition-all shadow-2xl active:scale-95">
                     Solicitar Diagnóstico Gratuito <ChevronRight size={22} className="group-hover:translate-x-1 transition-transform" />
                   </button>
                   <div className="absolute -bottom-6 left-0 right-0 text-center lg:text-left">
