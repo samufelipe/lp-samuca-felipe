@@ -35,7 +35,6 @@ const Aprender: React.FC = () => {
           <div className="max-w-5xl mx-auto px-6 text-center relative z-10">
             <ScrollReveal>
               <div className="inline-flex items-center gap-2 mb-8 px-5 py-2.5 glass-card rounded-full">
-                <Sparkles size={14} className="text-yellow-500" />
                 <span className="text-[10px] font-black uppercase tracking-[0.3em] text-yellow-500">Formação em Tráfego Pago</span>
               </div>
             </ScrollReveal>
