@@ -1,6 +1,9 @@
 import React from 'react';
 import { ChevronRight, Star, Handshake, TrendingUp, Code, Cpu } from 'lucide-react';
 import samuelPhoto from '@/assets/samuel-felipe.jpeg';
+import avatar1 from '@/assets/avatar-1.jpg';
+import avatar2 from '@/assets/avatar-2.jpg';
+import avatar3 from '@/assets/avatar-3.jpg';
 import ScrollReveal from './ScrollReveal';
 import { trackCtaClick } from '@/lib/gtm';
 
