@@ -19,8 +19,6 @@ const Hero: React.FC = () => {
                 Mais Demanda.{' '}
                 <br className="sm:hidden" />
                 Mais Vendas.
-                <br />
-                <span className="gold-gradient italic playfair font-medium">Mídia Paga de Verdade.</span>
               </h1>
             </ScrollReveal>
 
