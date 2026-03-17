@@ -44,15 +44,15 @@ const Hero: React.FC = () => {
 
                 <div className="flex items-center gap-4 px-6 py-5 lg:ml-4">
                   <div className="flex -space-x-3">
-                    {[1, 2, 3].map(i => (
-                      <img key={i} src={`https://i.pravatar.cc/100?img=${i+20}`} className="w-10 h-10 rounded-full border-2 border-zinc-950 shadow-xl" alt="Client" />
-                    ))}
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face" className="w-10 h-10 rounded-full border-2 border-zinc-950 shadow-xl object-cover" alt="Cliente" />
+                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&crop=face" className="w-10 h-10 rounded-full border-2 border-zinc-950 shadow-xl object-cover" alt="Cliente" />
+                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face" className="w-10 h-10 rounded-full border-2 border-zinc-950 shadow-xl object-cover" alt="Cliente" />
                   </div>
                   <div className="text-left">
                     <p className="text-xs font-bold text-white">+7 Milhões Geridos</p>
                     <div className="flex items-center gap-1">
                       {[...Array(5)].map((_, i) => <Star key={i} size={8} className="fill-yellow-500 text-yellow-500" />)}
-                      <span className="text-[10px] text-gray-500 uppercase font-bold tracking-widest ml-1">Rating 5.0</span>
+                      <span className="text-[10px] text-gray-500 uppercase font-bold tracking-widest ml-1">Avaliação 5.0</span>
                     </div>
                   </div>
                 </div>
