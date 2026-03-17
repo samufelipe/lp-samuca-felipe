@@ -185,7 +185,6 @@ const Aprender: React.FC = () => {
                 <div className="absolute -inset-1 bg-gradient-to-r from-yellow-600/20 via-yellow-500/30 to-yellow-600/20 rounded-[3rem] blur-xl opacity-50 group-hover:opacity-80 transition-all duration-700"></div>
                 <div className="relative glass-card rounded-[3rem] p-12 md:p-20 text-center border-yellow-500/10">
                   <div className="inline-flex items-center gap-2 mb-8 px-4 py-2 rounded-full bg-yellow-500/10 border border-yellow-500/20">
-                    <Sparkles size={14} className="text-yellow-500" />
                     <span className="text-[10px] font-black uppercase tracking-[0.2em] text-yellow-500">Vagas Limitadas</span>
                   </div>
                   <h3 className="text-3xl md:text-5xl font-black mb-6 leading-tight">
