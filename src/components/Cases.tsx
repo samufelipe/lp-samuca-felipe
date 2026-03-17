@@ -23,7 +23,7 @@ const Cases: React.FC = () => {
     { name: "Ituran Seguros", niche: "Segurança Veicular", desc: "Líder em rastreamento veicular, seguros e proteção automotiva com tecnologia de ponta.", result: "Performance Global", url: "https://ituran.com.br/", customLogo: ituranLogo },
     { name: "São José Confecções", niche: "Produtos Promocionais", desc: "Fábrica de bonés, viseiras, camisetas e ecobags personalizados para ações promocionais e eventos.", result: "Venda Direta", url: "https://www.saojoseconfeccoes.com.br/" },
     { name: "Ciatrip", niche: "Turismo Premium", desc: "Agência especializada em roteiros personalizados e experiências internacionais.", result: "Ticket Médio Alto", url: "https://ciatrip.com/", customLogo: ciatripLogo },
-    { name: "Paula Cromão", niche: "Estética & Saúde", desc: "Fisioterapeuta especializada em pós-operatório de cirurgia plástica, com atendimento domiciliar personalizado.", result: "Agenda Lotada", url: "https://www.paulacromao.com.br/" },
+    { name: "Paula Romão", niche: "Estética & Saúde", desc: "Fisioterapeuta especializada em pós-operatório de cirurgia plástica, com atendimento domiciliar personalizado.", result: "Agenda Lotada", url: "https://www.paulacromao.com.br/" },
     { name: "Gladys Religiosos", niche: "Varejo Especializado", desc: "Principal e-commerce de artigos sacros e religiosos do mercado brasileiro.", result: "E-commerce Escalonável", url: "https://www.gladysreligiosos.com.br/", customLogo: gladysLogo },
   ];
 
