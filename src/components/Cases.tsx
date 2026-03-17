@@ -72,11 +72,7 @@ const Cases: React.FC = () => {
       </div>
 
       {/* Carousel */}
-      <div className="relative group/carousel cursor-grab active:cursor-grabbing" role="region" aria-roledescription="carousel" aria-label="Projetos e Clientes">
-        <div className="absolute left-0 top-0 bottom-0 w-16 md:w-60 bg-gradient-to-r from-[#050505] via-[#050505]/80 to-transparent z-20 pointer-events-none"></div>
-        <div className="absolute right-0 top-0 bottom-0 w-16 md:w-60 bg-gradient-to-l from-[#050505] via-[#050505]/80 to-transparent z-20 pointer-events-none"></div>
-
-        <div className="flex animate-marquee gap-4 md:gap-6 py-8 md:py-10 px-4 md:px-6 touch-pan-x">
+      <DraggableCarousel allClients={allClients} getFaviconUrl={getFaviconUrl} />
           {[...allClients, ...allClients].map((client, idx) => (
             <a
               key={idx}
