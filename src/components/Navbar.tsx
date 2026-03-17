@@ -67,7 +67,7 @@ const Navbar: React.FC = () => {
                 </a>
               )
             )}
-            <a href={isHome ? '#contato' : '/#contato'} onClick={() => trackCtaClick('agendar_call', 'navbar')} className="gold-bg text-black px-8 py-3 rounded-xl text-xs font-black uppercase tracking-widest hover:scale-[1.05] hover:shadow-yellow-500/20 shadow-xl transition-all">
+            <a href={isHome ? '#contato' : '/#contato'} onClick={() => trackCtaClick('agendar_call', 'navbar')} className="gold-bg text-black px-6 py-2.5 rounded-xl text-xs font-bold uppercase tracking-widest hover:scale-[1.05] hover:shadow-yellow-500/20 shadow-lg transition-all">
               Agendar Call
             </a>
           </div>
@@ -108,7 +108,7 @@ const Navbar: React.FC = () => {
             )}
             <a
               href={isHome ? '#contato' : '/#contato'}
-              className="gold-bg text-black w-full py-5 rounded-2xl text-center font-black text-xl shadow-2xl mt-8"
+              className="gold-bg text-black w-full py-3.5 rounded-xl text-center font-bold text-base shadow-xl mt-8"
               onClick={() => setIsMenuOpen(false)}
             >
               Começar Agora
