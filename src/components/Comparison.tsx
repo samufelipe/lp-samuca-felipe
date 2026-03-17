@@ -1,5 +1,6 @@
 import React from 'react';
-import { X, Check } from 'lucide-react';
+import { X, Check, ChevronRight } from 'lucide-react';
+import { trackCtaClick } from '@/lib/gtm';
 import ScrollReveal from './ScrollReveal';
 
 const comparisonItems = [
