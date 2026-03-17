@@ -9,8 +9,120 @@ import ciatripLogo from '@/assets/ciatrip-logo.jpg';
 import ituranLogo from '@/assets/ituran-logo.jpg';
 import valemLogo from '@/assets/valem-logo.png';
 
+interface ClientData {
+  name: string;
+  niche: string;
+  desc: string;
+  result: string;
+  url: string;
+  customLogo?: string;
+}
+
+const DraggableCarousel: React.FC<{ allClients: ClientData[]; getFaviconUrl: (url: string) => string }> = ({ allClients, getFaviconUrl }) => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [isDragging, setIsDragging] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [scrollLeft, setScrollLeft] = useState(0);
+  const dragDistanceRef = useRef(0);
+
+  const handleMouseDown = useCallback((e: React.MouseEvent) => {
+    if (!containerRef.current) return;
+    setIsDragging(true);
+    setStartX(e.pageX - containerRef.current.offsetLeft);
+    setScrollLeft(containerRef.current.scrollLeft);
+    dragDistanceRef.current = 0;
+  }, []);
+
+  const handleMouseMove = useCallback((e: React.MouseEvent) => {
+    if (!isDragging || !containerRef.current) return;
+    e.preventDefault();
+    const x = e.pageX - containerRef.current.offsetLeft;
+    const walk = (x - startX) * 1.5;
+    dragDistanceRef.current = Math.abs(walk);
+    containerRef.current.scrollLeft = scrollLeft - walk;
+  }, [isDragging, startX, scrollLeft]);
+
+  const handleMouseUp = useCallback(() => {
+    setIsDragging(false);
+  }, []);
+
+  const handleClick = useCallback((e: React.MouseEvent, clientName: string, clientUrl: string) => {
+    if (dragDistanceRef.current > 5) {
+      e.preventDefault();
+      return;
+    }
+    trackCaseClick(clientName, clientUrl);
+  }, []);
+
+  return (
+    <div className="relative" role="region" aria-roledescription="carousel" aria-label="Projetos e Clientes">
+      <div className="absolute left-0 top-0 bottom-0 w-16 md:w-60 bg-gradient-to-r from-[#050505] via-[#050505]/80 to-transparent z-20 pointer-events-none"></div>
+      <div className="absolute right-0 top-0 bottom-0 w-16 md:w-60 bg-gradient-to-l from-[#050505] via-[#050505]/80 to-transparent z-20 pointer-events-none"></div>
+
+      <div
+        ref={containerRef}
+        className={`flex gap-4 md:gap-6 py-8 md:py-10 px-4 md:px-6 overflow-x-auto scrollbar-hide ${isDragging ? 'cursor-grabbing' : 'cursor-grab'}`}
+        style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+        onMouseDown={handleMouseDown}
+        onMouseMove={handleMouseMove}
+        onMouseUp={handleMouseUp}
+        onMouseLeave={handleMouseUp}
+      >
+        {[...allClients, ...allClients].map((client, idx) => (
+          <a
+            key={idx}
+            href={client.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={(e) => handleClick(e, client.name, client.url)}
+            className="min-w-[200px] md:min-w-[240px] group/card select-none"
+            draggable={false}
+            role="group"
+            aria-roledescription="slide"
+            aria-label={client.name}
+          >
+            <div className="rounded-xl p-4 md:p-5 h-full flex flex-col gap-3 md:gap-4 border border-white/[0.06] hover:border-yellow-500/20 transition-all duration-500 relative overflow-hidden bg-white/[0.02] backdrop-blur-sm hover:bg-white/[0.04]">
+              <div className="absolute -top-8 -right-8 w-24 h-24 bg-yellow-500/0 blur-[30px] pointer-events-none group-hover/card:bg-yellow-500/[0.08] transition-all duration-700"></div>
+
+              <div className="flex flex-col gap-2">
+                <div className="w-20 h-20 md:w-24 md:h-24 rounded-xl border border-yellow-500/20 overflow-hidden bg-white/10 flex-shrink-0 p-3 group-hover/card:border-yellow-500/40 group-hover/card:bg-white/15 transition-all duration-500">
+                  <img
+                    src={client.customLogo || getFaviconUrl(client.url)}
+                    alt={`${client.name} logo`}
+                    className="w-full h-full object-contain pointer-events-none"
+                    loading="lazy"
+                    draggable={false}
+                  />
+                </div>
+                <h4 className="text-sm md:text-base font-bold text-white group-hover/card:text-yellow-500 transition-colors leading-tight tracking-tight">
+                  {client.name}
+                </h4>
+                <div className="flex items-center gap-1.5">
+                  <span className="w-[3px] h-[3px] rounded-full bg-yellow-500/40"></span>
+                  <span className="text-[8px] text-gray-500 uppercase tracking-widest font-medium">{client.niche}</span>
+                </div>
+              </div>
+
+              <p className="text-[11px] md:text-xs text-gray-400 font-light leading-relaxed line-clamp-2">{client.desc}</p>
+
+              <div className="flex items-center justify-between mt-auto pt-2 border-t border-white/[0.04]">
+                <span className="text-[8px] md:text-[9px] font-bold text-yellow-500/60 uppercase tracking-wider">Ver Projeto</span>
+                <ArrowUpRight size={12} className="text-white/20 group-hover/card:text-yellow-500 group-hover/card:translate-x-0.5 group-hover/card:-translate-y-0.5 transition-all duration-300" />
+              </div>
+            </div>
+          </a>
+        ))}
+      </div>
+
+      <style>{`
+        .scrollbar-hide::-webkit-scrollbar { display: none; }
+      `}</style>
+    </div>
+  );
+};
+
 const Cases: React.FC = () => {
-  const allClients = [
+  const allClients: ClientData[] = [
     { name: "Móveis Bechara", niche: "Indústria Moveleira", desc: "Líder na fabricação de móveis modernos com design funcional e distribuição nacional.", result: "Escala Nacional", url: "https://moveisbechara.com.br/", customLogo: becharaLogo },
     { name: "FAS Iluminação", niche: "Design & Luxo", desc: "Curadoria de iluminação técnica e decorativa internacional de alto padrão.", result: "Posicionamento Premium", url: "https://fasiluminacao.com.br/", customLogo: fasLogo },
     { name: "Grupo AL7 Motos", niche: "Setor Automotivo", desc: "Concessionária Dafra com venda de motos 0km, seminovas, peças, consórcio e seguros.", result: "Autoridade Local", url: "https://grupoal7.com.br/" },
@@ -73,54 +185,6 @@ const Cases: React.FC = () => {
 
       {/* Carousel */}
       <DraggableCarousel allClients={allClients} getFaviconUrl={getFaviconUrl} />
-          {[...allClients, ...allClients].map((client, idx) => (
-            <a
-              key={idx}
-              href={client.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => trackCaseClick(client.name, client.url)}
-              className="min-w-[200px] md:min-w-[240px] group/card"
-              role="group"
-              aria-roledescription="slide"
-              aria-label={`${client.name}`}
-            >
-              <div className="rounded-xl p-4 md:p-5 h-full flex flex-col gap-3 md:gap-4 border border-white/[0.06] hover:border-yellow-500/20 transition-all duration-500 relative overflow-hidden bg-white/[0.02] backdrop-blur-sm hover:bg-white/[0.04]">
-                {/* Hover glow */}
-                <div className="absolute -top-8 -right-8 w-24 h-24 bg-yellow-500/0 blur-[30px] pointer-events-none group-hover/card:bg-yellow-500/[0.08] transition-all duration-700"></div>
-
-                {/* Logo + Name + Niche */}
-                <div className="flex flex-col gap-2">
-                  <div className="w-20 h-20 md:w-24 md:h-24 rounded-xl border border-yellow-500/20 overflow-hidden bg-white/10 flex-shrink-0 p-3 group-hover/card:border-yellow-500/40 group-hover/card:bg-white/15 transition-all duration-500">
-                    <img
-                      src={client.customLogo || getFaviconUrl(client.url)}
-                      alt={`${client.name} logo`}
-                      className="w-full h-full object-contain"
-                      loading="lazy"
-                    />
-                  </div>
-                  <h4 className="text-sm md:text-base font-bold text-white group-hover/card:text-yellow-500 transition-colors leading-tight tracking-tight">
-                    {client.name}
-                  </h4>
-                  <div className="flex items-center gap-1.5">
-                    <span className="w-[3px] h-[3px] rounded-full bg-yellow-500/40"></span>
-                    <span className="text-[8px] text-gray-500 uppercase tracking-widest font-medium">{client.niche}</span>
-                  </div>
-                </div>
-
-                {/* Description */}
-                <p className="text-[11px] md:text-xs text-gray-400 font-light leading-relaxed line-clamp-2">{client.desc}</p>
-
-                {/* Result + Arrow */}
-                <div className="flex items-center justify-between mt-auto pt-2 border-t border-white/[0.04]">
-                  <span className="text-[8px] md:text-[9px] font-bold text-yellow-500/60 uppercase tracking-wider">Ver Projeto</span>
-                  <ArrowUpRight size={12} className="text-white/20 group-hover/card:text-yellow-500 group-hover/card:translate-x-0.5 group-hover/card:-translate-y-0.5 transition-all duration-300" />
-                </div>
-              </div>
-            </a>
-          ))}
-        </div>
-      </div>
 
       {/* Bottom Authority Bar */}
       <div className="max-w-7xl mx-auto px-6 mt-12 md:mt-24">
@@ -141,32 +205,6 @@ const Cases: React.FC = () => {
           </div>
         </ScrollReveal>
       </div>
-
-      <style>{`
-        @keyframes marquee {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(calc(-200px * 14 - 14 * 16px)); }
-        }
-        @media (min-width: 768px) {
-          @keyframes marquee {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(calc(-240px * 14 - 14 * 24px)); }
-          }
-        }
-        .animate-marquee {
-          display: flex;
-          width: fit-content;
-          animation: marquee 45s linear infinite;
-        }
-        .animate-marquee:hover, .animate-marquee:focus-within {
-          animation-play-state: paused;
-        }
-        @media (max-width: 768px) {
-          .animate-marquee {
-            animation-duration: 30s;
-          }
-        }
-      `}</style>
     </section>
   );
 };
