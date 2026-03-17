@@ -20,7 +20,7 @@ const Hero: React.FC = () => {
                 <br className="sm:hidden" />
                 Mais Vendas.
                 <br />
-                <span className="gold-gradient italic playfair font-medium">Gestor de Tráfego Pago.</span>
+                <span className="gold-gradient italic playfair font-medium">Mídia Paga de Verdade.</span>
               </h1>
             </ScrollReveal>
 
