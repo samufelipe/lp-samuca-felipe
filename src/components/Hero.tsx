@@ -92,17 +92,17 @@ const Hero: React.FC = () => {
               <div
                 className="relative z-10 w-full h-full group"
                 style={{
-                  maskImage: 'radial-gradient(ellipse 70% 70% at center, black 50%, transparent 100%)',
-                  WebkitMaskImage: 'radial-gradient(ellipse 70% 70% at center, black 50%, transparent 100%)',
+                  maskImage: 'radial-gradient(ellipse 75% 75% at center, black 60%, transparent 100%)',
+                  WebkitMaskImage: 'radial-gradient(ellipse 75% 75% at center, black 60%, transparent 100%)',
                 }}
               >
                 <img
                   src={samuelPhoto}
-                  className="w-full h-full object-cover object-[center_15%] brightness-[0.55] contrast-[1.1] saturate-[0.9] md:brightness-[0.60] md:contrast-[1.12] lg:brightness-[0.65] md:group-hover:brightness-[0.75] md:group-hover:scale-105 transition-all duration-1000"
+                  className="w-full h-full object-cover object-[center_15%] brightness-[0.75] contrast-[1.08] saturate-[0.95] md:brightness-[0.80] md:contrast-[1.1] lg:brightness-[0.85] md:group-hover:brightness-[0.90] md:group-hover:scale-105 transition-all duration-1000"
                   alt="Samuel Felipe - Estrategista de Mídia Paga"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent pointer-events-none"></div>
-                <div className="absolute inset-0 bg-gradient-to-r from-background/30 via-transparent to-transparent pointer-events-none"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent pointer-events-none"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-background/20 via-transparent to-transparent pointer-events-none"></div>
               </div>
             </ScrollReveal>
           </div>
