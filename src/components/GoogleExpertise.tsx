@@ -109,7 +109,7 @@ const GoogleExpertise: React.FC = () => {
             <div className="absolute -inset-0.5 bg-gradient-to-r from-transparent via-yellow-500/20 to-transparent rounded-3xl blur opacity-30 group-hover:opacity-60 transition-opacity"></div>
             <div className="relative glass-card rounded-3xl p-8 md:p-12 text-center border-white/5">
               <h4 className="text-xl md:text-3xl font-black mb-3 tracking-tight">
-                Estratégia Certificada + Tecnologia + <span className="gold-gradient">4 Anos de Campo</span>
+                Estratégia Certificada + Tecnologia + <span className="gold-gradient">5 Anos de Mercado Digital</span>
               </h4>
               <p className="text-gray-500 text-sm md:text-lg font-medium max-w-2xl mx-auto mb-8">
                 A união entre certificação Google, desenvolvimento de soluções digitais com IA e a experiência de quem já geriu +R$ 7 milhões em mídia paga.

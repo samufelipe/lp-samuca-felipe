@@ -4,7 +4,7 @@ import ScrollReveal from './ScrollReveal';
 
 const Stats: React.FC = () => {
   const stats = [
-    { label: "+4 Anos", sub: "de Campo", icon: <Briefcase /> },
+    { label: "+5 Anos", sub: "de Mercado Digital", icon: <Briefcase /> },
     { label: "+7M", sub: "em Mídia Gerida", icon: <TrendingUp /> },
     { label: "+800K", sub: "Leads Gerados", icon: <Users /> },
     { label: "+170", sub: "Projetos Entregues", icon: <Trophy /> },
