@@ -92,7 +92,7 @@ const Hero: React.FC = () => {
               <div className="relative z-10 w-full h-full overflow-hidden group">
                 <img
                   src={samuelPhoto}
-                  className="w-full h-full object-cover object-[center_15%] grayscale brightness-90 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000"
+                  className="w-full h-full object-cover object-[center_15%] grayscale brightness-[0.65] md:brightness-[0.80] group-hover:grayscale-0 group-hover:brightness-90 group-hover:scale-105 transition-all duration-1000"
                   alt="Samuel Felipe - Estrategista de Mídia Paga"
                 />
                 {/* Smooth bottom fade into background */}
