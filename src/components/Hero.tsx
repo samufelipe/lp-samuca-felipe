@@ -92,7 +92,7 @@ const Hero: React.FC = () => {
               <div className="relative z-10 w-full h-full overflow-hidden group">
                 <img
                   src={samuelPhoto}
-                  className="w-full h-full object-cover object-[center_15%] brightness-[0.82] contrast-[1.05] saturate-[0.9] md:brightness-[0.85] md:contrast-[1.08] lg:brightness-[0.88] md:group-hover:brightness-[0.95] md:group-hover:scale-105 transition-all duration-1000"
+                  className="w-full h-full object-cover object-[center_15%] brightness-[0.55] contrast-[1.1] saturate-[0.9] md:brightness-[0.60] md:contrast-[1.12] lg:brightness-[0.65] md:group-hover:brightness-[0.75] md:group-hover:scale-105 transition-all duration-1000"
                   alt="Samuel Felipe - Estrategista de Mídia Paga"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background via-background/10 to-transparent pointer-events-none"></div>
