@@ -87,16 +87,16 @@ const Hero: React.FC = () => {
           <div className="w-full lg:flex-1 order-1 lg:order-2 flex justify-center lg:justify-end">
             <ScrollReveal className="relative w-72 h-72 sm:w-96 sm:h-96 md:w-[500px] md:h-[500px]">
               {/* Golden glow behind image — reduced on mobile */}
-              <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(197,160,89,0.06)_0%,_transparent_70%)] md:bg-[radial-gradient(ellipse_at_center,_rgba(197,160,89,0.12)_0%,_transparent_70%)] blur-[60px] scale-110 pointer-events-none"></div>
+              <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(197,160,89,0.03)_0%,_transparent_70%)] md:bg-[radial-gradient(ellipse_at_center,_rgba(197,160,89,0.06)_0%,_transparent_70%)] blur-[60px] scale-110 pointer-events-none"></div>
 
               <div className="relative z-10 w-full h-full overflow-hidden group">
                 <img
                   src={samuelPhoto}
-                  className="w-full h-full object-cover object-[center_15%] grayscale brightness-[0.48] contrast-[1.08] saturate-[0.88] md:brightness-[0.58] md:contrast-[1.1] lg:brightness-[0.66] md:group-hover:grayscale-0 md:group-hover:brightness-[0.72] md:group-hover:scale-105 transition-all duration-1000"
+                  className="w-full h-full object-cover object-[center_15%] brightness-[0.82] contrast-[1.05] saturate-[0.9] md:brightness-[0.85] md:contrast-[1.08] lg:brightness-[0.88] md:group-hover:brightness-[0.95] md:group-hover:scale-105 transition-all duration-1000"
                   alt="Samuel Felipe - Estrategista de Mídia Paga"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-background via-background/25 to-background/5 pointer-events-none"></div>
-                <div className="absolute inset-0 bg-gradient-to-r from-background/30 via-transparent to-background/10 pointer-events-none"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-background via-background/10 to-transparent pointer-events-none"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-background/15 via-transparent to-transparent pointer-events-none"></div>
               </div>
             </ScrollReveal>
           </div>
