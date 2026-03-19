@@ -1,54 +1,48 @@
 
+Objetivo: corrigir a foto da Hero para ela ficar mais nítida, sólida e com contraste natural, sem aparência “lavada” ou translúcida.
 
-## Plano: Redesign do Carrossel de Clientes
+1. Diagnóstico do problema no código atual
+- A imagem está com filtros muito agressivos em `src/components/Hero.tsx`: `grayscale`, `brightness-[0.48]`, `md:brightness-[0.58]`, `lg:brightness-[0.66]`, além de `contrast` e `saturate`.
+- Existem 2 overlays por cima da foto (`bg-gradient-to-t` e `bg-gradient-to-r`) que escurecem e “apagam” detalhes.
+- Há também um glow dourado atrás da imagem que pode reduzir a leitura do contorno, principalmente em telas menores.
+- O efeito de `ScrollReveal` aplica `opacity` e `blur` na entrada; se a sensação de transparência persistir visualmente, vou garantir que a foto final não dependa desse efeito para parecer visível.
 
-### Problema Atual
-Os cards do carrossel estao com dimensoes exageradas (260-380px de largura x 360-480px de altura), com muitos elementos visuais (estrelas, icone Globe, badges grandes, botao "Ver Projeto" ocupando largura total). Isso deixa o layout pesado e pouco elegante.
+2. Ajuste que vou aplicar
+- Remover o `grayscale` da foto.
+- Trocar os filtros por um tratamento muito mais leve, priorizando nitidez:
+  - brilho mais próximo do natural
+  - contraste moderado
+  - saturação discreta
+- Reduzir bastante a força dos overlays escuros para eles apenas integrarem a imagem ao fundo, sem “cobrir” o rosto.
+- Reduzir o glow dourado atrás da imagem para evitar sensação de imagem estourada.
+- Manter hover discreto no desktop, sem alterar drasticamente brilho ou cor.
 
-### Novo Design: Cards Compactos e Minimalistas
+3. Resultado esperado
+- Foto com aparência mais real e definida.
+- Melhor leitura do rosto no mobile e desktop.
+- Menos sensação de transparência/fade.
+- Visual premium, mas sem sacrificar naturalidade.
 
-**Dimensoes novas dos cards:**
-- Mobile: `200px` de largura, altura automatica (~200px)
-- Desktop: `240px` de largura, altura automatica (~220px)
+4. Arquivo a ajustar
+- `src/components/Hero.tsx`
 
-**Estrutura do novo card:**
+5. Direção técnica exata
 ```text
-+---------------------------+
-|  [Logo]  28x28            |
-|  Nome do Cliente           |
-|  ·  Nicho                 |
-|                            |
-|  Descricao curta (2 lines) |
-|                            |
-|  Resultado  ->             |
-+---------------------------+
+Atual:
+- grayscale
+- brightness muito baixo e compensado por overlays
+- 2 camadas fortes por cima da imagem
+- glow ainda influenciando a leitura
+
+Novo:
+- sem grayscale
+- brilho/controlado, sem escurecer demais
+- contraste leve para nitidez
+- overlays mais sutis
+- glow reduzido
 ```
 
-**Elementos do card:**
-1. **Logo do cliente** -- Imagem carregada via favicon do dominio do cliente (`https://www.google.com/s2/favicons?domain=URL&sz=64`), exibida em `28x28` com borda sutil dourada e `rounded-lg`
-2. **Nome** -- Fonte bold, tamanho reduzido (`text-sm` / `text-base`), branco, sem uppercase
-3. **Nicho** -- Tag inline discreta com dot dourado, texto `text-[8px]` em cinza
-4. **Descricao** -- `text-xs`, cinza claro, `line-clamp-2`, font-light
-5. **Resultado + link** -- Linha inferior com o resultado como badge sutil e seta de link para o site, tudo compacto
-
-**Elementos removidos:**
-- 5 estrelas (redundante)
-- Icone Globe grande no canto
-- Botao "Ver Projeto" de largura total (substituido por link discreto com seta)
-- Padding excessivo (`p-8` vira `p-4`/`p-5`)
-- Bordas arredondadas exageradas (`rounded-[2rem]` vira `rounded-xl`)
-
-### Ajustes no Marquee
-- Recalcular os `@keyframes marquee` com as novas larguras (200px mobile, 240px desktop)
-- Reduzir o gap entre cards de `gap-6/10` para `gap-4/6`
-- Ajustar velocidade da animacao para manter ritmo agradavel
-
-### Hover do Card
-- Borda muda para `border-yellow-500/20`
-- Glow dourado sutil no background
-- Nome fica dourado
-- Seta do link faz `translate-x`
-
-### Arquivo Modificado
-- `src/components/Cases.tsx` -- Redesign completo do card, adicao de logos via favicon, recalculo do marquee
-
+6. Validação depois da implementação
+- Conferir no mobile se o rosto continua legível sem parecer “apagado”.
+- Conferir no desktop se a imagem não volta a ficar clara demais.
+- Ajustar finamente apenas um destes pontos, se necessário: brilho, contraste ou overlay; não todos ao mesmo tempo, para evitar novo efeito lavado.
