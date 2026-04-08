@@ -1,5 +1,5 @@
 import React from 'react';
-import { ChevronRight, Star, Handshake, TrendingUp, Code, Cpu } from 'lucide-react';
+import { ChevronRight, Star, Handshake, TrendingUp, Code, Cpu, Rocket, Heart, Briefcase } from 'lucide-react';
 import samuelPhoto from '@/assets/samuel-felipe.jpeg';
 import avatar1 from '@/assets/avatar-1.jpg';
 import avatar2 from '@/assets/avatar-2.jpg';
@@ -28,11 +28,25 @@ const Hero: React.FC = () => {
             </ScrollReveal>
 
             <ScrollReveal stagger={1}>
-              <p className="text-base md:text-xl text-gray-400 mb-10 max-w-xl mx-auto lg:mx-0 font-light">
-                <span className="hidden sm:inline"><strong className="text-white">Cansou de pagar caro e não ter resultado?</strong> De ser só mais um número na carteira de uma agência? Aqui seu projeto é exclusivo: acompanhamento próximo, reports ágeis e decisões em conjunto. Sem filas, sem templates, sem rotatividade. </span>
-                <span className="sm:hidden"><strong className="text-white">Cansou de gastar sem resultado?</strong> Aqui é diferente: projeto exclusivo, atendimento direto e decisões em conjunto. </span>
+              <p className="text-base md:text-xl text-gray-400 mb-6 max-w-xl mx-auto lg:mx-0 font-light">
+                <span className="hidden sm:inline"><strong className="text-white">Cansou de pagar caro e não ter resultado?</strong> Especializado em <strong className="text-white">infoprodutores</strong>, <strong className="text-white">clínicas de estética</strong> e <strong className="text-white">times comerciais</strong> que precisam de leads reais. Projeto exclusivo, atendimento direto e decisões em conjunto. </span>
+                <span className="sm:hidden"><strong className="text-white">Cansou de gastar sem resultado?</strong> Especialista em <strong className="text-white">infoprodutos</strong>, <strong className="text-white">clínicas</strong> e <strong className="text-white">times comerciais</strong>. Projeto exclusivo, atendimento direto. </span>
                 <strong className="text-white">+7 milhões geridos.</strong>
               </p>
+            </ScrollReveal>
+
+            <ScrollReveal stagger={1.5}>
+              <div className="flex flex-wrap justify-center lg:justify-start gap-2 mb-10">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-semibold text-gray-300">
+                  <Rocket size={13} className="text-yellow-500" /> Infoprodutos
+                </span>
+                <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-semibold text-gray-300">
+                  <Heart size={13} className="text-pink-400" /> Clínicas & Estética
+                </span>
+                <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-semibold text-gray-300">
+                  <Briefcase size={13} className="text-blue-400" /> Times Comerciais
+                </span>
+              </div>
             </ScrollReveal>
 
             <ScrollReveal stagger={2}>
