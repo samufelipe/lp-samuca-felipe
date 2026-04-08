@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { trackWhatsAppClick } from '@/lib/gtm';
+import { useWhatsAppDialog } from '@/hooks/useWhatsAppDialog';
 import {
   Dialog,
   DialogContent,
@@ -25,7 +26,7 @@ const investmentOptions = [
 ];
 
 const WhatsAppButton: React.FC = () => {
-  const [open, setOpen] = useState(false);
+  const { isOpen, openWhatsApp, closeWhatsApp } = useWhatsAppDialog();
   const [name, setName] = useState('');
   const [investment, setInvestment] = useState('');
   const [nameError, setNameError] = useState('');
@@ -64,7 +65,7 @@ const WhatsAppButton: React.FC = () => {
   return (
     <>
       <button
-        onClick={() => setOpen(true)}
+        onClick={openWhatsApp}
         className="fixed bottom-6 right-6 md:bottom-10 md:right-10 z-[100] group flex items-center justify-center"
         aria-label="Falar no WhatsApp"
       >
@@ -81,7 +82,7 @@ const WhatsAppButton: React.FC = () => {
         </div>
       </button>
 
-      <Dialog open={open} onOpenChange={setOpen}>
+      <Dialog open={isOpen} onOpenChange={(open) => open ? openWhatsApp() : closeWhatsApp()}>
         <DialogContent className="bg-[#0a0a0a] border-white/10 text-white max-w-md">
           <DialogHeader>
             <DialogTitle className="text-xl font-bold text-white">

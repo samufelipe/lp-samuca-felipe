@@ -6,6 +6,7 @@ import avatar2 from '@/assets/avatar-2.jpg';
 import avatar3 from '@/assets/avatar-3.jpg';
 import ScrollReveal from './ScrollReveal';
 import { trackCtaClick } from '@/lib/gtm';
+import { useWhatsAppDialog } from '@/hooks/useWhatsAppDialog';
 
 const Hero: React.FC = () => {
   return (
@@ -35,17 +36,17 @@ const Hero: React.FC = () => {
 
             <ScrollReveal stagger={2}>
               <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-6 mb-14">
-                <a href="#contato" className="group relative w-auto max-w-xs sm:max-w-none shrink-0" onClick={() => trackCtaClick('solicitar_diagnostico', 'hero')}>
-                  <div className="absolute -inset-1 bg-gradient-to-r from-yellow-600 to-yellow-400 rounded-xl blur opacity-30 group-hover:opacity-60 transition duration-1000 group-hover:duration-200"></div>
-                  <button className="relative px-6 py-3 bg-gradient-to-r from-yellow-500 to-yellow-600 text-black rounded-xl font-bold text-xs sm:text-sm md:text-base flex items-center justify-center gap-2 hover:translate-y-[-2px] transition-all shadow-xl active:scale-95 whitespace-nowrap">
+                <button onClick={() => { trackCtaClick('solicitar_diagnostico', 'hero'); openWhatsApp(); }} className="group relative w-auto max-w-xs sm:max-w-none shrink-0">
+                  <div className="absolute -inset-1 bg-gradient-to-r from-[#25D366] to-[#20bd5a] rounded-xl blur opacity-30 group-hover:opacity-60 transition duration-1000 group-hover:duration-200"></div>
+                  <div className="relative px-6 py-3 bg-gradient-to-r from-[#25D366] to-[#20bd5a] text-white rounded-xl font-bold text-xs sm:text-sm md:text-base flex items-center justify-center gap-2 hover:translate-y-[-2px] transition-all shadow-xl active:scale-95 whitespace-nowrap">
                     Solicitar Diagnóstico Gratuito <ChevronRight size={18} className="group-hover:translate-x-1 transition-transform" />
-                  </button>
+                  </div>
                   <div className="mt-2 text-center lg:text-left">
                     <span className="text-[9px] text-yellow-500/70 uppercase font-black tracking-widest flex items-center justify-center lg:justify-start gap-1">
                        Atendimento limitado a poucos projetos simultâneos
                     </span>
                   </div>
-                </a>
+                </button>
 
                 <div className="flex items-center gap-4 px-6 py-5 lg:ml-4">
                   <div className="flex -space-x-3">

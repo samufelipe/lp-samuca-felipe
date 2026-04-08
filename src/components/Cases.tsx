@@ -205,10 +205,10 @@ const Cases: React.FC = () => {
               </div>
             </div>
 
-            <a href="#contato" onClick={() => trackCtaClick('diagnostico_semelhante', 'cases_section')} className="flex items-center gap-2 group cursor-pointer">
+            <button onClick={() => { trackCtaClick('diagnostico_semelhante', 'cases_section'); openWhatsApp(); }} className="flex items-center gap-2 group cursor-pointer">
               <span className="text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-gray-500 group-hover:text-white transition-colors">Solicitar Diagnóstico Semelhante</span>
-              <ArrowRight size={14} className="text-yellow-500 group-hover:translate-x-2 transition-transform" />
-            </a>
+              <ArrowRight size={14} className="text-[#25D366] group-hover:translate-x-2 transition-transform" />
+            </button>
           </div>
         </ScrollReveal>
       </div>

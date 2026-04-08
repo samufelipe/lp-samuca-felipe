@@ -1,6 +1,7 @@
 import React from 'react';
 import { DollarSign, UserX, FileX, ShieldOff } from 'lucide-react';
 import ScrollReveal from './ScrollReveal';
+import { useWhatsAppDialog } from '@/hooks/useWhatsAppDialog';
 
 const pains = [
   { icon: <DollarSign />, title: "Dinheiro jogado fora", desc: "Você investe rios de dinheiro e não sabe para onde vai. Sem clareza, sem retorno." },
@@ -40,9 +41,9 @@ const PainPoints: React.FC = () => {
             <p className="text-lg md:text-2xl font-black text-white mb-3">
               Existe um jeito diferente de fazer isso.
             </p>
-            <a href="#contato" className="inline-flex items-center gap-2 text-yellow-500 font-bold text-sm uppercase tracking-widest hover:text-white transition-colors">
+            <button onClick={openWhatsApp} className="inline-flex items-center gap-2 text-[#25D366] font-bold text-sm uppercase tracking-widest hover:text-white transition-colors">
               Descubra como <span className="ml-1">→</span>
-            </a>
+            </button>
           </div>
         </ScrollReveal>
       </div>

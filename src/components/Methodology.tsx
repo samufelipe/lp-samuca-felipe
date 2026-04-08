@@ -1,6 +1,7 @@
 import React from 'react';
 import { Target, Search, BarChart3, Rocket } from 'lucide-react';
 import ScrollReveal from './ScrollReveal';
+import { useWhatsAppDialog } from '@/hooks/useWhatsAppDialog';
 
 const Methodology: React.FC = () => {
   const steps = [
@@ -21,9 +22,9 @@ const Methodology: React.FC = () => {
               <p className="text-gray-400 text-lg md:text-xl mb-10 font-light">
                 Um processo testado em +170 projetos para gerar demanda comercial, escalar infoprodutos e posicionar marcas — do diagnóstico à escala.
               </p>
-              <a href="#contato" className="inline-flex items-center gap-3 text-white font-bold border-b-2 border-yellow-500 pb-2 hover:gap-5 transition-all">
+              <button onClick={openWhatsApp} className="inline-flex items-center gap-3 text-white font-bold border-b-2 border-[#25D366] pb-2 hover:gap-5 transition-all">
                 Aplicar ao Seu Negócio <Target size={20} />
-              </a>
+              </button>
             </ScrollReveal>
           </div>
 
