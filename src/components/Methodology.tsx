@@ -23,8 +23,8 @@ const Methodology: React.FC = () => {
               <p className="text-gray-400 text-lg md:text-xl mb-10 font-light">
                 Um processo testado em +170 projetos para gerar demanda comercial, escalar infoprodutos e posicionar marcas — do diagnóstico à escala.
               </p>
-              <button onClick={openWhatsApp} className="inline-flex items-center gap-3 text-white font-bold border-b-2 border-[#25D366] pb-2 hover:gap-5 transition-all">
-                Aplicar ao Seu Negócio <Target size={20} />
+              <button onClick={openWhatsApp} className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#25D366] to-[#20bd5a] text-white rounded-xl font-bold text-xs sm:text-sm hover:translate-y-[-2px] transition-all shadow-xl active:scale-95">
+                Aplicar ao Seu Negócio <ChevronRight size={18} />
               </button>
             </ScrollReveal>
           </div>

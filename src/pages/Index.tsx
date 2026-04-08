@@ -58,8 +58,8 @@ const Index: React.FC = () => {
             </div>
 
             <div className="text-center mt-12">
-              <button onClick={openWhatsApp} className="inline-flex items-center gap-2 text-[#25D366] font-bold text-sm uppercase tracking-widest hover:text-white transition-colors">
-                Ainda tem dúvidas? Fale comigo <span className="ml-1">→</span>
+              <button onClick={openWhatsApp} className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#25D366] to-[#20bd5a] text-white rounded-xl font-bold text-xs sm:text-sm hover:translate-y-[-2px] transition-all shadow-xl active:scale-95">
+                Ainda tem dúvidas? Fale comigo <ChevronRight size={18} />
               </button>
             </div>
           </div>
