@@ -7,7 +7,7 @@ const Methodology: React.FC = () => {
     { title: "Diagnóstico de Demanda", desc: "Entendemos seu mercado, concorrência e oportunidades reais de geração de leads e vendas antes de investir um centavo.", icon: <Search /> },
     { title: "Estrutura de Campanhas & Funil", desc: "Criamos campanhas, landing pages e funis otimizados para converter visitantes em clientes pagantes.", icon: <Target /> },
     { title: "Escala Controlada", desc: "Aumentamos o investimento com inteligência, garantindo que cada real a mais traga retorno proporcional.", icon: <Rocket /> },
-    { title: "Otimização Contínua & Dados", desc: "Relatórios claros, ajustes diários e foco total em lucratividade. Você sabe exatamente quanto está ganhando.", icon: <BarChart3 /> },
+    { title: "Acompanhamento Próximo", desc: "Reports semanais sob medida, reuniões de alinhamento e decisões tomadas junto com você. Sem surpresas, sem distância.", icon: <BarChart3 /> },
   ];
 
   return (

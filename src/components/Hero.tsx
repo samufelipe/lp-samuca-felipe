@@ -19,15 +19,15 @@ const Hero: React.FC = () => {
           <div className="w-full lg:flex-1 text-center lg:text-left order-2 lg:order-1">
             <ScrollReveal className="overflow-hidden">
               <h1 className="mask-reveal text-[2.1rem] leading-[1.1] sm:text-5xl md:text-7xl lg:text-[5.5rem] font-black mb-8 text-white">
-                Mais Demanda.{' '}
+                Seu Negócio Merece{' '}
                 <br className="sm:hidden" />
-                Mais Vendas.
+                <span className="gold-gradient italic playfair">Mais que uma Agência.</span>
               </h1>
             </ScrollReveal>
 
             <ScrollReveal stagger={1}>
               <p className="text-lg md:text-xl text-gray-400 mb-10 max-w-xl mx-auto lg:mx-0 font-light">
-                Estratégias de tráfego pago para lotar a agenda de times comerciais, escalar infoprodutos e gerar demanda para profissionais da saúde, educação e serviços. Landing Pages, sites e apps com IA. <strong className="text-white">+7 milhões geridos em mídia paga.</strong>
+                Estratégia exclusiva de mídia paga com acompanhamento próximo, reports ágeis e decisões em conjunto. Sem filas de atendimento, sem templates, sem rotatividade de analistas. <strong className="text-white">+7 milhões geridos em mídia paga.</strong>
               </p>
             </ScrollReveal>
 
@@ -40,7 +40,7 @@ const Hero: React.FC = () => {
                   </button>
                   <div className="mt-2 text-center lg:text-left">
                     <span className="text-[9px] text-yellow-500/70 uppercase font-black tracking-widest flex items-center justify-center lg:justify-start gap-1">
-                       Agenda Limitada para Novos Projetos
+                       Atendimento limitado a poucos projetos simultâneos
                     </span>
                   </div>
                 </a>
