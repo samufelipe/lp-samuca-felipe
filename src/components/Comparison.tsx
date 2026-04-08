@@ -25,7 +25,7 @@ const Comparison: React.FC = () => {
             <span className="gold-gradient italic">Estrategista Dedicado</span>
           </h2>
           <p className="text-gray-400 text-base md:text-lg max-w-2xl mx-auto font-light">
-            Chega de ser mais um cliente na fila. Tenha um estrategista dedicado ao seu negócio, com atendimento próximo, reports ágeis e decisões tomadas junto com você.
+            Você já sabe como é: atendimento por ticket, analista que nem sabe seu nome, reports que não dizem nada e dinheiro escorrendo pelo ralo. Compare com o que deveria ser.
           </p>
         </ScrollReveal>
 
