@@ -4,6 +4,7 @@ import Hero from '@/components/Hero';
 import PainPoints from '@/components/PainPoints';
 import Stats from '@/components/Stats';
 import BackgroundElements from '@/components/BackgroundElements';
+import GoogleExpertise from '@/components/GoogleExpertise';
 import Methodology from '@/components/Methodology';
 import Comparison from '@/components/Comparison';
 import Cases from '@/components/Cases';
@@ -20,6 +21,7 @@ const Index: React.FC = () => {
         <Hero />
         <PainPoints />
         <Stats />
+        <GoogleExpertise />
         <Methodology />
         <Comparison />
         <Cases />
