@@ -26,8 +26,10 @@ const Hero: React.FC = () => {
             </ScrollReveal>
 
             <ScrollReveal stagger={1}>
-              <p className="text-lg md:text-xl text-gray-400 mb-10 max-w-xl mx-auto lg:mx-0 font-light">
-                Estratégia exclusiva de mídia paga com acompanhamento próximo, reports ágeis e decisões em conjunto. Sem filas de atendimento, sem templates, sem rotatividade de analistas. <strong className="text-white">+7 milhões geridos em mídia paga.</strong>
+              <p className="text-base md:text-xl text-gray-400 mb-10 max-w-xl mx-auto lg:mx-0 font-light">
+                <span className="hidden sm:inline">Estratégia exclusiva de mídia paga com acompanhamento próximo, reports ágeis e decisões em conjunto. Sem filas de atendimento, sem templates, sem rotatividade de analistas. </span>
+                <span className="sm:hidden">Mídia paga com projeto exclusivo, atendimento direto e decisões em conjunto. </span>
+                <strong className="text-white">+7 milhões geridos.</strong>
               </p>
             </ScrollReveal>
 
