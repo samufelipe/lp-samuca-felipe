@@ -9,6 +9,8 @@ import ciatripLogo from '@/assets/ciatrip-logo.jpg';
 import ituranLogo from '@/assets/ituran-logo.jpg';
 import valemLogo from '@/assets/valem-logo.png';
 import al7Logo from '@/assets/al7-logo.png';
+import porscheLogo from '@/assets/porsche-logo.png';
+import mercedesLogo from '@/assets/mercedes-logo.png';
 
 interface ClientData {
   name: string;
