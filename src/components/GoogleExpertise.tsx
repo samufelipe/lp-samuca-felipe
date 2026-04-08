@@ -60,7 +60,7 @@ const GoogleExpertise: React.FC = () => {
 
               <div className="grid md:grid-cols-2 gap-8">
                 {[
-                  { title: "Leads para Times Comerciais", desc: "Campanhas de mídia paga para lotar o pipeline de vendas — ideal para clínicas, consultórios, escritórios e equipes comerciais.", icon: <Users size={20} /> },
+                  { title: "Leads para Times Comerciais", desc: "Campanhas de mídia paga para lotar o pipeline de vendas, ideal para clínicas, consultórios, escritórios e equipes comerciais.", icon: <Users size={20} /> },
                   { title: "Escala de Infoprodutos", desc: "Estratégias para vender mais cursos, mentorias e programas digitais com previsibilidade.", icon: <TrendingUp size={20} /> },
                   { title: "Visibilidade de Marcas", desc: "Branding e awareness estratégico com Google Ads e Meta Ads para posicionar sua marca.", icon: <Megaphone size={20} /> },
                   { title: "Landing Pages & Sites", desc: "Desenvolvimento de páginas de alta conversão e sites profissionais que vendem.", icon: <Code size={20} /> },

@@ -17,7 +17,7 @@ const Stats: React.FC = () => {
           <h2 className="text-[10px] md:text-xs font-bold text-yellow-500 uppercase tracking-[0.3em] mb-3 md:mb-4">Resultados Reais</h2>
           <h3 className="text-3xl md:text-4xl font-bold mb-4 md:mb-6">Enquanto agências genéricas entregam métricas de vaidade, <span className="gold-gradient">esses são resultados reais.</span></h3>
           <p className="text-gray-400 max-w-2xl mx-auto text-base md:text-lg font-light">
-            Números construídos com estratégia dedicada, acompanhamento próximo e foco em ROI — não em cliques que não pagam suas contas.
+            Números construídos com estratégia dedicada, acompanhamento próximo e foco em ROI, não em cliques que não pagam suas contas.
           </p>
         </ScrollReveal>
 
