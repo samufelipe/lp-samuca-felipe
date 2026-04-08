@@ -56,6 +56,13 @@ const WhatsAppButton: React.FC = () => {
       setNameError('');
     }
 
+    if (!segment) {
+      setSegmentError('Selecione seu segmento');
+      valid = false;
+    } else {
+      setSegmentError('');
+    }
+
     if (!investment) {
       setInvestmentError('Selecione uma faixa de investimento');
       valid = false;
@@ -65,7 +72,7 @@ const WhatsAppButton: React.FC = () => {
 
     if (!valid) return;
 
-    const message = `Olá Samuel! Meu nome é ${trimmedName}, vim através do seu site.\nMeu investimento mensal previsto é de ${investment}.\nGostaria de solicitar um diagnóstico estratégico para o meu negócio.`;
+    const message = `Olá Samuel! Meu nome é ${trimmedName}, vim através do seu site.\nMeu segmento: ${segment}.\nMeu investimento mensal previsto é de ${investment}.\nGostaria de solicitar um diagnóstico estratégico para o meu negócio.`;
     const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
     trackWhatsAppClick('floating_button_qualified');
