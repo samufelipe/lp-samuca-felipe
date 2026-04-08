@@ -127,6 +127,29 @@ const WhatsAppButton: React.FC = () => {
             </div>
 
             <div className="space-y-2">
+              <label htmlFor="wp-segment" className="text-sm font-medium text-white/80">
+                Qual seu segmento?
+              </label>
+              <Select value={segment} onValueChange={(v) => { setSegment(v); setSegmentError(''); }}>
+                <SelectTrigger className="bg-white/5 border-white/10 text-white focus:ring-[#25D366]/50 [&>span]:text-white/30 [&[data-state=open]>span]:text-white data-[placeholder]:text-white/30">
+                  <SelectValue placeholder="Selecione seu segmento" />
+                </SelectTrigger>
+                <SelectContent className="bg-[#141414] border-white/10">
+                  {segmentOptions.map((opt) => (
+                    <SelectItem
+                      key={opt}
+                      value={opt}
+                      className="text-white/80 focus:bg-white/10 focus:text-white"
+                    >
+                      {opt}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+              {segmentError && <p className="text-red-400 text-xs">{segmentError}</p>}
+            </div>
+
+            <div className="space-y-2">
               <label htmlFor="wp-investment" className="text-sm font-medium text-white/80">
                 Investimento Mensal para o Projeto
               </label>
