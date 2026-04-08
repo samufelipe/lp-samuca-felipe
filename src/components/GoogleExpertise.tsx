@@ -1,8 +1,10 @@
 import React from 'react';
 import { Shield, CheckCircle2, Award, Target, Layout, Search, Handshake, Users, Megaphone, Code, Compass, TrendingUp, ChevronRight } from 'lucide-react';
 import ScrollReveal from './ScrollReveal';
+import { useWhatsAppDialog } from '@/hooks/useWhatsAppDialog';
 
 const GoogleExpertise: React.FC = () => {
+  const { openWhatsApp } = useWhatsAppDialog();
   return (
     <section className="py-24 md:py-36 relative overflow-hidden">
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] bg-transparent pointer-events-none"></div>
@@ -114,9 +116,9 @@ const GoogleExpertise: React.FC = () => {
               <p className="text-gray-500 text-sm md:text-lg font-medium max-w-2xl mx-auto mb-8">
                 A união entre certificação Google, desenvolvimento de soluções digitais com IA e a experiência de quem já geriu +R$ 7 milhões em mídia paga.
               </p>
-              <a href="#contato" className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-yellow-500 to-yellow-600 text-black rounded-xl font-bold text-xs sm:text-sm hover:translate-y-[-2px] transition-all shadow-xl active:scale-95">
+              <button onClick={openWhatsApp} className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#25D366] to-[#20bd5a] text-white rounded-xl font-bold text-xs sm:text-sm hover:translate-y-[-2px] transition-all shadow-xl active:scale-95">
                 Solicitar Diagnóstico Gratuito <ChevronRight size={18} />
-              </a>
+              </button>
             </div>
           </div>
         </ScrollReveal>
