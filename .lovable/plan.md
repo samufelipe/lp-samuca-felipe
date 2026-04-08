@@ -1,40 +1,46 @@
 
 
-## Pop-up de Qualificação no Botão Flutuante do WhatsApp
+## Unificar CTAs com Pop-up WhatsApp e Remover Formulário de Diagnóstico
 
 ### O que muda
 
-Ao clicar no botão flutuante do WhatsApp, em vez de redirecionar direto, abre um pop-up (Dialog) com dois campos:
-1. **Nome Completo** (obrigatório)
-2. **Investimento Mensal para o Projeto** (select com faixas de valor)
+1. **Remover a seção de formulário de diagnóstico** (Contact.tsx) da página
+2. **Todos os CTAs da LP passam a abrir o pop-up de qualificação do WhatsApp** (mesmo formulário do botão flutuante)
+3. **Cor de todos os CTAs muda para verde WhatsApp** (`#25D366`)
 
-Após preencher e clicar "Continuar para o WhatsApp", o lead é redirecionado na aba atual (`_self`) com uma mensagem personalizada incluindo nome e faixa de investimento.
+### CTAs afetados (7 no total)
 
-### Faixas de investimento sugeridas
-
-- Até R$ 3.000/mês
-- R$ 3.000 a R$ 10.000/mês
-- R$ 10.000 a R$ 30.000/mês
-- Acima de R$ 30.000/mês
-- Ainda não sei
-
-### Mensagem personalizada no WhatsApp
-
-```
-Olá Samuel! Meu nome é {nome}, vim através do seu site.
-Meu investimento mensal previsto é de {faixa}.
-Gostaria de solicitar um diagnóstico estratégico para o meu negócio.
-```
+| Componente | CTA atual | Ação |
+|---|---|---|
+| Hero.tsx | "Solicitar Diagnóstico Gratuito" (amarelo) | Verde + abre pop-up WA |
+| PainPoints.tsx | "Descubra como →" (texto amarelo) | Verde + abre pop-up WA |
+| GoogleExpertise.tsx | "Solicitar Diagnóstico Gratuito" (amarelo) | Verde + abre pop-up WA |
+| Methodology.tsx | "Aplicar ao Seu Negócio" (texto c/ borda) | Verde + abre pop-up WA |
+| Comparison.tsx | "Quero um Estrategista Dedicado" (amarelo) | Verde + abre pop-up WA |
+| Cases.tsx | "Solicitar Diagnóstico Semelhante" (texto) | Verde + abre pop-up WA |
+| Index.tsx (FAQ) | "Ainda tem dúvidas? Fale comigo →" | Verde + abre pop-up WA |
 
 ### Detalhes técnicos
 
-**Arquivo**: `src/components/WhatsAppButton.tsx`
+**1. Extrair lógica do pop-up para um contexto compartilhado**
 
-- Converter o `<a>` direto em um `<button>` que abre um `Dialog` (do shadcn/ui)
-- Dentro do Dialog: título "Antes de falar comigo..." + dois campos (input de nome + select de investimento)
-- Validação: ambos obrigatórios, nome com mínimo 3 caracteres
-- Botão de submit estilizado em verde WhatsApp: "Falar com Samuel agora →"
-- No submit: `window.location.href` para o WhatsApp com a mensagem personalizada, tracking via `trackWhatsAppClick`
-- O botão flutuante mantém visual idêntico (ping, hover, tooltip)
-- O Dialog segue o tema escuro da LP para manter consistência visual
+Criar um `WhatsAppContext` (ou hook `useWhatsAppDialog`) que expõe uma função `openWhatsApp()`. Isso permite que qualquer CTA na página abra o mesmo Dialog sem duplicar código.
+
+- Arquivo novo: `src/hooks/useWhatsAppDialog.tsx` -- contexto com estado do Dialog
+- O `WhatsAppButton.tsx` passa a consumir esse contexto (mantém o botão flutuante + o Dialog centralizado)
+
+**2. Converter CTAs de `<a href="#contato">` para `<button onClick={openWhatsApp}>`**
+
+Cada CTA deixa de ser um link âncora e passa a chamar `openWhatsApp()` do contexto.
+
+**3. Atualizar cores dos CTAs**
+
+- Botões sólidos: `bg-gradient-to-r from-[#25D366] to-[#20bd5a]` com `text-white`
+- Links de texto: `text-[#25D366]` com hover para branco
+
+**4. Remover Contact.tsx**
+
+- Deletar `src/components/Contact.tsx`
+- Remover import e `<Contact />` de `src/pages/Index.tsx`
+- Remover a seção `id="contato"` (não será mais necessária como âncora)
 
