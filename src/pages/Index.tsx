@@ -34,6 +34,7 @@ const Index: React.FC = () => {
 
             <div className="space-y-4">
               {[
+                { q: "Qual a diferença entre contratar você e uma agência de marketing?", a: "Na agência, você é mais um cliente na fila — com atendimento por tickets, analistas rotativos e templates replicados. Comigo, seu projeto é exclusivo: atendimento direto, reports semanais sob medida, decisões tomadas em conjunto e um estrategista fixo dedicado ao seu negócio." },
                 { q: "Quais tipos de negócio você atende?", a: "Atendo times comerciais que precisam de mais leads qualificados, infoprodutores que desejam escalar vendas de cursos e mentorias, marcas que querem aumentar visibilidade e e-commerces que buscam mais vendas. Cada estratégia é personalizada para o seu modelo de negócio." },
                 { q: "Você também cria landing pages e sites?", a: "Sim! Desenvolvo landing pages de alta conversão, sites profissionais e até aplicativos com inteligência artificial. Tudo integrado à estratégia de mídia paga para maximizar seus resultados." },
                 { q: "Nunca anunciei, vocês me ajudam do zero?", a: "Com certeza. Faço o planejamento estratégico completo: desde a definição de público, criação de campanhas, desenvolvimento de landing pages até o acompanhamento diário. Você não precisa saber nada de tráfego pago." },

@@ -94,7 +94,7 @@ const Contact: React.FC = () => {
                   <h4 className="text-2xl md:text-3xl font-black mb-3 flex items-center gap-4">
                     Solicitar Diagnóstico
                   </h4>
-                  <p className="text-gray-500 text-sm md:text-base font-medium">Preencha os dados e receba uma análise personalizada da sua estratégia de mídia paga.</p>
+                  <p className="text-gray-500 text-sm md:text-base font-medium">Preencha os dados e receba uma proposta de parceria exclusiva para o seu negócio.</p>
                 </div>
 
                 <form className="space-y-6 md:space-y-8" onSubmit={handleSubmit}>
