@@ -21,7 +21,7 @@ const Methodology: React.FC = () => {
               <h2 className="text-sm font-bold text-yellow-500 uppercase tracking-[0.3em] mb-6">O Processo</h2>
               <h3 className="text-4xl md:text-5xl font-black mb-8">Método de Escala <br className="hidden md:block" /><span className="gold-gradient italic playfair">com Previsibilidade</span></h3>
               <p className="text-gray-400 text-lg md:text-xl mb-10 font-light">
-                Um processo testado em +170 projetos para gerar demanda comercial, escalar infoprodutos e posicionar marcas — do diagnóstico à escala.
+                Um processo testado em +170 projetos para gerar demanda comercial, escalar infoprodutos e posicionar marcas, do diagnóstico à escala.
               </p>
               <button onClick={openWhatsApp} className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#25D366] to-[#20bd5a] text-white rounded-xl font-bold text-xs sm:text-sm hover:translate-y-[-2px] transition-all shadow-xl active:scale-95">
                 Aplicar ao Seu Negócio <ChevronRight size={18} />
