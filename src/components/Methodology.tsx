@@ -4,6 +4,7 @@ import ScrollReveal from './ScrollReveal';
 import { useWhatsAppDialog } from '@/hooks/useWhatsAppDialog';
 
 const Methodology: React.FC = () => {
+  const { openWhatsApp } = useWhatsAppDialog();
   const steps = [
     { title: "Diagnóstico de Demanda", desc: "Entendemos seu mercado, concorrência e oportunidades reais de geração de leads e vendas antes de investir um centavo.", icon: <Search /> },
     { title: "Estrutura de Campanhas & Funil", desc: "Criamos campanhas, landing pages e funis otimizados para converter visitantes em clientes pagantes.", icon: <Target /> },

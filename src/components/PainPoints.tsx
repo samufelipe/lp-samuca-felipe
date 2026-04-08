@@ -11,6 +11,7 @@ const pains = [
 ];
 
 const PainPoints: React.FC = () => {
+  const { openWhatsApp } = useWhatsAppDialog();
   return (
     <section className="py-16 md:py-20">
       <div className="max-w-5xl mx-auto px-6">

@@ -9,6 +9,7 @@ import { trackCtaClick } from '@/lib/gtm';
 import { useWhatsAppDialog } from '@/hooks/useWhatsAppDialog';
 
 const Hero: React.FC = () => {
+  const { openWhatsApp } = useWhatsAppDialog();
   return (
     <section id="inicio" className="relative pt-28 md:pt-40 pb-20 md:pb-28 overflow-hidden">
       {/* Dynamic Background Elements — reduced on mobile */}

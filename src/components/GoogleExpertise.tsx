@@ -4,6 +4,7 @@ import ScrollReveal from './ScrollReveal';
 import { useWhatsAppDialog } from '@/hooks/useWhatsAppDialog';
 
 const GoogleExpertise: React.FC = () => {
+  const { openWhatsApp } = useWhatsAppDialog();
   return (
     <section className="py-24 md:py-36 relative overflow-hidden">
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] bg-transparent pointer-events-none"></div>

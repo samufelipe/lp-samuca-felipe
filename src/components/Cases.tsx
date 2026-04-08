@@ -2,6 +2,7 @@ import React, { useRef, useState, useCallback } from 'react';
 import { Handshake, ArrowRight, ArrowUpRight } from 'lucide-react';
 import ScrollReveal from './ScrollReveal';
 import { trackCaseClick, trackCtaClick } from '@/lib/gtm';
+import { useWhatsAppDialog } from '@/hooks/useWhatsAppDialog';
 import gladysLogo from '@/assets/gladys-logo.jpg';
 import becharaLogo from '@/assets/bechara-logo.png';
 import fasLogo from '@/assets/fas-logo.png';
@@ -126,6 +127,7 @@ const DraggableCarousel: React.FC<{ allClients: ClientData[]; getFaviconUrl: (ur
 };
 
 const Cases: React.FC = () => {
+  const { openWhatsApp } = useWhatsAppDialog();
   const allClients: ClientData[] = [
     { name: "Móveis Bechara", niche: "Indústria Moveleira", desc: "Líder na fabricação de móveis modernos com design funcional e distribuição nacional.", result: "Escala Nacional", url: "https://moveisbechara.com.br/", customLogo: becharaLogo },
     { name: "FAS Iluminação", niche: "Design & Luxo", desc: "Curadoria de iluminação técnica e decorativa internacional de alto padrão.", result: "Posicionamento Premium", url: "https://fasiluminacao.com.br/", customLogo: fasLogo },
