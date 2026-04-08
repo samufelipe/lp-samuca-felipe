@@ -1,5 +1,5 @@
 import React from 'react';
-import { DollarSign, UserX, FileX, ShieldOff } from 'lucide-react';
+import { DollarSign, UserX, FileX, ShieldOff, ChevronRight } from 'lucide-react';
 import ScrollReveal from './ScrollReveal';
 import { useWhatsAppDialog } from '@/hooks/useWhatsAppDialog';
 

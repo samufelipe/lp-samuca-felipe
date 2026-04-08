@@ -1,5 +1,5 @@
 import React from 'react';
-import { Target, Search, BarChart3, Rocket } from 'lucide-react';
+import { Target, Search, BarChart3, Rocket, ChevronRight } from 'lucide-react';
 import ScrollReveal from './ScrollReveal';
 import { useWhatsAppDialog } from '@/hooks/useWhatsAppDialog';
 

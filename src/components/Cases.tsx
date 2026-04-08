@@ -1,5 +1,5 @@
 import React, { useRef, useState, useCallback } from 'react';
-import { Handshake, ArrowRight, ArrowUpRight } from 'lucide-react';
+import { Handshake, ArrowRight, ArrowUpRight, ChevronRight } from 'lucide-react';
 import ScrollReveal from './ScrollReveal';
 import { trackCaseClick, trackCtaClick } from '@/lib/gtm';
 import { useWhatsAppDialog } from '@/hooks/useWhatsAppDialog';
