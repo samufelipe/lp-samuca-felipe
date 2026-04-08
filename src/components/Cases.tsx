@@ -126,7 +126,7 @@ const Cases: React.FC = () => {
   const allClients: ClientData[] = [
     { name: "Móveis Bechara", niche: "Indústria Moveleira", desc: "Líder na fabricação de móveis modernos com design funcional e distribuição nacional.", result: "Escala Nacional", url: "https://moveisbechara.com.br/", customLogo: becharaLogo },
     { name: "FAS Iluminação", niche: "Design & Luxo", desc: "Curadoria de iluminação técnica e decorativa internacional de alto padrão.", result: "Posicionamento Premium", url: "https://fasiluminacao.com.br/", customLogo: fasLogo },
-    { name: "Grupo AL7 Motos", niche: "Setor Automotivo", desc: "Concessionária Dafra com venda de motos 0km, seminovas, peças, consórcio e seguros.", result: "Autoridade Local", url: "https://grupoal7.com.br/" },
+    { name: "Grupo AL7 Motos", niche: "Setor Automotivo", desc: "Concessionária Dafra com venda de motos 0km, seminovas, peças, consórcio e seguros.", result: "Autoridade Local", url: "https://grupoal7.com.br/", customLogo: al7Logo },
     { name: "Inovando na sua Obra", niche: "Educação & Arquitetura", desc: "Mentoria para arquitetas e designers de interiores sobre gerenciamento lucrativo de obras.", result: "Captação Qualificada", url: "https://www.inovandonasuaobra.com.br/" },
     { name: "Lu Guerra", niche: "Iluminação & Arquitetura", desc: "Arquiteta especialista em lighting design com projetos autorais e cursos para profissionais da iluminação.", result: "Branding de Luxo", url: "https://www.luguerra.com/" },
     { name: "VALEM Administradora de Benefícios", niche: "Gestão de Saúde", desc: "Administradora líder em benefícios e planos de saúde corporativos.", result: "Lead B2B", url: "https://www.valem.com.br/", customLogo: valemLogo },
