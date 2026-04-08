@@ -64,7 +64,7 @@ const Contact: React.FC = () => {
             <h2 className="text-[10px] md:text-sm font-bold text-yellow-500 uppercase tracking-[0.2em] mb-4">Diagnóstico Gratuito</h2>
             <h3 className="text-3xl md:text-5xl font-bold mb-6 md:mb-8 leading-[1.1] text-balance tracking-tight">Solicitar Diagnóstico <br className="hidden md:block" /><span className="gold-gradient">de Mídia Paga</span></h3>
             <p className="text-gray-400 text-base md:text-lg mb-10 md:mb-12 leading-relaxed">
-              Descubra como gerar mais demanda para seu time comercial, escalar suas vendas de infoprodutos ou posicionar sua marca no digital. Análise gratuita e sem compromisso.
+              <strong className="text-white">Cada dia com a estratégia errada é dinheiro desperdiçado.</strong> Descubra em 5 minutos se sua operação de mídia paga está no caminho certo. Análise gratuita e sem compromisso.
             </p>
 
             <div className="space-y-4 md:space-y-6 max-w-sm mx-auto lg:mx-0">

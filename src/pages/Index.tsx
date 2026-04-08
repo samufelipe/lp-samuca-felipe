@@ -1,9 +1,9 @@
 import React from 'react';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
+import PainPoints from '@/components/PainPoints';
 import Stats from '@/components/Stats';
 import BackgroundElements from '@/components/BackgroundElements';
-import GoogleExpertise from '@/components/GoogleExpertise';
 import Methodology from '@/components/Methodology';
 import Comparison from '@/components/Comparison';
 import Cases from '@/components/Cases';
@@ -18,8 +18,8 @@ const Index: React.FC = () => {
       <Navbar />
       <main className="overflow-x-hidden relative z-10">
         <Hero />
+        <PainPoints />
         <Stats />
-        <GoogleExpertise />
         <Methodology />
         <Comparison />
         <Cases />
