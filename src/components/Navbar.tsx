@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { trackNavClick, trackCtaClick } from '@/lib/gtm';
-import { useNavigate, useLocation, Link } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
+import { useWhatsAppDialog } from '@/hooks/useWhatsAppDialog';
 
 const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
   const location = useLocation();
+  const { openWhatsApp } = useWhatsAppDialog();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -28,12 +30,10 @@ const Navbar: React.FC = () => {
         { label: 'Método', href: '#metodologia' },
         { label: 'Cases', href: '#projetos' },
         { label: 'Aprender', href: '/aprender' },
-        { label: 'Diagnóstico', href: '#contato' },
       ]
     : [
         { label: 'Início', href: '/' },
         { label: 'Aprender', href: '/aprender' },
-        { label: 'Diagnóstico', href: '/#contato' },
       ];
 
   const handleNavClick = (link: { label: string; href: string }) => {
@@ -67,9 +67,9 @@ const Navbar: React.FC = () => {
                 </a>
               )
             )}
-            <a href={isHome ? '#contato' : '/#contato'} onClick={() => trackCtaClick('agendar_call', 'navbar')} className="gold-bg text-black px-6 py-2.5 rounded-xl text-xs font-bold uppercase tracking-widest hover:scale-[1.05] hover:shadow-yellow-500/20 shadow-lg transition-all">
-              Agendar Call
-            </a>
+            <button onClick={() => { trackCtaClick('diagnostico', 'navbar'); openWhatsApp(); }} className="bg-gradient-to-r from-[#25D366] to-[#20bd5a] text-white px-6 py-2.5 rounded-xl text-xs font-bold uppercase tracking-widest hover:scale-[1.05] hover:shadow-[#25D366]/20 shadow-lg transition-all">
+              Quero um Diagnóstico
+            </button>
           </div>
 
           <button
@@ -106,13 +106,12 @@ const Navbar: React.FC = () => {
                 </a>
               )
             )}
-            <a
-              href={isHome ? '#contato' : '/#contato'}
-              className="gold-bg text-black w-full py-3.5 rounded-xl text-center font-bold text-base shadow-xl mt-8"
-              onClick={() => setIsMenuOpen(false)}
+            <button
+              className="bg-gradient-to-r from-[#25D366] to-[#20bd5a] text-white w-full py-3.5 rounded-xl text-center font-bold text-base shadow-xl mt-8"
+              onClick={() => { setIsMenuOpen(false); trackCtaClick('diagnostico', 'navbar_mobile'); openWhatsApp(); }}
             >
-              Começar Agora
-            </a>
+              Quero um Diagnóstico
+            </button>
           </div>
         </div>
       </nav>
