@@ -36,8 +36,10 @@ const segmentOptions = [
 const WhatsAppButton: React.FC = () => {
   const { isOpen, openWhatsApp, closeWhatsApp } = useWhatsAppDialog();
   const [name, setName] = useState('');
+  const [segment, setSegment] = useState('');
   const [investment, setInvestment] = useState('');
   const [nameError, setNameError] = useState('');
+  const [segmentError, setSegmentError] = useState('');
   const [investmentError, setInvestmentError] = useState('');
 
   const phoneNumber = '5531992976990';
