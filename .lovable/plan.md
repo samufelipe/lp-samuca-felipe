@@ -1,62 +1,56 @@
 
 
-## Otimização da Copy para Campanha Google Ads — Posicionamento Anti-Agência
+## Aumentar Persuasão — Bater nas Dores de Quem Contrata Agência Genérica
 
-### Diagnóstico da Copy Atual
+### Diagnóstico
 
-A LP atual comunica bem autoridade e resultados, mas fala de forma **genérica** sobre os serviços. O diferencial que você quer vender — **proximidade, exclusividade, atendimento personalizado vs. agência genérica** — quase não aparece. As empresas que vão clicar no anúncio precisam sentir isso logo nos primeiros 5 segundos.
+A LP já tem o posicionamento anti-agência, mas falta **agitar a dor** antes de apresentar a solução. Quem vem do Google Ads precisa se identificar nos primeiros segundos: "isso é exatamente o que eu passo". Hoje a LP vai direto para a solução sem antes validar o problema do visitante.
 
-Gaps identificados:
-- **Hero**: fala de "times comerciais, infoprodutos, saúde" — dispersa demais para quem busca sair de uma agência
-- **Nenhuma menção explícita** a: projeto exclusivo, atendimento próximo, reports ágeis, decisões em conjunto
-- **Comparison**: compara com "Gestor Comum", mas o inimigo real para essa campanha é "Agência Genérica"
-- **FAQ**: não tem a pergunta óbvia "Qual a diferença entre você e uma agência?"
+Gaps principais:
+- **Hero**: subtítulo fala dos benefícios mas não menciona as dores (dinheiro jogado fora, falta de resultado, distância do analista)
+- **Falta uma seção de "agitação de dor"** entre o Hero e os Stats — o visitante precisa sentir que você entende o que ele vive
+- **Comparison**: lista diferenças mas não tem peso emocional — falta a sensação de "já passei por isso"
+- **Contact**: não reforça urgência ou consequência de continuar com agência genérica
+- **Stats**: fala de números mas não conecta com a dor de quem gastou muito e teve pouco retorno
 
 ---
 
 ### Mudanças Propostas
 
-#### 1. Hero — Reescrever headline e subtítulo (Hero.tsx)
+#### 1. Hero — Adicionar linha de dor no subtítulo (Hero.tsx)
 
-**Headline atual**: "Mais Demanda. Mais Vendas."
-**Proposta**: "Seu Negócio Merece Mais que uma Agência Genérica."
+Antes de falar dos benefícios, abrir com a dor:
+- **Desktop**: "Cansou de pagar caro e não ter resultado? De ser só mais um número na carteira de uma agência? Aqui seu projeto é exclusivo..."
+- **Mobile**: "Cansou de gastar sem resultado? Aqui é diferente."
 
-**Subtítulo atual**: lista serviços variados
-**Proposta**: Algo como "Estratégia exclusiva de mídia paga com acompanhamento próximo, reports ágeis e decisões em conjunto. Sem filas de atendimento, sem templates, sem rotatividade de analistas. +7 milhões geridos em mídia paga."
+Manter o restante do subtítulo como está.
 
-Isso fala diretamente com a dor de quem está cansado de agência.
+#### 2. Nova seção "Dores" — entre Hero e Stats (novo componente PainPoints.tsx + Index.tsx)
 
-#### 2. Comparison — Reposicionar contra "Agência Genérica" (Comparison.tsx)
+Criar uma seção curta e impactante com 3-4 dores que o visitante se identifica:
+- "Você investe rios de dinheiro e não sabe para onde vai"
+- "Seu analista muda a cada 3 meses e você recomeça do zero"
+- "Reports mensais genéricos que não dizem nada"
+- "Decisões tomadas sem te consultar"
 
-- Trocar título de "Gestão de Tráfego vs. Parceria Estratégica" para algo como "Agência Genérica vs. Estrategista Dedicado"
-- Trocar coluna "Gestor Comum" para "Agência Genérica"
-- Adicionar itens de comparação focados no atendimento:
-  - "Atendimento": Fila de tickets / Contato direto e ágil
-  - "Relatórios": Mensais e genéricos / Semanais e sob medida
-  - "Decisões": Unilaterais / Em conjunto com você
-  - "Projeto": Template replicado / 100% exclusivo
-  - "Analista": Rotatividade constante / Estrategista fixo e dedicado
+Visual: ícones em vermelho/cinza, texto direto, sem firulas. No final, uma frase de transição tipo "Existe um jeito diferente de fazer isso." com link para o formulário.
 
-#### 3. Methodology — Adicionar pilar de proximidade (Methodology.tsx)
+#### 3. Comparison — Adicionar peso emocional (Comparison.tsx)
 
-Ajustar a descrição de um dos steps (ou adicionar um) para reforçar:
-- Reports semanais claros
-- Reuniões de alinhamento
-- Decisões tomadas junto com o cliente
+Reforçar o subtítulo da seção com mais emoção:
+- De: "Chega de ser mais um cliente na fila..."
+- Para: "Você já sabe como é: atendimento por ticket, analista que nem sabe seu nome, reports que não dizem nada e dinheiro escorrendo pelo ralo. Compare com o que deveria ser."
 
-#### 4. FAQ — Adicionar pergunta estratégica (Index.tsx)
+#### 4. Contact — Adicionar linha de urgência (Contact.tsx)
 
-Adicionar no início do FAQ:
-- **"Qual a diferença entre contratar você e uma agência de marketing?"**
-- Resposta focada em: projeto exclusivo, sem rotatividade, contato direto, reports ágeis, decisões em conjunto.
+No texto à esquerda do formulário, substituir o subtítulo genérico por algo que reforce a consequência:
+- "Cada dia com a estratégia errada é dinheiro desperdiçado. Descubra em 5 minutos se sua operação de mídia paga está no caminho certo."
 
-#### 5. Contact — Ajustar copy do formulário (Contact.tsx)
+#### 5. Stats — Conectar com a dor (Stats.tsx)
 
-Trocar subtítulo do formulário de "análise personalizada da sua estratégia" para algo que reforce exclusividade, como "Receba uma proposta de parceria exclusiva para o seu negócio."
-
-#### 6. CTA do Hero — Ajustar micro-copy
-
-Trocar "Agenda Limitada para Novos Projetos" para algo como "Atendimento limitado a poucos projetos simultâneos" — reforça exclusividade.
+Ajustar o subtítulo da seção de stats para fazer ponte com o problema:
+- De: "Demanda gerada para times comerciais e vendas escaladas para infoprodutores"
+- Para: "Enquanto agências genéricas entregam métricas de vaidade, esses são os resultados reais de quem tem um estrategista dedicado."
 
 ---
 
@@ -64,13 +58,14 @@ Trocar "Agenda Limitada para Novos Projetos" para algo como "Atendimento limitad
 
 | Arquivo | O que muda |
 |---|---|
-| `src/components/Hero.tsx` | Headline, subtítulo, micro-copy do CTA |
-| `src/components/Comparison.tsx` | Título, coluna "Agência Genérica", novos itens de comparação |
-| `src/components/Methodology.tsx` | Ajuste em um step para incluir proximidade |
-| `src/pages/Index.tsx` | Nova pergunta no FAQ |
-| `src/components/Contact.tsx` | Subtítulo do formulário |
+| `src/components/Hero.tsx` | Linha de dor antes dos benefícios no subtítulo |
+| `src/components/PainPoints.tsx` | **Novo componente** — seção de agitação de dor com 4 itens |
+| `src/pages/Index.tsx` | Inserir PainPoints entre Hero e Stats |
+| `src/components/Comparison.tsx` | Subtítulo com mais peso emocional |
+| `src/components/Contact.tsx` | Texto à esquerda com urgência e consequência |
+| `src/components/Stats.tsx` | Subtítulo conectado à dor de agência genérica |
 
 ### Resultado esperado
 
-Visitante vindo do Google Ads lê a headline e pensa: "é exatamente isso que eu preciso — alguém dedicado, não mais uma agência". A Comparison reforça visualmente cada dor que ele já viveu. O FAQ responde a objeção final. O formulário fecha com exclusividade.
+O visitante chega, lê o Hero e pensa "é exatamente isso que eu passo". A seção de dores confirma ponto a ponto. Os Stats mostram o contraste com resultados reais. A Comparison dá o tapa final. O formulário fecha com urgência. Funil emocional completo: dor → agitação → solução → prova → ação.
 
