@@ -9,6 +9,8 @@ import ciatripLogo from '@/assets/ciatrip-logo.jpg';
 import ituranLogo from '@/assets/ituran-logo.jpg';
 import valemLogo from '@/assets/valem-logo.png';
 import al7Logo from '@/assets/al7-logo.png';
+import porscheLogo from '@/assets/porsche-logo.png';
+import mercedesLogo from '@/assets/mercedes-logo.png';
 
 interface ClientData {
   name: string;
@@ -138,6 +140,8 @@ const Cases: React.FC = () => {
     { name: "Ciatrip", niche: "Turismo Premium", desc: "Agência especializada em roteiros personalizados e experiências internacionais.", result: "Ticket Médio Alto", url: "https://ciatrip.com/", customLogo: ciatripLogo },
     { name: "Paula Romão", niche: "Estética & Saúde", desc: "Fisioterapeuta especializada em pós-operatório de cirurgia plástica, com atendimento domiciliar personalizado.", result: "Agenda Lotada", url: "https://www.paulacromao.com.br/" },
     { name: "Gladys Religiosos", niche: "Varejo Especializado", desc: "Principal e-commerce de artigos sacros e religiosos do mercado brasileiro.", result: "E-commerce Escalonável", url: "https://www.gladysreligiosos.com.br/", customLogo: gladysLogo },
+    { name: "Porsche Center BH", niche: "Luxo & Lifestyle", desc: "E-commerce oficial de vestuário e acessórios Porsche com estratégia de conversão para o público de alta renda.", result: "ROI Premium", url: "https://loja.porschecenterbh.com.br/", customLogo: porscheLogo },
+    { name: "Mercedes-Benz Collection", niche: "Moda & Luxo", desc: "Loja online da coleção de roupas e acessórios Mercedes-Benz com posicionamento de marca e performance em mídia paga.", result: "Branding + Vendas", url: "https://www.mercedes-benzcollection.com.br/mercedes-benz/roupas", customLogo: mercedesLogo },
   ];
 
   const getFaviconUrl = (url: string) => {
@@ -192,7 +196,7 @@ const Cases: React.FC = () => {
         <ScrollReveal>
           <div className="flex flex-col md:flex-row items-center justify-between gap-6 md:gap-8 py-8 md:py-10 border-t border-white/5 opacity-50 hover:opacity-100 transition-opacity">
             <div className="flex items-center gap-4 md:gap-6">
-              <span className="text-4xl md:text-7xl font-black text-white/10 playfair">14</span>
+              <span className="text-4xl md:text-7xl font-black text-white/10 playfair">16</span>
               <div className="text-left">
                 <p className="text-[10px] md:text-xs font-black text-yellow-500 uppercase tracking-widest">Parcerias de Sucesso</p>
                 <p className="text-gray-500 text-[10px] md:text-sm">Modelos de negócio validados por escala real.</p>
