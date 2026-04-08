@@ -25,11 +25,21 @@ const investmentOptions = [
   'Ainda não sei',
 ];
 
+const segmentOptions = [
+  'Infoproduto (curso, mentoria, programa)',
+  'Clínica / Consultório de Estética',
+  'Empresa com Time Comercial',
+  'E-commerce',
+  'Outro',
+];
+
 const WhatsAppButton: React.FC = () => {
   const { isOpen, openWhatsApp, closeWhatsApp } = useWhatsAppDialog();
   const [name, setName] = useState('');
+  const [segment, setSegment] = useState('');
   const [investment, setInvestment] = useState('');
   const [nameError, setNameError] = useState('');
+  const [segmentError, setSegmentError] = useState('');
   const [investmentError, setInvestmentError] = useState('');
 
   const phoneNumber = '5531992976990';
@@ -46,6 +56,13 @@ const WhatsAppButton: React.FC = () => {
       setNameError('');
     }
 
+    if (!segment) {
+      setSegmentError('Selecione seu segmento');
+      valid = false;
+    } else {
+      setSegmentError('');
+    }
+
     if (!investment) {
       setInvestmentError('Selecione uma faixa de investimento');
       valid = false;
@@ -55,7 +72,7 @@ const WhatsAppButton: React.FC = () => {
 
     if (!valid) return;
 
-    const message = `Olá Samuel! Meu nome é ${trimmedName}, vim através do seu site.\nMeu investimento mensal previsto é de ${investment}.\nGostaria de solicitar um diagnóstico estratégico para o meu negócio.`;
+    const message = `Olá Samuel! Meu nome é ${trimmedName}, vim através do seu site.\nMeu segmento: ${segment}.\nMeu investimento mensal previsto é de ${investment}.\nGostaria de solicitar um diagnóstico estratégico para o meu negócio.`;
     const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
     trackWhatsAppClick('floating_button_qualified');
@@ -107,6 +124,29 @@ const WhatsAppButton: React.FC = () => {
                 maxLength={100}
               />
               {nameError && <p className="text-red-400 text-xs">{nameError}</p>}
+            </div>
+
+            <div className="space-y-2">
+              <label htmlFor="wp-segment" className="text-sm font-medium text-white/80">
+                Qual seu segmento?
+              </label>
+              <Select value={segment} onValueChange={(v) => { setSegment(v); setSegmentError(''); }}>
+                <SelectTrigger className="bg-white/5 border-white/10 text-white focus:ring-[#25D366]/50 [&>span]:text-white/30 [&[data-state=open]>span]:text-white data-[placeholder]:text-white/30">
+                  <SelectValue placeholder="Selecione seu segmento" />
+                </SelectTrigger>
+                <SelectContent className="bg-[#141414] border-white/10">
+                  {segmentOptions.map((opt) => (
+                    <SelectItem
+                      key={opt}
+                      value={opt}
+                      className="text-white/80 focus:bg-white/10 focus:text-white"
+                    >
+                      {opt}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+              {segmentError && <p className="text-red-400 text-xs">{segmentError}</p>}
             </div>
 
             <div className="space-y-2">

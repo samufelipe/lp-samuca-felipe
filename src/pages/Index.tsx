@@ -3,6 +3,7 @@ import { ChevronRight } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import PainPoints from '@/components/PainPoints';
+import TargetAudience from '@/components/TargetAudience';
 import Stats from '@/components/Stats';
 import BackgroundElements from '@/components/BackgroundElements';
 import GoogleExpertise from '@/components/GoogleExpertise';
@@ -23,6 +24,7 @@ const Index: React.FC = () => {
       <main className="overflow-x-hidden relative z-10">
         <Hero />
         <PainPoints />
+        <TargetAudience />
         <Stats />
         <GoogleExpertise />
         <Methodology />
@@ -40,7 +42,10 @@ const Index: React.FC = () => {
             <div className="space-y-4">
               {[
                 { q: "Qual a diferença entre contratar você e uma agência de marketing?", a: "Na agência, você é mais um cliente na fila — com atendimento por tickets, analistas rotativos e templates replicados. Comigo, seu projeto é exclusivo: atendimento direto, reports semanais sob medida, decisões tomadas em conjunto e um estrategista fixo dedicado ao seu negócio." },
-                { q: "Quais tipos de negócio você atende?", a: "Atendo times comerciais que precisam de mais leads qualificados, infoprodutores que desejam escalar vendas de cursos e mentorias, marcas que querem aumentar visibilidade e e-commerces que buscam mais vendas. Cada estratégia é personalizada para o seu modelo de negócio." },
+                { q: "Quais tipos de negócio você atende?", a: "Atendo infoprodutores que desejam escalar vendas de cursos e mentorias, clínicas de estética e saúde que precisam lotar a agenda, e empresas com times comerciais que buscam leads qualificados. Cada estratégia é personalizada para o seu modelo de negócio." },
+                { q: "Trabalho com infoproduto (curso/mentoria), como vocês ajudam?", a: "Criamos funis de venda completos com Meta Ads e Google Ads, landing pages otimizadas e estratégias de escala progressiva. Trabalhamos desde lançamentos até vendas no perpétuo, sempre com foco em ROAS e CAC saudável." },
+                { q: "Tenho uma clínica de estética, como gero mais agendamentos?", a: "Utilizamos Google Ads com foco em buscas locais e Meta Ads para geração de demanda. Criamos landing pages específicas para cada procedimento e implementamos formulários de qualificação para filtrar leads com real interesse." },
+                { q: "Preciso de leads para meu time comercial, qual a abordagem?", a: "Montamos campanhas de geração de leads B2B com formulários qualificados, integramos com seu CRM e otimizamos continuamente o custo por lead qualificado. O foco é entregar oportunidades reais para seu time fechar." },
                 { q: "Você também cria landing pages e sites?", a: "Sim! Desenvolvo landing pages de alta conversão, sites profissionais e até aplicativos com inteligência artificial. Tudo integrado à estratégia de mídia paga para maximizar seus resultados." },
                 { q: "Nunca anunciei, vocês me ajudam do zero?", a: "Com certeza. Faço o planejamento estratégico completo: desde a definição de público, criação de campanhas, desenvolvimento de landing pages até o acompanhamento diário. Você não precisa saber nada de tráfego pago." },
                 { q: "Já anuncio mas quero escalar, como funciona?", a: "Começo com um diagnóstico completo das suas campanhas atuais, identifico gargalos e oportunidades, e implemento estratégias de escala controlada para multiplicar seus resultados sem desperdiçar investimento." },
