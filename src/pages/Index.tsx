@@ -8,11 +8,13 @@ import GoogleExpertise from '@/components/GoogleExpertise';
 import Methodology from '@/components/Methodology';
 import Comparison from '@/components/Comparison';
 import Cases from '@/components/Cases';
-import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 import WhatsAppButton from '@/components/WhatsAppButton';
+import { useWhatsAppDialog } from '@/hooks/useWhatsAppDialog';
 
 const Index: React.FC = () => {
+  const { openWhatsApp } = useWhatsAppDialog();
+
   return (
     <div className="min-h-screen relative">
       <BackgroundElements />
@@ -56,14 +58,13 @@ const Index: React.FC = () => {
             </div>
 
             <div className="text-center mt-12">
-              <a href="#contato" className="inline-flex items-center gap-2 text-yellow-500 font-bold text-sm uppercase tracking-widest hover:text-white transition-colors">
+              <button onClick={openWhatsApp} className="inline-flex items-center gap-2 text-[#25D366] font-bold text-sm uppercase tracking-widest hover:text-white transition-colors">
                 Ainda tem dúvidas? Fale comigo <span className="ml-1">→</span>
-              </a>
+              </button>
             </div>
           </div>
         </section>
 
-        <Contact />
       </main>
       <Footer />
       <WhatsAppButton />
