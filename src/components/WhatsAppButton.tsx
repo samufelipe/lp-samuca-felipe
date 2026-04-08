@@ -25,6 +25,14 @@ const investmentOptions = [
   'Ainda não sei',
 ];
 
+const segmentOptions = [
+  'Infoproduto (curso, mentoria, programa)',
+  'Clínica / Consultório de Estética',
+  'Empresa com Time Comercial',
+  'E-commerce',
+  'Outro',
+];
+
 const WhatsAppButton: React.FC = () => {
   const { isOpen, openWhatsApp, closeWhatsApp } = useWhatsAppDialog();
   const [name, setName] = useState('');
