@@ -18,7 +18,7 @@ const Hero: React.FC = () => {
         <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
           <div className="w-full lg:flex-1 text-center lg:text-left order-2 lg:order-1">
             <ScrollReveal className="overflow-hidden">
-              <h1 className="mask-reveal text-[2.1rem] leading-[1.1] sm:text-5xl md:text-7xl lg:text-[5.5rem] font-black mb-8 text-white">
+              <h1 className="mask-reveal text-[1.75rem] leading-[1.1] sm:text-5xl md:text-7xl lg:text-[5.5rem] font-black mb-8 text-white">
                 Pare de Queimar Dinheiro{' '}
                 <br className="sm:hidden" />
                 com Agência <span className="gold-gradient italic playfair">Genérica.</span>
