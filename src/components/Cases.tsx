@@ -8,6 +8,7 @@ import fasLogo from '@/assets/fas-logo.png';
 import ciatripLogo from '@/assets/ciatrip-logo.jpg';
 import ituranLogo from '@/assets/ituran-logo.jpg';
 import valemLogo from '@/assets/valem-logo.png';
+import al7Logo from '@/assets/al7-logo.png';
 
 interface ClientData {
   name: string;
