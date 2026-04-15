@@ -20,7 +20,7 @@ const Hero: React.FC = () => {
         <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
           <div className="w-full lg:flex-1 text-center lg:text-left order-2 lg:order-1">
             <ScrollReveal className="overflow-hidden">
-              <h1 className="mask-reveal text-[1.75rem] leading-[1.1] sm:text-5xl md:text-7xl lg:text-[5.5rem] font-black mb-8 text-white">
+              <h1 className="mask-reveal text-[2.15rem] leading-[1.06] sm:text-5xl md:text-7xl lg:text-[5.5rem] font-black mb-8 text-white">
                 Pare de Queimar Dinheiro{' '}
                 <br className="sm:hidden" />
                 com Agência <span className="gold-gradient italic playfair">Genérica.</span>
@@ -118,6 +118,8 @@ const Hero: React.FC = () => {
                   src={samuelPhoto}
                   className="w-full h-full object-cover object-[center_15%] brightness-[0.75] contrast-[1.08] saturate-[0.95] md:brightness-[0.80] md:contrast-[1.1] lg:brightness-[0.85] md:group-hover:brightness-[0.90] md:group-hover:scale-105 transition-all duration-1000"
                   alt="Samuel Felipe - Estrategista de Mídia Paga"
+                  loading="eager"
+                  decoding="async"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent pointer-events-none"></div>
                 <div className="absolute inset-0 bg-gradient-to-r from-background/20 via-transparent to-transparent pointer-events-none"></div>

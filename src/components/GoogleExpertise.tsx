@@ -32,9 +32,10 @@ const GoogleExpertise: React.FC = () => {
 
               <div className="bg-white p-10 rounded-[2.5rem] mb-10 shadow-[0_20px_50px_rgba(255,255,255,0.1)] group-hover:scale-105 transition-transform duration-700">
                 <img
-                  src="https://upload.wikimedia.org/wikipedia/commons/c/c7/Google_Ads_logo.svg"
+                  src="/google-ads-logo.svg"
                   alt="Google Ads Logo"
                   className="w-48 md:w-56 h-auto"
+                  loading="lazy"
                 />
                 <div className="mt-6 pt-6 border-t border-gray-100">
                   <p className="text-gray-900 font-black text-2xl tracking-tighter italic">Certified</p>
