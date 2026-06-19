@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { WhatsAppDialogProvider } from "@/hooks/useWhatsAppDialog";
 import Index from "./pages/Index";
 import Aprender from "./pages/Aprender";
+import Portfolio from "./pages/Portfolio";
 import NotFound from "./pages/NotFound";
 import {
   trackPageLoad,
@@ -44,6 +45,7 @@ const App = () => {
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/aprender" element={<Aprender />} />
+              <Route path="/portfolio" element={<Portfolio />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>

@@ -29,10 +29,12 @@ const Navbar: React.FC = () => {
         { label: 'Início', href: '#inicio' },
         { label: 'Método', href: '#metodologia' },
         { label: 'Cases', href: '#projetos' },
+        { label: 'Portfólio', href: '/portfolio' },
         { label: 'Aprender', href: '/aprender' },
       ]
     : [
         { label: 'Início', href: '/' },
+        { label: 'Portfólio', href: '/portfolio' },
         { label: 'Aprender', href: '/aprender' },
       ];
 

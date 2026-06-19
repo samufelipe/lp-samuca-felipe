@@ -1,29 +1,12 @@
 import React, { useRef, useState, useCallback } from 'react';
-import { Handshake, ArrowRight, ArrowUpRight, ChevronRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Handshake, ArrowUpRight, ChevronRight, ArrowRight } from 'lucide-react';
 import ScrollReveal from './ScrollReveal';
 import { trackCaseClick, trackCtaClick } from '@/lib/gtm';
 import { useWhatsAppDialog } from '@/hooks/useWhatsAppDialog';
-import gladysLogo from '@/assets/gladys-logo.jpg';
-import becharaLogo from '@/assets/bechara-logo.png';
-import fasLogo from '@/assets/fas-logo.png';
-import ciatripLogo from '@/assets/ciatrip-logo.jpg';
-import ituranLogo from '@/assets/ituran-logo.jpg';
-import valemLogo from '@/assets/valem-logo.png';
-import al7Logo from '@/assets/al7-logo.png';
-import porscheLogo from '@/assets/porsche-logo.png';
-import mercedesLogo from '@/assets/mercedes-logo.png';
-import agvLogo from '@/assets/agv-logo.png';
+import { allCases, getFaviconUrl, type CaseItem } from '@/data/cases';
 
-interface ClientData {
-  name: string;
-  niche: string;
-  desc: string;
-  result: string;
-  url: string;
-  customLogo?: string;
-}
-
-const DraggableCarousel: React.FC<{ allClients: ClientData[]; getFaviconUrl: (url: string) => string }> = ({ allClients, getFaviconUrl }) => {
+const DraggableCarousel: React.FC<{ clients: CaseItem[] }> = ({ clients }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
@@ -73,7 +56,7 @@ const DraggableCarousel: React.FC<{ allClients: ClientData[]; getFaviconUrl: (ur
         onMouseUp={handleMouseUp}
         onMouseLeave={handleMouseUp}
       >
-        {[...allClients, ...allClients].map((client, idx) => (
+        {[...clients, ...clients].map((client, idx) => (
           <a
             key={idx}
             href={client.url}
@@ -92,7 +75,7 @@ const DraggableCarousel: React.FC<{ allClients: ClientData[]; getFaviconUrl: (ur
               <div className="flex flex-col gap-2">
                 <div className="w-20 h-20 md:w-24 md:h-24 rounded-xl border border-yellow-500/20 overflow-hidden bg-white/10 flex-shrink-0 p-3 group-hover/card:border-yellow-500/40 group-hover/card:bg-white/15 transition-all duration-500">
                   <img
-                    src={client.customLogo || getFaviconUrl(client.url)}
+                    src={client.logo || getFaviconUrl(client.url)}
                     alt={`${client.name} logo`}
                     className="w-full h-full object-contain pointer-events-none"
                     loading="lazy"
@@ -128,34 +111,6 @@ const DraggableCarousel: React.FC<{ allClients: ClientData[]; getFaviconUrl: (ur
 
 const Cases: React.FC = () => {
   const { openWhatsApp } = useWhatsAppDialog();
-  const allClients: ClientData[] = [
-    { name: "Móveis Bechara", niche: "Indústria Moveleira", desc: "Líder na fabricação de móveis modernos com design funcional e distribuição nacional.", result: "Escala Nacional", url: "https://moveisbechara.com.br/", customLogo: becharaLogo },
-    { name: "FAS Iluminação", niche: "Design & Luxo", desc: "Curadoria de iluminação técnica e decorativa internacional de alto padrão.", result: "Posicionamento Premium", url: "https://fasiluminacao.com.br/", customLogo: fasLogo },
-    { name: "Grupo AL7 Motos", niche: "Setor Automotivo", desc: "Concessionária Dafra com venda de motos 0km, seminovas, peças, consórcio e seguros.", result: "Autoridade Local", url: "https://grupoal7.com.br/", customLogo: al7Logo },
-    { name: "Inovando na sua Obra", niche: "Educação & Arquitetura", desc: "Mentoria para arquitetas e designers de interiores sobre gerenciamento lucrativo de obras.", result: "Captação Qualificada", url: "https://www.inovandonasuaobra.com.br/" },
-    { name: "Lu Guerra", niche: "Iluminação & Arquitetura", desc: "Arquiteta especialista em lighting design com projetos autorais e cursos para profissionais da iluminação.", result: "Branding de Luxo", url: "https://www.luguerra.com/" },
-    { name: "VALEM Administradora de Benefícios", niche: "Gestão de Saúde", desc: "Administradora líder em benefícios e planos de saúde corporativos.", result: "Lead B2B", url: "https://www.valem.com.br/", customLogo: valemLogo },
-    { name: "HDI Brasil", niche: "Padrões de TI", desc: "Autoridade global em suporte técnico e melhores práticas de tecnologia.", result: "Educação Corporativa", url: "https://hdibrasil.com.br/" },
-    { name: "Instituto Embelleze", niche: "Educação Profissional", desc: "Maior rede mundial de cursos profissionalizantes na área da beleza.", result: "Conversão em Massa", url: "https://institutoembelleze.com/" },
-    { name: "Colina dos Ipês", niche: "Planos Funerários", desc: "Planos funerários com atendimento humanizado e clube de benefícios com mais de 500 parceiros.", result: "Acolhimento Digital", url: "https://www.colinadosipes.com.br/" },
-    { name: "Ituran Seguros", niche: "Segurança Veicular", desc: "Líder em rastreamento veicular, seguros e proteção automotiva com tecnologia de ponta.", result: "Performance Global", url: "https://ituran.com.br/", customLogo: ituranLogo },
-    { name: "São José Confecções", niche: "Produtos Promocionais", desc: "Fábrica de bonés, viseiras, camisetas e ecobags personalizados para ações promocionais e eventos.", result: "Venda Direta", url: "https://www.saojoseconfeccoes.com.br/" },
-    { name: "Ciatrip", niche: "Turismo Premium", desc: "Agência especializada em roteiros personalizados e experiências internacionais.", result: "Ticket Médio Alto", url: "https://ciatrip.com/", customLogo: ciatripLogo },
-    { name: "Paula Romão", niche: "Estética & Saúde", desc: "Fisioterapeuta especializada em pós-operatório de cirurgia plástica, com atendimento domiciliar personalizado.", result: "Agenda Lotada", url: "https://www.paulacromao.com.br/" },
-    { name: "Gladys Religiosos", niche: "Varejo Especializado", desc: "Principal e-commerce de artigos sacros e religiosos do mercado brasileiro.", result: "E-commerce Escalonável", url: "https://www.gladysreligiosos.com.br/", customLogo: gladysLogo },
-    { name: "Porsche Center BH", niche: "Luxo & Lifestyle", desc: "E-commerce oficial de vestuário e acessórios Porsche com estratégia de conversão para o público de alta renda.", result: "ROI Premium", url: "https://loja.porschecenterbh.com.br/", customLogo: porscheLogo },
-    { name: "Mercedes-Benz Collection", niche: "Moda & Luxo", desc: "Loja online da coleção de roupas e acessórios Mercedes-Benz com posicionamento de marca e performance em mídia paga.", result: "Branding + Vendas", url: "https://www.mercedes-benzcollection.com.br/mercedes-benz/roupas", customLogo: mercedesLogo },
-    { name: "Universo AGV Protege", niche: "Proteção Veicular", desc: "Associação de proteção veicular com estratégias digitais para captação de leads e crescimento de base de associados.", result: "Escala de Leads", url: "https://agvprotege.com.br/", customLogo: agvLogo },
-  ];
-
-  const getFaviconUrl = (url: string) => {
-    try {
-      const domain = new URL(url).hostname;
-      return `https://www.google.com/s2/favicons?domain=${domain}&sz=64`;
-    } catch {
-      return '';
-    }
-  };
 
   return (
     <section id="projetos" className="py-20 md:py-32 overflow-hidden relative">
@@ -192,10 +147,8 @@ const Cases: React.FC = () => {
         </div>
       </div>
 
-      {/* Carousel */}
-      <DraggableCarousel allClients={allClients} getFaviconUrl={getFaviconUrl} />
+      <DraggableCarousel clients={allCases} />
 
-      {/* Bottom Authority Bar */}
       <div className="max-w-7xl mx-auto px-6 mt-12 md:mt-24">
         <ScrollReveal>
           <div className="flex flex-col md:flex-row items-center justify-between gap-6 md:gap-8 py-8 md:py-10 border-t border-white/5 opacity-50 hover:opacity-100 transition-opacity">
@@ -207,9 +160,20 @@ const Cases: React.FC = () => {
               </div>
             </div>
 
-            <button onClick={() => { trackCtaClick('diagnostico_semelhante', 'cases_section'); openWhatsApp(); }} className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#25D366] to-[#20bd5a] text-white rounded-xl font-bold text-xs sm:text-sm hover:translate-y-[-2px] transition-all shadow-xl active:scale-95">
-              Solicitar Diagnóstico <ChevronRight size={18} />
-            </button>
+            <div className="flex flex-col sm:flex-row gap-3">
+              <Link
+                to="/portfolio"
+                className="inline-flex items-center gap-2 px-6 py-3 border border-yellow-500/30 text-yellow-500 rounded-xl font-bold text-xs sm:text-sm hover:bg-yellow-500/10 hover:translate-y-[-2px] transition-all"
+              >
+                Ver Portfólio Completo <ArrowRight size={16} />
+              </Link>
+              <button
+                onClick={() => { trackCtaClick('diagnostico_semelhante', 'cases_section'); openWhatsApp(); }}
+                className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#25D366] to-[#20bd5a] text-white rounded-xl font-bold text-xs sm:text-sm hover:translate-y-[-2px] transition-all shadow-xl active:scale-95"
+              >
+                Solicitar Diagnóstico <ChevronRight size={18} />
+              </button>
+            </div>
           </div>
         </ScrollReveal>
       </div>
