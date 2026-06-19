@@ -5,10 +5,8 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { WhatsAppDialogProvider } from "@/hooks/useWhatsAppDialog";
-import Index from "./pages/Index";
-import Aprender from "./pages/Aprender";
+import Maintenance from "./pages/Maintenance";
 import Portfolio from "./pages/Portfolio";
-import NotFound from "./pages/NotFound";
 import {
   trackPageLoad,
   initScrollDepthTracking,
@@ -43,11 +41,9 @@ const App = () => {
           <Sonner />
           <BrowserRouter>
             <Routes>
-              <Route path="/" element={<Index />} />
-              <Route path="/aprender" element={<Aprender />} />
               <Route path="/portfolio" element={<Portfolio />} />
-              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-              <Route path="*" element={<NotFound />} />
+              {/* MAINTENANCE MODE — substituir Maintenance por Index para reativar */}
+              <Route path="*" element={<Maintenance />} />
             </Routes>
           </BrowserRouter>
         </WhatsAppDialogProvider>
